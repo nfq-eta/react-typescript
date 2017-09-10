@@ -88,7 +88,7 @@ const config: webpack.Configuration = {
     },
     devServer: {
         hot: true,
-        hotOnly: true,
+        // hotOnly: true,
     },
 };
 
