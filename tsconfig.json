@@ -1,13 +1,13 @@
 {
     "compilerOptions": {
-      "jsx": "react",
-      "module": "commonjs",
-      "noImplicitAny": true,
-      "strictNullChecks": true,
-      "outDir": "./build/",
-      "preserveConstEnums": true,
-      "removeComments": true,
-      "target": "ES5"
+        "target": "ES5",
+        "jsx": "react",
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "outDir": "./build/",
+        "preserveConstEnums": true,
+        "removeComments": true
     },
     "exclude": [
         "typings/browser.d.ts",

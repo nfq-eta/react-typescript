@@ -5,7 +5,7 @@ import { App } from "./components/App";
 
 render(
     <AppContainer>
-        <App title="Demonas" />
+        <App title="Demonas"/>
     </AppContainer>,
     document.getElementById("app") as HTMLElement,
 );
@@ -19,7 +19,7 @@ if (module.hot) {
         const NextApp = require<IRequireImport>("./components/App").default;
         render(
             <AppContainer>
-                <NextApp />
+                <NextApp/>
             </AppContainer>,
             document.getElementById("app"),
         );
