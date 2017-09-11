@@ -1,6 +1,9 @@
 {
     "compilerOptions": {
-        "target": "ES5",
+        "target": "es6",
+        "moduleResolution": "node",
+        "baseUrl": "src",
+        "allowSyntheticDefaultImports": true,
         "jsx": "react",
         "module": "commonjs",
         "noImplicitAny": true,
@@ -10,8 +13,10 @@
         "removeComments": true
     },
     "exclude": [
+        "**/*.test.tsx",
         "typings/browser.d.ts",
         "typings/browser",
-        "node_modules"
+        "node_modules",
+        "./lib/__tests__"
     ]
 }

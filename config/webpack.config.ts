@@ -1,53 +1,53 @@
-import * as HtmlWebpackPlugin from "html-webpack-plugin";
-import * as path from "path";
-import * as webpack from "webpack";
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as path from 'path';
+import * as webpack from 'webpack';
 
 const NODE_ENV = process.env.NODE_ENV;
-const isDev = NODE_ENV === "development";
+const isDev = NODE_ENV === 'development';
 
 const config: webpack.Configuration = {
     entry: {
         app: [
-            "react-hot-loader/patch",
-            "./src/index.tsx",
+            'react-hot-loader/patch',
+            './src/index.tsx',
         ],
-        vendors: Object.keys(require(path.resolve("package.json")).dependencies),
+        vendors: Object.keys(require(path.resolve('package.json')).dependencies),
     },
 
     output: {
-        path: path.resolve(__dirname, "../dist"),
-        sourceMapFilename: "js/[name].map",
-        filename: "js/[name].[hash].min.js",
-        chunkFilename: "js/[name].[hash].chunk.js",
+        path: path.resolve(__dirname, '../dist'),
+        sourceMapFilename: 'js/[name].map',
+        filename: 'js/[name].[hash].min.js',
+        chunkFilename: 'js/[name].[hash].chunk.js',
     },
 
-    devtool: "source-map",
+    devtool: 'source-map',
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx", ".js", ".json"],
+        extensions: ['.ts', '.tsx', '.js', '.json'],
     },
 
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
-                use: ["react-hot-loader/webpack", "awesome-typescript-loader"],
+                test: /^(?!.*\.test\.tsx$).*\.tsx$/,
+                use: ['react-hot-loader/webpack', 'babel-loader', 'awesome-typescript-loader'],
             },
             {
-                enforce: "pre",
+                enforce: 'pre',
                 test: /\.js$/,
-                use: "source-map-loader",
+                use: 'source-map-loader',
             },
         ],
     },
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve("./src/index.html"),
-            inject: "body",
-            filename: "index.html",
-            title: require(path.resolve("package.json")).description,
+            template: path.resolve('./src/index.html'),
+            inject: 'body',
+            filename: 'index.html',
+            title: require(path.resolve('package.json')).description,
             minify: isDev ? false : {
                 removeComments: true,
                 collapseWhitespace: true,
@@ -63,8 +63,8 @@ const config: webpack.Configuration = {
         }),
         new webpack.optimize.CommonsChunkPlugin({
             names: [
-                "app",
-                "vendors",
+                'app',
+                'vendors',
             ],
             minChunks: Infinity,
         }),

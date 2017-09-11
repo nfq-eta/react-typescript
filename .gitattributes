@@ -1,0 +1,4 @@
+* text=auto
+yarn.lock merge=ours
+*.snap binary
+yarn.lock binary

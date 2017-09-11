@@ -1,13 +1,35 @@
 {
     "extends": [
-        "tslint:latest",
-        "tslint-react"
+        "tslint-config-airbnb"
     ],
+    "env": {
+        "browser": true,
+        "jest": true
+    },
     "rules": {
-        "object-literal-sort-keys": false,
-        "no-unused-variable": [
-            true,
-            "react"
-        ]
+        "ter-indent": [true, 4],
+        "newline-before-return": true,
+        "no-prototype-builtins": 0,
+        "semi": ["error", "always"],
+        "comma-dangle": [2, "always-multiline"],
+        "max-len": 0,
+        "no-shadow": 0,
+        "arrow-body-style": 0,
+        "global-require": 0,
+        "no-unused-expressions": 0,
+        "no-confusing-arrow": 0,
+        "no-unused-vars": 0,
+        "import/no-unresolved": 0,
+        "import/extensions": 0,
+        "import/no-dynamic-require": 0,
+        "import/no-extraneous-dependencies": 0,
+        "import/prefer-default-export": 0,
+        "react/require-default-props": 0,
+        "react/forbid-prop-types": 0,
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-filename-extension": [2, {"extensions": [".js", ".jsx"]}],
+        "react/jsx-boolean-value": 0,
+        "react/jsx-indent-props": ["error", 4],
+        "no-unused-vars-rest/no-unused-vars": [2, {"ignoreDestructuredVarsWithRest": true}]
     }
 }

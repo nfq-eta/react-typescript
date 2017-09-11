@@ -21,7 +21,7 @@ insert_final_newline = ignore
 # Minified JavaScript files shouldn't be changed
 [**.min.js]
 indent_style = ignore
-insert_final_newline = ignore
+insert_final_newline = false
 
 # Batch files use tabs for indentation
 [*.bat]
