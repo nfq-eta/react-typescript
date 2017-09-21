@@ -1,9 +1,15 @@
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as path from 'path';
 import * as webpack from 'webpack';
+import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
+
 
 const NODE_ENV = process.env.NODE_ENV;
 const isDev = NODE_ENV === 'development';
+const extractSass = new ExtractTextPlugin({
+    filename: 'static/css/[name].[chunkhash:8].min.css',
+    disable: isDev,
+});
 
 const config: webpack.Configuration = {
     entry: {
@@ -39,6 +45,26 @@ const config: webpack.Configuration = {
                 test: /\.js$/,
                 use: 'source-map-loader',
             },
+            {
+                test: /\.s?css$/,
+                use: extractSass.extract({
+                    use: [
+                        {
+                            loader: 'typings-for-css-modules-loader',
+                            options: {
+                                modules: true,
+                                sourceMap: isDev,
+                                namedExport: true,
+                                camelCase: true,
+                                importLoaders: 1,
+                            },
+                        },
+                        { loader: 'resolve-url-loader' },
+                        { loader: 'sass-loader', options: { sourceMap: isDev } },
+                    ],
+                    fallback: 'style-loader',
+                }),
+            },
         ],
     },
 
@@ -70,6 +96,10 @@ const config: webpack.Configuration = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
+        new webpack.WatchIgnorePlugin([
+            /css\.d\.ts$/,
+        ]),
+        extractSass,
     ],
 
     externals: {},
