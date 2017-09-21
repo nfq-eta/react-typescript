@@ -7,6 +7,7 @@
         "start": "webpack-dev-server --open --content-base dist --env=dev",
         "build": "rimraf ./dist && webpack -p",
         "test": "NODE_ENV=test jest --env=jsdom --watch",
+        "test:ci": "jest --env=jsdom --no-cache --maxWorkers=2",
         "test:coverage": "NODE_ENV=test jest --env=jsdom --no-cache --coverage"
     },
     "devDependencies": {
