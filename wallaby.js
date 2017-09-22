@@ -4,7 +4,11 @@ module.exports = function (wallaby) {
         files: [
             {
                 pattern: 'src/**/*.tsx',
-                // load: false
+                load: false
+            },
+            {
+                pattern: 'src/**/*.json',
+                load: false
             },
             {
                 pattern: 'src/**/*.test.tsx',

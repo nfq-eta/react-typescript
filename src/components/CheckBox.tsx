@@ -9,25 +9,28 @@ export interface IItem {
 }
 
 export interface IProps extends IItem {
-    handleClick: (item: IItem) => void;
+    handleClick: (item: IItem, checked: boolean) => void;
 }
 
-export class CheckBox extends React.Component<IProps, Partial<IItem>> {
+interface ICheckBoxState {
+    checked: boolean;
+}
+
+export class CheckBox extends React.Component<IProps, ICheckBoxState> {
     constructor(props: IProps) {
         super(props);
 
         this.state = {
-            checked: props.checked,
+            checked: props.checked || false,
         };
     }
 
     handleClick = () => {
-        this.setState({
-            checked: !this.state.checked,
-        });
+        const checked = !this.state.checked;
+        this.setState({ checked });
+
         const { id, label } = this.props;
-        const checked = this.state.checked;
-        this.props.handleClick({ id, label, checked });
+        this.props.handleClick({ id, label }, checked);
     }
 
     public render() {

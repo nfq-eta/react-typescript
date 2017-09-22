@@ -3,7 +3,6 @@ import * as path from 'path';
 import * as webpack from 'webpack';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-
 const NODE_ENV = process.env.NODE_ENV;
 const isDev = NODE_ENV === 'development';
 const extractSass = new ExtractTextPlugin({
@@ -38,7 +37,11 @@ const config: webpack.Configuration = {
         rules: [
             {
                 test: /^(?!.*\.test\.tsx$).*\.tsx$/,
-                use: ['react-hot-loader/webpack', 'babel-loader', 'awesome-typescript-loader'],
+                use: [
+                    'react-hot-loader/webpack',
+                    'babel-loader',
+                    'awesome-typescript-loader',
+                ],
             },
             {
                 enforce: 'pre',
@@ -56,7 +59,7 @@ const config: webpack.Configuration = {
                                 sourceMap: isDev,
                                 namedExport: true,
                                 camelCase: true,
-                                importLoaders: 1,
+                                importLoaders: 2,
                             },
                         },
                         { loader: 'resolve-url-loader' },

@@ -6,7 +6,7 @@
     "scripts": {
         "start": "webpack-dev-server --open --content-base dist --env=dev",
         "build": "rimraf ./dist && webpack -p",
-        "test": "NODE_ENV=test jest --env=jsdom --watch",
+        "test": "jest --watch",
         "test:ci": "jest --env=jsdom --no-cache --maxWorkers=2",
         "test:coverage": "NODE_ENV=test jest --env=jsdom --no-cache --coverage"
     },
@@ -36,6 +36,7 @@
         "html-webpack-plugin": "^2.30.1",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^21.0.2",
+        "json-d-ts": "^1.0.1",
         "node-sass": "^4.5.3",
         "react-addons-test-utils": "^15.6.0",
         "react-hot-loader": "^3.0.0-beta.7",
