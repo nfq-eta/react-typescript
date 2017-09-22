@@ -1,0 +1,5 @@
+[
+    [1, { "id": 1, "label": "Foo" }],
+    [2, { "id": 2, "label": "Buzz" }],
+    [6, { "id": 6, "label": "Boo" }]
+]

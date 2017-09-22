@@ -10,7 +10,11 @@
         "strictNullChecks": true,
         "outDir": "./build/",
         "preserveConstEnums": true,
-        "removeComments": true
+        "removeComments": true,
+        "typeRoots": [
+            "./node_modules/json-d-ts",
+            "./node_modules/@types"
+        ]
     },
     "exclude": [
         "**/*.test.tsx",
