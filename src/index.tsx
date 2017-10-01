@@ -12,7 +12,9 @@ render(
 
 if (module.hot) {
     module.hot.accept('./components/App', () => {
+        /* tslint:disable */
         const NextApp = require('./components/App').default;
+        /* tslint:enable */
         render(
             <AppContainer>
                 <NextApp/>
