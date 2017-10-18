@@ -13,4 +13,5 @@ after_success:
   - yarn build
 
 script:
+  - yarn test:ci
   - yarn lint
