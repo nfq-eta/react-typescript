@@ -77,6 +77,8 @@
         ],
         "moduleNameMapper": {
             "^.+\\.s?css$": "identity-obj-proxy"
-        }
+        },
+        "coverageDirectory": "./coverage/",
+        "collectCoverage": true
     }
 }
