@@ -1,20 +1,11 @@
 sudo: false
 
 language: node_js
-
 node_js:
-  - '8'
-
-cache:
-  yarn: true
-  directories:
-    - node_modules
+  - 8
 
 before_install:
-  - npm install codecov.io coveralls
-
-before_script:
-    - yarn
+  - yarn add codecov.io coveralls
 
 after_success:
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
