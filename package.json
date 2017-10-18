@@ -6,7 +6,7 @@
     "scripts": {
         "start": "webpack-dev-server --open --content-base dist --env=dev",
         "build": "rimraf ./dist && webpack -p",
-        "lint": "tslint --project .",
+        "lint": "tslint --project tsconfig.json",
         "test": "jest --watch",
         "test:ci": "jest --env=jsdom --no-cache --maxWorkers=2",
         "test:coverage": "NODE_ENV=test jest --env=jsdom --no-cache --coverage"

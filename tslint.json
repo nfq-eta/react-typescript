@@ -9,7 +9,7 @@
     "rules": {
         "ter-indent": [true, 4],
         "newline-before-return": true,
-        "semi": ["error", "always"],
+        "semicolon": [true, "always", "ignore-bound-class-methods"],
         "comma-dangle": [2, "always-multiline"],
         "react/jsx-indent": ["error", 4],
         "react/jsx-filename-extension": [2, {"extensions": [".js", ".jsx"]}],
