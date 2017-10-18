@@ -2,6 +2,7 @@ import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as path from 'path';
 import * as webpack from 'webpack';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
+import * as nodeExternals from 'webpack-node-externals';
 
 const NODE_ENV = process.env.NODE_ENV;
 const isDev = NODE_ENV === 'development';
@@ -108,7 +109,7 @@ const config: webpack.Configuration = {
         extractSass,
     ],
 
-    externals: {},
+    externals: [nodeExternals()],
     devServer: {
         hot: true,
         // hotOnly: true,
