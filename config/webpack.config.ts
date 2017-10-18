@@ -112,7 +112,7 @@ const config: webpack.Configuration = {
         // hotOnly: true,
     },
     node: {
-        console: true,
+        tls: true,
     },
 };
 
