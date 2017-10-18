@@ -35,6 +35,7 @@ const config: webpack.Configuration = {
 
     module: {
         rules: [
+            { test: /\.json$/, loader: 'json-loader' },
             {
                 test: /^(?!.*\.test\.tsx$).*\.tsx$/,
                 use: [
@@ -109,6 +110,9 @@ const config: webpack.Configuration = {
     devServer: {
         hot: true,
         // hotOnly: true,
+    },
+    node: {
+        console: true,
     },
 };
 
