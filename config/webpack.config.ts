@@ -28,6 +28,8 @@ const config: webpack.Configuration = {
 
     devtool: 'source-map',
 
+    target: 'node',
+
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
         extensions: ['.ts', '.tsx', '.js', '.json'],
@@ -110,9 +112,6 @@ const config: webpack.Configuration = {
     devServer: {
         hot: true,
         // hotOnly: true,
-    },
-    node: {
-        console: false,
     },
 };
 
