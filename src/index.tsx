@@ -3,11 +3,11 @@ import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { App } from './components/App';
 
-render(
+export default render(
     <AppContainer>
         <App title="Demo" />
     </AppContainer>,
-    document.getElementById('app') as HTMLElement,
+    document.getElementById('app') || document.createElement('div'),
 );
 
 if (module.hot) {

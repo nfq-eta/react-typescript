@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`CheckBox.js matches checked snapshot 1`] = `
+<div
+  className="checkBox"
+  onClick={[Function]}
+>
+  1
+  . 
+  [x] 
+  Testing
+</div>
+`;
+
 exports[`CheckBox.js matches snapshot 1`] = `
 <div
   className="checkBox"
