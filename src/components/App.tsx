@@ -11,7 +11,6 @@ export interface IAppProps {
 
 export interface IAppState {
     items: IItem[];
-    selectedItems?: Map<Number,IItem>;
 }
 
 export class App extends React.Component<IAppProps, IAppState> {
@@ -41,9 +40,8 @@ export class App extends React.Component<IAppProps, IAppState> {
                 <h1>{this.props.title || ''}</h1>
                 { this.state.items.map(item => (
                     <CheckBox
+                        item={item}
                         key={item.id}
-                        id={item.id}
-                        label={item.label}
                         checked={this.isSelected(item) || false}
                         handleClick={this.handleClick}
                     />

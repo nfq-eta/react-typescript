@@ -26,13 +26,13 @@ describe('App.js', () => {
 
     it('should handle click', () => {
         const wrapper = shallow(<App />);
+        const instance = wrapper.instance() as App;
         const params = { id: 1, label: 'Demo' };
-        wrapper.instance().handleClick(params, true);
 
-        expect(wrapper.instance().selectedItems.has(1)).toBeTruthy();
+        instance.handleClick(params, true);
+        expect(instance.selectedItems.has(1)).toBeTruthy();
 
-        wrapper.instance().handleClick(params, false);
-
-        expect(wrapper.instance().selectedItems.has(1)).toBeFalsy();
+        instance.handleClick(params, false);
+        expect(instance.selectedItems.has(1)).toBeFalsy();
     });
 });
