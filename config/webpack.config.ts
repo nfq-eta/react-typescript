@@ -32,7 +32,7 @@ const config: webpack.Configuration = {
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: ['', '.ts', '.tsx', '.js', '.json', 'jsx'],
+        extensions: ['.ts', '.tsx', '.js', '.json', 'jsx'],
         modulesDirectories: ['node_modules', 'src'],
     },
 

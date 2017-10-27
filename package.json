@@ -5,7 +5,7 @@
     "license": "MIT",
     "scripts": {
         "start": "webpack-dev-server --open --content-base dist --env=dev --progress",
-        "build": "rimraf ./dist && webpack -p",
+        "build": "rimraf ./dist && webpack -p --display-error-details",
         "prebuild:start": "yarn build",
         "build:start": "serve -s -o -C -n dist",
         "lint": "tslint --project tsconfig.json",
