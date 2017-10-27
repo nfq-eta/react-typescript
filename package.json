@@ -4,8 +4,9 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "start": "webpack-dev-server --open --content-base dist --env=dev",
+        "start": "webpack-dev-server --open --content-base dist --env=dev --progress",
         "build": "rimraf ./dist && webpack -p",
+        "prebuild:start": "yarn build",
         "build:start": "serve -s -o -C -n dist",
         "lint": "tslint --project tsconfig.json",
         "test": "jest --env=jsdom --watch",
@@ -70,7 +71,7 @@
     },
     "dependencies": {
         "react": "^16.0.0",
-        "react-dom": "^16.0.0"
+        "react-dom": "^16.0.0-rc.3"
     },
     "jest": {
         "testEnvironment": "node",

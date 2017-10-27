@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import * as styles from './CheckBox.css';
 
 export interface IItem {
@@ -17,7 +16,7 @@ interface ICheckBoxState {
     checked: boolean;
 }
 
-export class CheckBox extends React.Component<IProps, ICheckBoxState> {
+export default class CheckBox extends React.Component<IProps, ICheckBoxState> {
     constructor(props: IProps) {
         super(props);
 

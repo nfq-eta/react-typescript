@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { CheckBox } from '../CheckBox';
+import CheckBox from '../CheckBox';
 
 describe('CheckBox.js', () => {
     const props = {

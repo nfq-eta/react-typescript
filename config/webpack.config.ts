@@ -117,6 +117,10 @@ const config: webpack.Configuration = {
         hot: true,
         // hotOnly: true,
     },
+    node: {
+        fs: 'empty',
+        net: 'empty',
+    },
 };
 
 export default config;
