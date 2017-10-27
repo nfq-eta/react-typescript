@@ -13,6 +13,7 @@ const extractSass = new ExtractTextPlugin({
 const config: webpack.Configuration = {
     entry: {
         app: [
+            'babel-polyfill',
             'react-hot-loader/patch',
             './src/index.tsx',
         ],

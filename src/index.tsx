@@ -1,25 +1,29 @@
 import * as React from 'react';
 import { render } from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
+const loader = require('react-hot-loader');
 import { App } from './components/App';
 
-render(
-    <AppContainer>
+/* tslint:disable */
+
+
+function rend(Comp:any) {
+    render(<Comp />, document.getElementById("app"))
+}
+
+rend(
+    <loader.AppContainer>
         <App title="Demo" />
-    </AppContainer>,
-    document.getElementById('app') as HTMLElement,
+    </loader.AppContainer>
 );
 
 if (module.hot) {
     module.hot.accept('./components/App', () => {
-        /* tslint:disable */
         const NextApp = require('./components/App').default;
-        /* tslint:enable */
         render(
-            <AppContainer>
+            <loader.AppContainer>
                 <NextApp/>
-            </AppContainer>,
-            document.getElementById('app'),
+            </loader.AppContainer>,
+            document.getElementById('app')  as HTMLElement,
         );
     });
 }

@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import { CheckBox, IItem } from './CheckBox';
 
 const items = require('./tests/__mocks__/CheckboxItems.json');

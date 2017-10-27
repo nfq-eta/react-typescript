@@ -1,6 +1,5 @@
-import { shallow } from 'enzyme';
-import enzymeToJson from 'enzyme-to-json';
 import * as React from 'react';
+import { shallow } from 'enzyme';
 
 import { App } from '../App';
 
@@ -11,7 +10,7 @@ describe('App.js', () => {
 
     it('matches snapshot', () => {
         const wrapper = shallow(<App title="Test" />);
-        expect(enzymeToJson(wrapper)).toMatchSnapshot();
+        expect(wrapper).toMatchSnapshot();
     });
 
     it('Title should be visible', () => {
