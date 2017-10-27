@@ -120,6 +120,10 @@ const config: webpack.Configuration = {
     node: {
         fs: 'empty',
         net: 'empty',
+        tls: 'empty',
+        should: 'empty',
+        'sinon-restore': 'empty',
+        child_process: 'empty',
     },
 };
 
