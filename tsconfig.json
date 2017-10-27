@@ -1,21 +1,22 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
         "target": "es5",
         "moduleResolution": "node",
         "baseUrl": "src",
         "allowSyntheticDefaultImports": true,
         "jsx": "react",
+        "allowJs": true,
+        "sourceMap": true,
+        "module": "commonjs",
         "noImplicitAny": true,
         "strictNullChecks": true,
-        "outDir": "./build/",
         "preserveConstEnums": true,
         "removeComments": true,
         "typeRoots": [
             "./node_modules/json-d-ts",
             "./node_modules/@types"
         ],
-        "lib": [ "es2015", "dom" ]
+        "lib": ["es2015", "es6", "dom"]
     },
     "exclude": [
         "**/*.test.tsx",

@@ -1,45 +1,397 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App.js matches snapshot 1`] = `
-<div>
-  <h1>
-    Test
-  </h1>
-  <CheckBox
-    checked={true}
-    handleClick={[Function]}
-    id={1}
-    label="Foo"
-  />
-  <CheckBox
-    checked={true}
-    handleClick={[Function]}
-    id={2}
-    label="Buzz"
-  />
-  <CheckBox
-    checked={false}
-    handleClick={[Function]}
-    id={3}
-    label="Fuzz"
-  />
-  <CheckBox
-    checked={false}
-    handleClick={[Function]}
-    id={4}
-    label="Fizz"
-  />
-  <CheckBox
-    checked={false}
-    handleClick={[Function]}
-    id={5}
-    label="FizzBuzz"
-  />
-  <CheckBox
-    checked={true}
-    handleClick={[Function]}
-    id={6}
-    label="Boo"
-  />
-</div>
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <App
+    title="Test"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h1>
+          Test
+        </h1>,
+        Array [
+          <CheckBox
+            checked={true}
+            handleClick={[Function]}
+            item={
+              Object {
+                "id": 1,
+                "label": "Foo",
+              }
+            }
+          />,
+          <CheckBox
+            checked={true}
+            handleClick={[Function]}
+            item={
+              Object {
+                "id": 2,
+                "label": "Buzz",
+              }
+            }
+          />,
+          <CheckBox
+            checked={false}
+            handleClick={[Function]}
+            item={
+              Object {
+                "id": 3,
+                "label": "Fuzz",
+              }
+            }
+          />,
+          <CheckBox
+            checked={false}
+            handleClick={[Function]}
+            item={
+              Object {
+                "id": 4,
+                "label": "Fizz",
+              }
+            }
+          />,
+          <CheckBox
+            checked={false}
+            handleClick={[Function]}
+            item={
+              Object {
+                "id": 5,
+                "label": "FizzBuzz",
+              }
+            }
+          />,
+          <CheckBox
+            checked={true}
+            handleClick={[Function]}
+            item={
+              Object {
+                "id": 6,
+                "label": "Boo",
+              }
+            }
+          />,
+        ],
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Test",
+        },
+        "ref": null,
+        "rendered": "Test",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": "1",
+        "nodeType": "class",
+        "props": Object {
+          "checked": true,
+          "handleClick": [Function],
+          "item": Object {
+            "id": 1,
+            "label": "Foo",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "2",
+        "nodeType": "class",
+        "props": Object {
+          "checked": true,
+          "handleClick": [Function],
+          "item": Object {
+            "id": 2,
+            "label": "Buzz",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "3",
+        "nodeType": "class",
+        "props": Object {
+          "checked": false,
+          "handleClick": [Function],
+          "item": Object {
+            "id": 3,
+            "label": "Fuzz",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "4",
+        "nodeType": "class",
+        "props": Object {
+          "checked": false,
+          "handleClick": [Function],
+          "item": Object {
+            "id": 4,
+            "label": "Fizz",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "5",
+        "nodeType": "class",
+        "props": Object {
+          "checked": false,
+          "handleClick": [Function],
+          "item": Object {
+            "id": 5,
+            "label": "FizzBuzz",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "6",
+        "nodeType": "class",
+        "props": Object {
+          "checked": true,
+          "handleClick": [Function],
+          "item": Object {
+            "id": 6,
+            "label": "Boo",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h1>
+            Test
+          </h1>,
+          Array [
+            <CheckBox
+              checked={true}
+              handleClick={[Function]}
+              item={
+                Object {
+                  "id": 1,
+                  "label": "Foo",
+                }
+              }
+            />,
+            <CheckBox
+              checked={true}
+              handleClick={[Function]}
+              item={
+                Object {
+                  "id": 2,
+                  "label": "Buzz",
+                }
+              }
+            />,
+            <CheckBox
+              checked={false}
+              handleClick={[Function]}
+              item={
+                Object {
+                  "id": 3,
+                  "label": "Fuzz",
+                }
+              }
+            />,
+            <CheckBox
+              checked={false}
+              handleClick={[Function]}
+              item={
+                Object {
+                  "id": 4,
+                  "label": "Fizz",
+                }
+              }
+            />,
+            <CheckBox
+              checked={false}
+              handleClick={[Function]}
+              item={
+                Object {
+                  "id": 5,
+                  "label": "FizzBuzz",
+                }
+              }
+            />,
+            <CheckBox
+              checked={true}
+              handleClick={[Function]}
+              item={
+                Object {
+                  "id": 6,
+                  "label": "Boo",
+                }
+              }
+            />,
+          ],
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Test",
+          },
+          "ref": null,
+          "rendered": "Test",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "class",
+          "props": Object {
+            "checked": true,
+            "handleClick": [Function],
+            "item": Object {
+              "id": 1,
+              "label": "Foo",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "2",
+          "nodeType": "class",
+          "props": Object {
+            "checked": true,
+            "handleClick": [Function],
+            "item": Object {
+              "id": 2,
+              "label": "Buzz",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "3",
+          "nodeType": "class",
+          "props": Object {
+            "checked": false,
+            "handleClick": [Function],
+            "item": Object {
+              "id": 3,
+              "label": "Fuzz",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "4",
+          "nodeType": "class",
+          "props": Object {
+            "checked": false,
+            "handleClick": [Function],
+            "item": Object {
+              "id": 4,
+              "label": "Fizz",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "5",
+          "nodeType": "class",
+          "props": Object {
+            "checked": false,
+            "handleClick": [Function],
+            "item": Object {
+              "id": 5,
+              "label": "FizzBuzz",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "6",
+          "nodeType": "class",
+          "props": Object {
+            "checked": true,
+            "handleClick": [Function],
+            "item": Object {
+              "id": 6,
+              "label": "Boo",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
 `;

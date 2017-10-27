@@ -14,6 +14,7 @@ const extractSass = new ExtractTextPlugin({
 const config: webpack.Configuration = {
     entry: {
         app: [
+            'babel-polyfill',
             'react-hot-loader/patch',
             './src/index.tsx',
         ],
@@ -31,7 +32,7 @@ const config: webpack.Configuration = {
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: ['.ts', '.tsx', '.js', '.json'],
+        extensions: ['.ts', '.tsx', '.js', '.json', 'jsx'],
     },
 
     module: {
@@ -115,6 +116,14 @@ const config: webpack.Configuration = {
     devServer: {
         hot: true,
         // hotOnly: true,
+    },
+    node: {
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty',
+        should: 'empty',
+        'sinon-restore': 'empty',
+        child_process: 'empty',
     },
 };
 

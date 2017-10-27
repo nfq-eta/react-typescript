@@ -1,25 +1,158 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CheckBox.js matches checked snapshot 1`] = `
-<div
-  className="checkBox"
-  onClick={[Function]}
->
-  1
-  . 
-  [x] 
-  Testing
-</div>
+exports[`CheckBox.js matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CheckBox
+    handleClick={[Function]}
+    item={
+      Object {
+        "id": 1,
+        "label": "Test",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": "1",
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        1,
+        ". ",
+        "[ ] ",
+        "Test",
+      ],
+      "className": "checkBox",
+      "onClick": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      1,
+      ". ",
+      "[ ] ",
+      "Test",
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": "1",
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          1,
+          ". ",
+          "[ ] ",
+          "Test",
+        ],
+        "className": "checkBox",
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        1,
+        ". ",
+        "[ ] ",
+        "Test",
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
 `;
 
-exports[`CheckBox.js matches snapshot 1`] = `
-<div
-  className="checkBox"
-  onClick={[Function]}
->
-  1
-  . 
-  [ ] 
-  Testing
-</div>
+exports[`CheckBox.js should be checked 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CheckBox
+    checked={true}
+    handleClick={[Function]}
+    item={
+      Object {
+        "id": 1,
+        "label": "Test",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": "1",
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        1,
+        ". ",
+        "[x] ",
+        "Test",
+      ],
+      "className": "checkBox",
+      "onClick": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      1,
+      ". ",
+      "[x] ",
+      "Test",
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": "1",
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          1,
+          ". ",
+          "[x] ",
+          "Test",
+        ],
+        "className": "checkBox",
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        1,
+        ". ",
+        "[x] ",
+        "Test",
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
 `;

@@ -1,32 +1,46 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import enzymeToJson from 'enzyme-to-json';
 
-import { CheckBox, IItem } from '../CheckBox';
+import CheckBox from '../CheckBox';
 
 describe('CheckBox.js', () => {
+    const props = {
+        item: {
+            id: 1,
+            label: 'Test',
+        },
+        handleClick: jest.fn(),
+    };
+
     it('renders without crashing', () => {
-        const handleClick = (item: IItem, checked: boolean) => jest.fn();
-        shallow(<CheckBox handleClick={handleClick} id={1} label={'Testing'} />);
+        shallow(<CheckBox {...props} />);
     });
 
     it('matches snapshot', () => {
-        const handleClick = (item: IItem, checked: boolean) => jest.fn();
-        const wrapper = shallow(<CheckBox handleClick={handleClick} id={1} label={'Testing'} />);
-        expect(enzymeToJson(wrapper)).toMatchSnapshot();
+        const wrapper = shallow(<CheckBox {...props} />);
+        expect(wrapper).toMatchSnapshot();
     });
 
-    it('matches checked snapshot', () => {
-        const handleClick = jest.fn();
-        const wrapper = shallow(<CheckBox handleClick={handleClick} id={1} label={'Testing'} />);
-        wrapper.find('div').first().simulate('click');
-        expect(enzymeToJson(wrapper)).toMatchSnapshot();
+    it('Label should be visible', () => {
+        const wrapper = shallow(<CheckBox {...props} />);
+        expect(wrapper.find('div').text()).toContain('Test');
     });
 
-    it('handle click', () => {
-        const handleClick = jest.fn();
-        const wrapper = shallow(<CheckBox handleClick={handleClick} id={1} label={'Testing'} />);
-        wrapper.find('div').first().simulate('click');
-        expect(handleClick).toBeCalledWith({ id: 1, label: 'Testing' }, true);
+    it('should be checked', () => {
+        const wrapper = shallow(<CheckBox {...props} checked={true} />);
+        const appInstance = wrapper.instance() as CheckBox;
+        expect(appInstance.state.checked).toBeTruthy();
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should toggle state', () => {
+        const wrapper = shallow(<CheckBox {...props} />);
+        const appInstance = wrapper.instance() as CheckBox;
+        appInstance.handleClick();
+
+        expect(appInstance.state.checked).toBeTruthy();
+
+        appInstance.handleClick();
+        expect(appInstance.state.checked).toBeFalsy();
     });
 });

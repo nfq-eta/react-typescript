@@ -1,22 +1,22 @@
 import * as React from 'react';
-
 import * as styles from './CheckBox.css';
 
 export interface IItem {
     id: number;
     label: string;
-    checked?: boolean;
 }
 
-export interface IProps extends IItem {
+export interface IProps {
+    item: IItem;
     handleClick: (item: IItem, checked: boolean) => void;
+    checked?: boolean;
 }
 
 interface ICheckBoxState {
     checked: boolean;
 }
 
-export class CheckBox extends React.Component<IProps, ICheckBoxState> {
+export default class CheckBox extends React.Component<IProps, ICheckBoxState> {
     constructor(props: IProps) {
         super(props);
 
@@ -29,12 +29,12 @@ export class CheckBox extends React.Component<IProps, ICheckBoxState> {
         const checked = !this.state.checked;
         this.setState({ checked });
 
-        const { id, label } = this.props;
+        const { id, label } = this.props.item;
         this.props.handleClick({ id, label }, checked);
     };
 
     public render() {
-        const { id, label } = this.props;
+        const { id, label } = this.props.item;
 
         return (
             <div key={id} onClick={this.handleClick} className={styles.checkBox}>

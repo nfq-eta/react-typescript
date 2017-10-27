@@ -30,9 +30,6 @@ module.exports = function (wallaby) {
             type: 'node',
         },
         testFramework: 'jest',
-        compilers: {
-            '**/*.tsx': wallaby.compilers.typeScript()
-        },
         setup(wallaby) {
             const jestConfig = require('./package.json').jest;
             jestConfig.testEnvironment = 'jsdom';
