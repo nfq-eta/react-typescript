@@ -32,7 +32,7 @@ export class CheckBox extends React.Component<IProps, ICheckBoxState> {
 
         const { id, label } = this.props.item;
         this.props.handleClick({ id, label }, checked);
-    }
+    };
 
     public render() {
         const { id, label } = this.props.item;

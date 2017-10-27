@@ -14,6 +14,10 @@ module.exports = function (wallaby) {
                 pattern: 'src/**/*.test.tsx',
                 ignore: true
             },
+            {
+                pattern: 'src/index.tsx',
+                ignore: true
+            },
         ],
 
         tests: [

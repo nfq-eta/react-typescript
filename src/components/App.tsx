@@ -27,7 +27,7 @@ export class App extends React.Component<IAppProps, IAppState> {
         } else {
             this.selectedItems.delete(item.id);
         }
-    }
+    };
 
     isSelected(item: IItem): boolean {
         return this.selectedItems.has(item.id);

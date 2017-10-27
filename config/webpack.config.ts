@@ -2,6 +2,7 @@ import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as path from 'path';
 import * as webpack from 'webpack';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
+import * as OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
 const NODE_ENV = process.env.NODE_ENV;
 const isDev = NODE_ENV === 'development';
@@ -27,7 +28,7 @@ const config: webpack.Configuration = {
         chunkFilename: 'js/[name].[hash].chunk.js',
     },
 
-    devtool: 'source-map',
+    devtool: isDev ? 'source-map' : false,
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
@@ -36,6 +37,7 @@ const config: webpack.Configuration = {
 
     module: {
         rules: [
+            { test: /\.json$/, loader: 'json-loader' },
             {
                 test: /^(?!.*\.test\.tsx$).*\.tsx$/,
                 use: [
@@ -104,9 +106,13 @@ const config: webpack.Configuration = {
             /css\.d\.ts$/,
         ]),
         extractSass,
+        isDev ? new OptimizeCssAssetsPlugin({
+            cssProcessorOptions: { discardComments: { removeAll: true } },
+            canPrint: false,
+        }) : () => {},
     ],
 
-    externals: {},
+    externals: [],
     devServer: {
         hot: true,
         // hotOnly: true,
