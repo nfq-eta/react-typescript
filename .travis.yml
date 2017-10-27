@@ -9,14 +9,12 @@ cache:
   directories:
     - node_modules
 
-before_install:
-  - yarn add codecov.io coveralls
-
 after_success:
+  - yarn add codecov.io coveralls
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-  - yarn build
 
 script:
   - yarn test:ci
   - yarn lint
+  - yarn build
