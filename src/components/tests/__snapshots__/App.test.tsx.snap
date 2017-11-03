@@ -8,38 +8,68 @@ exports[`App.js matches snapshot 1`] = `
   <CheckBox
     checked={true}
     handleClick={[Function]}
-    id={1}
-    label="Foo"
+    item={
+      Object {
+        "id": 1,
+        "label": "Foo",
+      }
+    }
+    key="1"
   />
   <CheckBox
     checked={true}
     handleClick={[Function]}
-    id={2}
-    label="Buzz"
+    item={
+      Object {
+        "id": 2,
+        "label": "Buzz",
+      }
+    }
+    key="2"
   />
   <CheckBox
     checked={false}
     handleClick={[Function]}
-    id={3}
-    label="Fuzz"
+    item={
+      Object {
+        "id": 3,
+        "label": "Fuzz",
+      }
+    }
+    key="3"
   />
   <CheckBox
     checked={false}
     handleClick={[Function]}
-    id={4}
-    label="Fizz"
+    item={
+      Object {
+        "id": 4,
+        "label": "Fizz",
+      }
+    }
+    key="4"
   />
   <CheckBox
     checked={false}
     handleClick={[Function]}
-    id={5}
-    label="FizzBuzz"
+    item={
+      Object {
+        "id": 5,
+        "label": "FizzBuzz",
+      }
+    }
+    key="5"
   />
   <CheckBox
     checked={true}
     handleClick={[Function]}
-    id={6}
-    label="Boo"
+    item={
+      Object {
+        "id": 6,
+        "label": "Boo",
+      }
+    }
+    key="6"
   />
 </div>
 `;

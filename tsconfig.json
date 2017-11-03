@@ -1,26 +1,27 @@
 {
     "compilerOptions": {
-        "target": "es6",
-        "moduleResolution": "node",
-        "baseUrl": "src",
+        "module": "es6",
+        "target": "es5",
+        "baseUrl": "./src",
         "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
         "jsx": "react",
-        "module": "commonjs",
+        "allowJs": true,
+        "sourceMap": true,
         "noImplicitAny": true,
         "strictNullChecks": true,
-        "outDir": "./build/",
+        "outDir": "./dist/",
         "preserveConstEnums": true,
         "removeComments": true,
+        "skipLibCheck": true,
         "typeRoots": [
             "./node_modules/json-d-ts",
             "./node_modules/@types"
-        ]
+        ],
+        "lib": ["es2015", "es6", "dom"]
     },
     "exclude": [
         "**/*.test.tsx",
-        "typings/browser.d.ts",
-        "typings/browser",
-        "node_modules",
-        "./lib/__tests__"
+        "node_modules"
     ]
 }

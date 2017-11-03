@@ -2,6 +2,7 @@ import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as path from 'path';
 import * as webpack from 'webpack';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
+import * as OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
 const NODE_ENV = process.env.NODE_ENV;
 const isDev = NODE_ENV === 'development';
@@ -13,6 +14,7 @@ const extractSass = new ExtractTextPlugin({
 const config: webpack.Configuration = {
     entry: {
         app: [
+            'babel-polyfill',
             'react-hot-loader/patch',
             './src/index.tsx',
         ],
@@ -26,7 +28,7 @@ const config: webpack.Configuration = {
         chunkFilename: 'js/[name].[hash].chunk.js',
     },
 
-    devtool: 'source-map',
+    devtool: isDev ? 'source-map' : false,
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
@@ -35,18 +37,14 @@ const config: webpack.Configuration = {
 
     module: {
         rules: [
+            { test: /\.json$/, loader: 'json-loader' },
             {
-                test: /^(?!.*\.test\.tsx$).*\.tsx$/,
+                test: /.*\.tsx$/,
+                include: path.resolve('src'),
                 use: [
                     'react-hot-loader/webpack',
-                    'babel-loader',
                     'awesome-typescript-loader',
                 ],
-            },
-            {
-                enforce: 'pre',
-                test: /\.js$/,
-                use: 'source-map-loader',
             },
             {
                 test: /\.s?css$/,
@@ -103,12 +101,23 @@ const config: webpack.Configuration = {
             /css\.d\.ts$/,
         ]),
         extractSass,
+        isDev ? new OptimizeCssAssetsPlugin({
+            cssProcessorOptions: { discardComments: { removeAll: true } },
+            canPrint: false,
+        }) : () => {},
     ],
 
-    externals: {},
+    externals: [],
     devServer: {
         hot: true,
         // hotOnly: true,
+    },
+    node: {
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty',
+        should: 'empty',
+        child_process: 'empty',
     },
 };
 

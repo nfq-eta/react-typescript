@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBox.js matches snapshot 1`] = `
+<div
+  key="1"
+  onClick={[Function]}
+>
+  1
+  . 
+  [ ] 
+  Test
+</div>
+`;
+
+exports[`CheckBox.js should be checked 1`] = `
+<div
+  key="1"
+  onClick={[Function]}
+>
+  1
+  . 
+  [x] 
+  Test
+</div>
+`;
