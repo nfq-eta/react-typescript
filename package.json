@@ -103,6 +103,7 @@
         "moduleNameMapper": {
             "^.+\\.s?css$": "identity-obj-proxy"
         },
-        "mapCoverage": true
+        "mapCoverage": true,
+        "coverageDirectory": "./coverage/"
     }
 }
