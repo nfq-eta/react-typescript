@@ -1,4 +1,7 @@
-files:
-  include: 'src/**/*.s+(a|c)ss'
-  ignore:
-    - 'src/**/*.test.s+(a|c)ss'
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "indentation": "tab",
+    "number-leading-zero": null
+  }
+}
