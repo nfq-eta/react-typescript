@@ -1,0 +1,4 @@
+files:
+  include: 'src/**/*.s+(a|c)ss'
+  ignore:
+    - 'src/**/*.test.s+(a|c)ss'

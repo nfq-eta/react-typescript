@@ -4,8 +4,6 @@ const loader = require('react-hot-loader');
 import App from './components/App';
 
 /* tslint:disable */
-
-
 ReactDOM.render(
     <loader.AppContainer>
         <App/>

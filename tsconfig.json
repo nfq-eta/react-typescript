@@ -1,8 +1,9 @@
 {
     "compilerOptions": {
-        "module": "es6",
         "target": "es5",
+        "module": "commonjs",
         "baseUrl": "./src",
+        "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
         "jsx": "react",

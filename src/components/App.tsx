@@ -40,6 +40,7 @@ export default class App extends React.Component<IAppProps, IAppState> {
                 { this.state.items.map(item => (
                     <CheckBox
                         item={item}
+                        key={item.id}
                         checked={this.isSelected(item) || false}
                         handleClick={this.handleClick}
                     />

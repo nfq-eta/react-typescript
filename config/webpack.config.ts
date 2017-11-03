@@ -117,6 +117,7 @@ const config: webpack.Configuration = {
         net: 'empty',
         tls: 'empty',
         should: 'empty',
+        'sinon-restore': 'empty',
         child_process: 'empty',
     },
 };
