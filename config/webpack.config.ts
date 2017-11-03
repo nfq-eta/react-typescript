@@ -28,7 +28,7 @@ const config: webpack.Configuration = {
         chunkFilename: 'js/[name].[hash].chunk.js',
     },
 
-    devtool: isDev ? 'source-map' : false,
+    devtool: isDev ? 'inline-source-map' : false,
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.

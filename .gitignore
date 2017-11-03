@@ -4,3 +4,4 @@ dist/
 .idea/
 .history/
 coverage/
+*.css.d.ts

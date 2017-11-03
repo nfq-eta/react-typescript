@@ -4,7 +4,7 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "start": "webpack-dev-server --open --content-base dist --env=dev --progress",
+        "start": "NODE_ENV=development webpack-dev-server --open --content-base dist --env=dev --progress",
         "build": "rimraf ./dist && webpack -p",
         "prebuild:start": "yarn build",
         "build:start": "serve -s -o -C -n dist",
@@ -59,6 +59,7 @@
         "source-map-loader": "^0.2.1",
         "style-loader": "^0.18.2",
         "stylelint": "8.2.0",
+        "stylelint-config-sass-guidelines": "3.1.0",
         "ts-jest": "21.1.4",
         "ts-node": "3.3.0",
         "tslint": "^5.7.0",
@@ -105,5 +106,13 @@
         },
         "mapCoverage": true,
         "coverageDirectory": "./coverage/"
+    },
+    "stylelint": {
+        "extends": "stylelint-config-sass-guidelines",
+        "rules": {
+            "indentation": 4,
+            "number-leading-zero": null,
+            "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$"
+        }
     }
 }
