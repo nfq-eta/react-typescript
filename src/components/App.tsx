@@ -13,8 +13,8 @@ export interface IAppState {
 }
 
 export default class App extends React.Component<IAppProps, IAppState> {
-    constructor(props: IAppProps) {
-        super(props);
+    constructor() {
+        super();
 
         this.state = { items };
     }
@@ -37,14 +37,14 @@ export default class App extends React.Component<IAppProps, IAppState> {
         return (
             <div>
                 <h1>{this.props.title || ''}</h1>
-                { this.state.items.map(item => (
+                {this.state.items.map(item => (
                     <CheckBox
                         item={item}
                         key={item.id}
                         checked={this.isSelected(item) || false}
                         handleClick={this.handleClick}
                     />
-                ))}
+                    ))}
             </div>
         );
     }

@@ -28,28 +28,23 @@ const config: webpack.Configuration = {
         chunkFilename: 'js/[name].[hash].chunk.js',
     },
 
-    devtool: isDev ? 'source-map' : false,
+    devtool: isDev ? 'inline-source-map' : false,
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: ['.ts', '.tsx', '.js', '.json', 'jsx'],
+        extensions: ['.ts', '.tsx', '.js', '.json'],
     },
 
     module: {
         rules: [
             { test: /\.json$/, loader: 'json-loader' },
             {
-                test: /^(?!.*\.test\.tsx$).*\.tsx$/,
+                test: /.*\.tsx$/,
+                include: path.resolve('src'),
                 use: [
                     'react-hot-loader/webpack',
-                    'babel-loader',
                     'awesome-typescript-loader',
                 ],
-            },
-            {
-                enforce: 'pre',
-                test: /\.js$/,
-                use: 'source-map-loader',
             },
             {
                 test: /\.s?css$/,

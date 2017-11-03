@@ -1,15 +1,18 @@
 {
+    "version": "2.1.4",
     "compilerOptions": {
         "target": "es5",
+        "module": "commonjs",
+        "baseUrl": "./src",
         "moduleResolution": "node",
-        "baseUrl": "src",
         "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
         "jsx": "react",
         "allowJs": true,
         "sourceMap": true,
-        "module": "commonjs",
         "noImplicitAny": true,
         "strictNullChecks": true,
+        "outDir": "./dist/",
         "preserveConstEnums": true,
         "removeComments": true,
         "typeRoots": [
@@ -20,9 +23,9 @@
     },
     "exclude": [
         "**/*.test.tsx",
-        "typings/browser.d.ts",
-        "typings/browser",
-        "node_modules",
-        "./lib/__tests__"
+        "node_modules"
+    ],
+    "include": [
+        "./src/**/*"
     ]
 }

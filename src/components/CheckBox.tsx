@@ -18,7 +18,7 @@ interface ICheckBoxState {
 
 export default class CheckBox extends React.Component<IProps, ICheckBoxState> {
     constructor(props: IProps) {
-        super(props);
+        super();
 
         this.state = {
             checked: props.checked || false,
