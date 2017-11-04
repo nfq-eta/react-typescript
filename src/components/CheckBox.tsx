@@ -33,11 +33,15 @@ export default class CheckBox extends React.Component<IProps, ICheckBoxState> {
         this.props.handleClick({ id, label }, checked);
     };
 
-    public render() {
+    render() {
         const { id, label } = this.props.item;
 
         return (
-            <div key={id} onClick={this.handleClick} className={styles.checkBox}>
+            <div
+                key={id}
+                onClick={this.handleClick}
+                className={this.state.checked ? styles.checkBox : styles.checkBoxSelected}
+            >
                 {id}. {!this.state.checked ? '[ ] ' : '[x] '}{label}
             </div>
         );

@@ -37,7 +37,11 @@ const config: webpack.Configuration = {
 
     module: {
         rules: [
-            { test: /\.json$/, loader: 'json-loader' },
+            {
+                test: /\.json$/,
+                loader: 'json-loader',
+                exclude: /node_modules/
+            },
             {
                 test: /.*\.tsx$/,
                 include: path.resolve('src'),
@@ -47,8 +51,10 @@ const config: webpack.Configuration = {
                 ],
             },
             {
-                test: /\.s?css$/,
+                test: /\.(css|sass|scss)$/,
+                exclude : /node_modules/,
                 use: extractSass.extract({
+                    fallback: 'style-loader',
                     use: [
                         {
                             loader: 'typings-for-css-modules-loader',
@@ -63,7 +69,6 @@ const config: webpack.Configuration = {
                         { loader: 'resolve-url-loader' },
                         { loader: 'sass-loader', options: { sourceMap: isDev } },
                     ],
-                    fallback: 'style-loader',
                 }),
             },
         ],
@@ -113,12 +118,12 @@ const config: webpack.Configuration = {
         // hotOnly: true,
     },
     node: {
-        fs: 'empty',
-        net: 'empty',
-        tls: 'empty',
-        should: 'empty',
+        'fs': 'empty',
+        'net': 'empty',
+        'tls': 'empty',
+        'should': 'empty',
         'sinon-restore': 'empty',
-        child_process: 'empty',
+        'child_process': 'empty',
     },
 };
 

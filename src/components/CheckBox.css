@@ -1,3 +1,7 @@
 .checkBox {
     cursor: pointer;
 }
+.checkBoxSelected {
+    composes: checkBox;
+    color: red;
+}

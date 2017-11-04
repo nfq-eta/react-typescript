@@ -1,8 +1,8 @@
 import * as React from 'react';
 import CheckBox, { IItem } from './CheckBox';
 
-const items = require('./tests/__mocks__/CheckboxItems.json');
-const selectedItems = require('./tests/__mocks__/CheckboxSelectedItems.json');
+import items from './tests/__mocks__/CheckboxItems.json';
+import selectedItems from './tests/__mocks__/CheckboxSelectedItems.json';
 
 export interface IAppProps {
     title?: string;
@@ -13,13 +13,13 @@ export interface IAppState {
 }
 
 export default class App extends React.Component<IAppProps, IAppState> {
+    selectedItems = new Map(selectedItems);
+
     constructor() {
         super();
 
         this.state = { items };
     }
-
-    selectedItems = new Map(selectedItems);
 
     handleClick = (item: IItem, checked: boolean) => {
         if (checked) {
@@ -33,7 +33,7 @@ export default class App extends React.Component<IAppProps, IAppState> {
         return this.selectedItems.has(item.id);
     }
 
-    public render() {
+    render() {
         return (
             <div>
                 <h1>{this.props.title || ''}</h1>
@@ -44,7 +44,8 @@ export default class App extends React.Component<IAppProps, IAppState> {
                         checked={this.isSelected(item) || false}
                         handleClick={this.handleClick}
                     />
-                    ))}
+                    ))
+                }
             </div>
         );
     }
