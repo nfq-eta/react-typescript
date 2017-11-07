@@ -4,13 +4,6 @@ import * as webpack from 'webpack';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
-const NODE_ENV = process.env.NODE_ENV;
-const isDev = NODE_ENV === 'development';
-const extractSass = new ExtractTextPlugin({
-    filename: 'static/css/[name].[chunkhash:8].min.css',
-    disable: isDev,
-});
-
 const config: webpack.Configuration = {
     entry: {
         app: [
@@ -28,7 +21,7 @@ const config: webpack.Configuration = {
         chunkFilename: 'js/[name].[hash].chunk.js',
     },
 
-    devtool: isDev ? 'inline-source-map' : false,
+    devtool: 'inline-source-map', // TODO: different for prod?
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
@@ -40,7 +33,7 @@ const config: webpack.Configuration = {
             {
                 test: /\.json$/,
                 loader: 'json-loader',
-                exclude: /node_modules/
+                exclude: /node_modules/,
             },
             {
                 test: /.*\.tsx$/,
@@ -53,23 +46,24 @@ const config: webpack.Configuration = {
             {
                 test: /\.(css|sass|scss)$/,
                 exclude : /node_modules/,
-                use: extractSass.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'typings-for-css-modules-loader',
-                            options: {
-                                modules: true,
-                                sourceMap: isDev,
-                                namedExport: true,
-                                camelCase: true,
-                                importLoaders: 2,
+                // TODO: hot loader won't work in prod if css filename is dynamicly assigned
+                use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        use: [
+                            {
+                                loader: 'typings-for-css-modules-loader',
+                                options: {
+                                    modules: true,
+                                    sourceMap: true,
+                                    namedExport: true,
+                                    camelCase: true,
+                                    importLoaders: 2,
+                                },
                             },
-                        },
-                        { loader: 'resolve-url-loader' },
-                        { loader: 'sass-loader', options: { sourceMap: isDev } },
-                    ],
-                }),
+                            { loader: 'resolve-url-loader' },
+                            { loader: 'sass-loader', options: { sourceMap: true } },
+                        ],
+                    }) as any),
             },
         ],
     },
@@ -80,18 +74,19 @@ const config: webpack.Configuration = {
             inject: 'body',
             filename: 'index.html',
             title: require(path.resolve('package.json')).description,
-            minify: isDev ? false : {
-                removeComments: true,
-                collapseWhitespace: true,
-                removeRedundantAttributes: true,
-                useShortDoctype: true,
-                removeEmptyAttributes: false,
-                removeStyleLinkTypeAttributes: true,
-                keepClosingSlash: true,
-                minifyJS: true,
-                minifyCSS: true,
-                minifyURLs: true,
-            },
+            minify: false, // TODO: minify in prod
+            // minify: {
+            //     removeComments: true,
+            //     collapseWhitespace: true,
+            //     removeRedundantAttributes: true,
+            //     useShortDoctype: true,
+            //     removeEmptyAttributes: false,
+            //     removeStyleLinkTypeAttributes: true,
+            //     keepClosingSlash: true,
+            //     minifyJS: true,
+            //     minifyCSS: true,
+            //     minifyURLs: true,
+            // },
         }),
         new webpack.optimize.CommonsChunkPlugin({
             names: [
@@ -105,11 +100,14 @@ const config: webpack.Configuration = {
         new webpack.WatchIgnorePlugin([
             /css\.d\.ts$/,
         ]),
-        extractSass,
-        isDev ? new OptimizeCssAssetsPlugin({
+        new ExtractTextPlugin({
+            filename: 'static/css/styles.css', // TODO: chunk, hash in prod?
+            disable: false, // TODO: disable in prod?
+        }),
+        new OptimizeCssAssetsPlugin({ // TODO: remove for prod
             cssProcessorOptions: { discardComments: { removeAll: true } },
             canPrint: false,
-        }) : () => {},
+        }),
     ],
 
     externals: [],
