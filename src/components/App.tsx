@@ -1,8 +1,8 @@
 import * as React from 'react';
 import CheckBox, { IItem } from './CheckBox';
 
-import items from './tests/__mocks__/CheckboxItems.json';
-import selectedItems from './tests/__mocks__/CheckboxSelectedItems.json';
+const items = require('./tests/__mocks__/CheckboxItems.json');
+const selectedItems = require('./tests/__mocks__/CheckboxSelectedItems.json');
 
 export interface IAppProps {
     title?: string;

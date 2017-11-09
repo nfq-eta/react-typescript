@@ -5,7 +5,7 @@
     "license": "MIT",
     "scripts": {
         "prestart": "tcm src",
-        "start": "ODE_ENV=development webpack-dev-server --open --content-base dist --env=dev --progress",
+        "start": "NODE_ENV=development webpack-dev-server --open --content-base dist --env=dev --progress",
         "prebuild": "tcm src && rimraf ./dist",
         "build": "webpack -p",
         "prebuild:start": "yarn build",
