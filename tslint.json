@@ -25,7 +25,7 @@
         "no-null-keyword": false,
         "no-require-imports": false,
         "no-switch-case-fall-through": true,
-        "no-submodule-imports": [true, "rxjs", "@src"],
+        "no-submodule-imports": [false, "rxjs", "@src"],
         "no-trailing-whitespace": true,
         "no-this-assignment": [true, {
           "allow-destructuring": true
