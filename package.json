@@ -5,7 +5,7 @@
     "license": "MIT",
     "scripts": {
         "prestart": "tcm src",
-        "start": "NODE_ENV=development webpack-dev-server --open --content-base dist --env=dev --progress",
+        "start": "NODE_ENV=development webpack-dev-server --open --content-base dist --env=dev",
         "prebuild": "tcm src && rimraf ./dist",
         "build": "webpack -p",
         "prebuild:start": "yarn build",
@@ -72,6 +72,7 @@
         "typescript-babel-jest": "1.0.5",
         "typings-for-css-modules-loader": "1.7.0",
         "webpack": "^3.8.1",
+        "webpack-dashboard": "0.4.0",
         "webpack-dev-server": "^2.9.4",
         "webpack-hot-middleware": "^2.20.0"
     },

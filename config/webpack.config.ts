@@ -3,6 +3,10 @@ import * as path from 'path';
 import * as webpack from 'webpack';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import * as DashboardPlugin from 'webpack-dashboard/plugin';
+import * as Dashboard from 'webpack-dashboard';
+
+const dashboard = new Dashboard();
 
 const config: webpack.Configuration = {
     entry: {
@@ -35,7 +39,7 @@ const config: webpack.Configuration = {
                 include: path.resolve('src'),
                 use: [
                     'react-hot-loader/webpack',
-                    'awesome-typescript-loader',
+                    'awesome-typescript-loader?silent',
                 ],
             },
             {
@@ -43,27 +47,28 @@ const config: webpack.Configuration = {
                 exclude : /node_modules/,
                 // TODO: hot loader won't work in prod if css filename is dynamicly assigned
                 use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
-                        fallback: 'style-loader',
-                        use: [
-                            {
-                                loader: 'typings-for-css-modules-loader',
-                                options: {
-                                    modules: true,
-                                    sourceMap: true,
-                                    namedExport: true,
-                                    camelCase: true,
-                                    importLoaders: 2,
-                                },
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'typings-for-css-modules-loader',
+                            options: {
+                                modules: true,
+                                sourceMap: true,
+                                namedExport: true,
+                                camelCase: true,
+                                importLoaders: 2,
                             },
+                        },
                             { loader: 'resolve-url-loader' },
                             { loader: 'sass-loader', options: { sourceMap: true } },
-                        ],
-                    }) as any),
+                    ],
+                }) as any),
             },
         ],
     },
 
     plugins: [
+        new DashboardPlugin(dashboard.setData),
         new HtmlWebpackPlugin({
             template: path.resolve('./src/index.html'),
             inject: 'body',
@@ -111,15 +116,16 @@ const config: webpack.Configuration = {
     externals: [],
     devServer: {
         hot: true,
+        quiet: true,
         // hotOnly: true,
     },
     node: {
-        'fs': 'empty',
-        'net': 'empty',
-        'tls': 'empty',
-        'should': 'empty',
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty',
+        should: 'empty',
         'sinon-restore': 'empty',
-        'child_process': 'empty',
+        child_process: 'empty',
     },
 };
 
