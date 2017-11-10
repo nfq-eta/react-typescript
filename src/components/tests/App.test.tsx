@@ -4,7 +4,7 @@ import enzymeToJson from 'enzyme-to-json';
 
 import App from '../App';
 
-describe('App.js', () => {
+describe('App.tsx', () => {
     it('renders without crashing', () => {
         shallow(<App title="Test" />);
     });

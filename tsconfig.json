@@ -5,13 +5,15 @@
         "target": "es5",
         "module": "commonjs",
         "baseUrl": "./src",
-        "moduleResolution": "node",
+        "moduleResolution": "classic",
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
         "jsx": "react",
         "allowJs": true,
         "sourceMap": true,
         "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
         "strictNullChecks": true,
         "outDir": "./dist/",
         "preserveConstEnums": true,
@@ -20,13 +22,14 @@
             "./node_modules/json-d-ts",
             "./node_modules/@types"
         ],
-        "lib": ["es2015", "es6", "dom"]
+        "lib": ["es2015", "es6", "dom"],
+        "skipLibCheck": true
     },
     "exclude": [
-        "**/*.test.tsx",
         "node_modules"
     ],
     "include": [
-        "./src/**/*"
+        "./src/**/*",
+        "./typings/**/*"
     ]
 }

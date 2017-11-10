@@ -31,11 +31,6 @@ const config: webpack.Configuration = {
     module: {
         rules: [
             {
-                test: /\.json$/,
-                loader: 'json-loader',
-                exclude: /node_modules/,
-            },
-            {
                 test: /.*\.tsx$/,
                 include: path.resolve('src'),
                 use: [
@@ -107,6 +102,9 @@ const config: webpack.Configuration = {
         new OptimizeCssAssetsPlugin({ // TODO: remove for prod
             cssProcessorOptions: { discardComments: { removeAll: true } },
             canPrint: false,
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
         }),
     ],
 
