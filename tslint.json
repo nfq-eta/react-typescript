@@ -1,5 +1,5 @@
 {
-    "extends": ["tslint:latest", "tslint-react"],
+    "extends": ["tslint:latest", "tslint-react", "tslint-config-airbnb"],
     "env": {
         "browser": true,
         "jest": true
@@ -31,7 +31,6 @@
           "allow-destructuring": true
         }],
         "jsx-no-multiline-js": false,
-        "no-unused-variable": [true, "react"],
         "object-literal-sort-keys": false,
         "object-literal-shorthand": false,
         "one-variable-per-declaration": [false],
@@ -40,6 +39,8 @@
         "prefer-method-signature": false,
         "prefer-template": [true, "allow-single-concat"],
         "semicolon": [true, "ignore-bound-class-methods"],
+        "strict-boolean-expressions": [false], // TODO: turn it on
+        "ter-indent": [true, 4],
         "quotemark": [true, "single", "jsx-double"],
         "triple-equals": [true, "allow-null-check"],
         "typedef": [true,"parameter", "property-declaration"],

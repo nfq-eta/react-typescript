@@ -6,7 +6,7 @@ import App from './components/App';
 
 ReactDOM.render(
     <loader.AppContainer>
-        <App/>
+        <App />
     </loader.AppContainer>,
     document.getElementById('app')  as HTMLElement,
 );

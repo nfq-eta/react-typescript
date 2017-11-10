@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App.js matches snapshot 1`] = `
+exports[`App.tsx matches snapshot 1`] = `
 <div>
   <h1>
     Test

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import CheckBox, { IItem } from './CheckBox';
 
-const items = require('./tests/__mocks__/CheckboxItems.json');
-const selectedItems = require('./tests/__mocks__/CheckboxSelectedItems.json');
+import CheckboxItemsJson = require('./tests/__mocks__/CheckboxItems.json');
+import CheckboxSelectedItemsJson = require('./tests/__mocks__/CheckboxSelectedItems.json');
 
 export interface IAppProps {
     title?: string;
@@ -13,12 +13,12 @@ export interface IAppState {
 }
 
 export default class App extends React.Component<IAppProps, IAppState> {
-    selectedItems = new Map(selectedItems);
+    selectedItems = new Map(CheckboxSelectedItemsJson);
 
     constructor() {
         super();
 
-        this.state = { items };
+        this.state = { items: CheckboxItemsJson };
     }
 
     handleClick = (item: IItem, checked: boolean) => {

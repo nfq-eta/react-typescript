@@ -31,11 +31,6 @@ const config: webpack.Configuration = {
     module: {
         rules: [
             {
-                test: /\.json$/,
-                loader: 'json-loader',
-                exclude: /node_modules/,
-            },
-            {
                 test: /.*\.tsx$/,
                 include: path.resolve('src'),
                 use: [

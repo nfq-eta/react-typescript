@@ -2,6 +2,7 @@
 
 exports[`CheckBox.js matches snapshot 1`] = `
 <div
+  className="checkBoxSelected"
   key="1"
   onClick={[Function]}
 >
@@ -14,6 +15,7 @@ exports[`CheckBox.js matches snapshot 1`] = `
 
 exports[`CheckBox.js should be checked 1`] = `
 <div
+  className="checkBox"
   key="1"
   onClick={[Function]}
 >
