@@ -3,15 +3,59 @@ import { strategy } from 'webpack-merge';
 import * as path from 'path';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import webpackCommon from './webpack.common';
 
 const config: webpack.Configuration = strategy(
     {
-        devtool: 'prepend',
         plugins: 'prepend',
     },
 )(webpackCommon, {
+    entry: {
+        app: [
+            'babel-polyfill',
+            './src/index.tsx',
+        ],
+    },
+
+    output: {
+        filename: 'js/[name].[hash].min.js',
+        chunkFilename: 'js/[name].[hash].chunk.js',
+    },
+
     devtool: false,
+
+    module: {
+        rules: [
+            {
+                test: /.*\.tsx$/,
+                include: path.resolve('src'),
+                use: [
+                    'awesome-typescript-loader',
+                ],
+            },
+            {
+                test: /\.(css|sass|scss)$/,
+                exclude : /node_modules/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'typings-for-css-modules-loader',
+                            options: {
+                                modules: true,
+                                namedExport: true,
+                                camelCase: true,
+                                importLoaders: 2,
+                            },
+                        },
+                        { loader: 'resolve-url-loader' },
+                        { loader: 'sass-loader', options: { sourceMap: true } },
+                    ],
+                }),
+            },
+        ],
+    },
 
     plugins: [
         new HtmlWebpackPlugin({
@@ -32,6 +76,7 @@ const config: webpack.Configuration = strategy(
                 minifyURLs: true,
             },
         }),
+        new ExtractTextPlugin('static/css/[name].[chunkhash:8].min.css'),
         new OptimizeCssAssetsPlugin({
             cssProcessorOptions: { discardComments: { removeAll: true } },
             canPrint: false,
