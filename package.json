@@ -7,7 +7,7 @@
         "prestart": "tcm src",
         "start": "NODE_ENV=development webpack-dev-server --open --content-base dist --env=dev",
         "prebuild": "tcm src && rimraf ./dist",
-        "build": "webpack -p",
+        "build": "NODE_ENV=production webpack -p --env=prod --progress --display-error-details",
         "prebuild:start": "yarn build",
         "build:start": "serve -s -o -C -n dist",
         "lint": "tslint -c tslint.json -p tsconfig.json -t stylish ",
@@ -30,6 +30,7 @@
         "@types/react-test-renderer": "^16.0.0",
         "@types/webpack": "^3.0.14",
         "@types/webpack-env": "^1.13.2",
+        "@types/webpack-merge": "^4.1.1",
         "awesome-typescript-loader": "^3.3.0",
         "babel-core": "6.26.0",
         "babel-loader": "7.1.2",
@@ -74,7 +75,8 @@
         "webpack": "^3.8.1",
         "webpack-dashboard": "0.4.0",
         "webpack-dev-server": "^2.9.4",
-        "webpack-hot-middleware": "^2.20.0"
+        "webpack-hot-middleware": "^2.20.0",
+        "webpack-merge": "^4.1.1"
     },
     "dependencies": {
         "react": "^16.0.0",
