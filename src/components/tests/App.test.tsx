@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import enzymeToJson from 'enzyme-to-json';
+import {} from 'jest';
 
 import App from '../App';
 

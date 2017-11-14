@@ -44,7 +44,7 @@
     "@types/html-minifier" "*"
     "@types/webpack" "*"
 
-"@types/jest@21.1.5":
+"@types/jest@^21.1.5":
   version "21.1.5"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-21.1.5.tgz#3db93d069d12602ca115d3604550e15131d8eb7a"
 
