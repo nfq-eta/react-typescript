@@ -5,16 +5,18 @@
     "license": "MIT",
     "scripts": {
         "prestart": "tcm src",
-        "start": "NODE_ENV=development webpack-dev-server --open --content-base dist --env=dev",
-        "prebuild": "tcm src && rimraf ./dist",
-        "build": "NODE_ENV=production webpack -p --env=prod --progress --display-error-details",
+        "start": "cross-env NODE_ENV=development webpack-dev-server --open --content-base dist --env=dev",
+        "prebuild": "tcm src && rimraf ./dist ./coverage",
+        "build": "cross-env NODE_ENV=production webpack -p --env=prod --progress --display-error-details",
         "prebuild:start": "yarn build",
         "build:start": "serve -s -o -C -n dist",
         "lint": "tslint -c tslint.json -p tsconfig.json -t stylish ",
+        "lint:css": "stylelint './src/**/*.{css,scss}'",
         "test": "jest --watch --no-cache",
         "test:ci": "jest --env=jsdom --no-cache --maxWorkers=2",
-        "test:coverage": "NODE_ENV=test jest --env=jsdom --no-cache --coverage",
-        "prepush": "yarn test:ci -- --notify && yarn lint"
+        "test:coverage": "cross-env NODE_ENV=test jest --env=jsdom --no-cache --coverage",
+        "prepush": "yarn test:ci --notify && yarn lint && yarn lint:css",
+        "version": "update-changelog && git add CHANGELOG.md"
     },
     "devDependencies": {
         "@types/enzyme": "3.1.3",
@@ -38,6 +40,7 @@
         "babel-preset-es2015": "6.24.1",
         "babel-preset-react": "6.24.1",
         "babel-preset-stage-0": "6.24.1",
+        "cross-env": "5.1.1",
         "css-hot-loader": "^1.3.2",
         "css-loader": "0.28.7",
         "enzyme": "^3.1.0",
@@ -61,6 +64,7 @@
         "source-map-loader": "^0.2.3",
         "style-loader": "^0.19.0",
         "stylelint": "8.2.0",
+        "stylelint-config-css-modules": "1.1.0",
         "stylelint-config-sass-guidelines": "3.1.0",
         "ts-jest": "21.1.4",
         "ts-node": "3.3.0",
@@ -72,6 +76,7 @@
         "typescript": "2.6.1",
         "typescript-babel-jest": "1.0.5",
         "typings-for-css-modules-loader": "1.7.0",
+        "update-changelog": "1.0.2",
         "webpack": "^3.8.1",
         "webpack-dashboard": "0.4.0",
         "webpack-dev-server": "^2.9.4",
@@ -114,11 +119,15 @@
         "coverageDirectory": "./coverage/"
     },
     "stylelint": {
-        "extends": "stylelint-config-sass-guidelines",
+        "extends": [
+            "stylelint-config-sass-guidelines",
+            "stylelint-config-css-modules"
+        ],
         "rules": {
             "indentation": 4,
             "number-leading-zero": null,
-            "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$"
+            "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
+            "order/properties-alphabetical-order": null
         }
     }
 }
