@@ -7,6 +7,11 @@
 1. [Configure wallaby test runner](https://wallabyjs.com/docs/intro/install.html)
 1. `yarn test` Run tests to check if everything is working
 
+## Why?
+Make it fast as possible. Current development environment starts in ~10s
+Build time as fast as posible
+Bundle size should be minimum as possible
+
 ## What's inside
 * webpack v3
     * [dashboard](https://github.com/FormidableLabs/webpack-dashboard)
@@ -56,3 +61,4 @@
 * [ ] storybook
 * [ ] i18n
 * [ ] Red box for react errors?
+* [ ] Server side rendering
