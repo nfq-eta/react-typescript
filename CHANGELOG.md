@@ -1,6 +1,7 @@
 1.0.1 / 2017-11-16
 ==================
 
+* [[`3fccd46`]](https://github.com/nfq-eta/react-typescript/commit/3fccd46) - release-v1.0.4
 * [[`5f02202`]](https://github.com/nfq-eta/react-typescript/commit/5f02202) - release-v1.0.3
 * [[`20a37b3`]](https://github.com/nfq-eta/react-typescript/commit/20a37b3) - Added auto changelog
 * [[`048e78b`]](https://github.com/nfq-eta/react-typescript/commit/048e78b) - release-v1.0.2
