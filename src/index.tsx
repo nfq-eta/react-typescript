@@ -1,7 +1,6 @@
-/* tslint:disable */
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-const loader = require('react-hot-loader');
+import * as loader from 'react-hot-loader';
 import App from './components/App';
 
 ReactDOM.render(
