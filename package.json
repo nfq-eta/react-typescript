@@ -1,5 +1,5 @@
 {
-    "name": "typescript",
+    "name": "react-typescript",
     "version": "1.0.2",
     "main": "index.js",
     "license": "MIT",
@@ -16,7 +16,7 @@
         "test:ci": "jest --env=jsdom --no-cache --maxWorkers=2",
         "test:coverage": "cross-env NODE_ENV=test jest --env=jsdom --no-cache --coverage",
         "prepush": "yarn test:ci --notify && yarn lint && yarn lint:css",
-        "version": "update-changelog && git add CHANGELOG.md"
+        "preversion": "changelog -c HEAD -p node -r 1.0.1 > CHANGELOG.md && git add CHANGELOG.md"
     },
     "devDependencies": {
         "@types/enzyme": "3.1.3",
@@ -40,6 +40,7 @@
         "babel-preset-es2015": "6.24.1",
         "babel-preset-react": "6.24.1",
         "babel-preset-stage-0": "6.24.1",
+        "changelog-gn": "1.3.0",
         "cross-env": "5.1.1",
         "css-hot-loader": "^1.3.2",
         "css-loader": "0.28.7",
@@ -76,7 +77,6 @@
         "typescript": "2.6.1",
         "typescript-babel-jest": "1.0.5",
         "typings-for-css-modules-loader": "1.7.0",
-        "update-changelog": "1.0.2",
         "webpack": "^3.8.1",
         "webpack-dashboard": "0.4.0",
         "webpack-dev-server": "^2.9.4",
