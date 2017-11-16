@@ -18,3 +18,12 @@ script:
   - yarn test:coverage
   - yarn lint
   - yarn build
+
+deploy:
+  - provider: pages
+    name: Github Pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: dist
+    on:
+      branch: master
