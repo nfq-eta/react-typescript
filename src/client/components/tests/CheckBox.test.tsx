@@ -8,7 +8,7 @@ import CheckBox from '../CheckBox';
 describe('CheckBox.js', () => {
     const props = {
         item: {
-            id: 1,
+            value: 1,
             label: 'Test',
         },
         handleClick: jest.fn(),

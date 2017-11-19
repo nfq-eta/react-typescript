@@ -17,7 +17,7 @@ const config: webpack.Configuration = strategy(
     entry: {
         app: [
             'react-hot-loader/patch',
-            './src/index.tsx',
+            './src/client/index.tsx',
         ],
     },
 
@@ -71,7 +71,7 @@ const config: webpack.Configuration = strategy(
             /css\.d\.ts$/,
         ]),
         new HtmlWebpackPlugin({
-            template: path.resolve('./src/index.html'),
+            template: path.resolve('./src/client/index.html'),
             inject: 'body',
             filename: 'index.html',
             title: require(path.resolve('package.json')).description,

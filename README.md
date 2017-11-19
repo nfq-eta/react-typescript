@@ -9,7 +9,7 @@
 
 ## Why?
 Make it fast as possible. Current development environment starts in ~10s
-Build time as fast as posible
+Build time as fast as possible
 Bundle size should be minimum as possible
 
 ## What's inside
@@ -23,6 +23,10 @@ Bundle size should be minimum as possible
     * [airbnb](https://github.com/airbnb/javascript) [coding style rules](https://github.com/progre/tslint-config-airbnb)
 * react v16
     * [react hot loader](https://github.com/gaearon/react-hot-loader)
+* redux
+    * react-redux
+    * redux-loger
+    * hot reload
 * scss/css [module](https://github.com/css-modules/css-modules)
     * [stylelint](https://github.com/stylelint/stylelint) (lint scss and css)
     * [auto typings](https://github.com/Quramy/typed-css-modules) for [css modules](https://github.com/Jimdo/typings-for-css-modules-loader)
@@ -57,8 +61,9 @@ Bundle size should be minimum as possible
 ## Todo
 * [x] Automate Changelist.md
 * [ ] E2E Tests
-* [ ] react-redux
+* [x] react-redux
 * [ ] storybook
 * [ ] i18n
 * [ ] Red box for react errors?
 * [ ] Server side rendering
+* [ ] TS Config enable `noImplicitAny": true`

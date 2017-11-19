@@ -1,14 +1,7 @@
-1.0.4 / 2017-11-16
+1.0.4 / 2017-11-19
 ==================
 
-* [[`270c6a7`]](https://github.com/nfq-eta/react-typescript/commit/270c6a7) - Updated auto changelog
-* [[`3fccd46`]](https://github.com/nfq-eta/react-typescript/commit/3fccd46) - release-v1.0.4
-* [[`5f02202`]](https://github.com/nfq-eta/react-typescript/commit/5f02202) - release-v1.0.3
-* [[`20a37b3`]](https://github.com/nfq-eta/react-typescript/commit/20a37b3) - Added auto changelog
-* [[`048e78b`]](https://github.com/nfq-eta/react-typescript/commit/048e78b) - release-v1.0.2
-* [[`c2b9599`]](https://github.com/nfq-eta/react-typescript/commit/c2b9599) - Updated Readme.md file
-* [[`58c57f9`]](https://github.com/nfq-eta/react-typescript/commit/58c57f9) - Updated Readme.md file
-* [[`8ffbb39`]](https://github.com/nfq-eta/react-typescript/commit/8ffbb39) - **Fixed scss / css lint Added commands:** yarn lint:css, yarn version Added changelist generator Updated Readme.md fie
+* [[`bc625f8`]](https://github.com/nfq-eta/react-typescript/commit/bc625f8) - enable_style_lint (#16)
 * [[`6312bdf`]](https://github.com/nfq-eta/react-typescript/commit/6312bdf) - :**parking:** Add demo website (#15)
 * [[`864c1c1`]](https://github.com/nfq-eta/react-typescript/commit/864c1c1) - Replacing require with import
 * [[`bbe374e`]](https://github.com/nfq-eta/react-typescript/commit/bbe374e) - Webpack issue

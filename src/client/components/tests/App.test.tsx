@@ -3,32 +3,32 @@ import { shallow } from 'enzyme';
 import enzymeToJson from 'enzyme-to-json';
 import {} from 'jest';
 
-import App from '../App';
+import { AppDisconnected as App } from '../../containers/App';
 
 describe('App.tsx', () => {
+    const props = {
+        actions: jest.fn(),
+        items: [],
+    };
+
     it('renders without crashing', () => {
-        shallow(<App title="Test" />);
+        shallow(<App {...props} />);
     });
 
     it('matches snapshot', () => {
-        const wrapper = shallow(<App title="Test" />);
+        const wrapper = shallow(<App {...props} />);
         expect(enzymeToJson(wrapper)).toMatchSnapshot();
     });
 
     it('Title should be visible', () => {
-        const wrapper = shallow(<App title="Test" />);
-        expect(wrapper.find('h1').text()).toContain('Test');
-    });
-
-    it('Title should not be visible', () => {
-        const wrapper = shallow(<App />);
-        expect(wrapper.find('h1').text().length).toBe(0);
+        const wrapper = shallow(<App {...props} />);
+        expect(wrapper.find('h1').text()).toContain('App');
     });
 
     it('should handle click', () => {
-        const wrapper = shallow(<App />);
+        const wrapper = shallow(<App {...props} />);
         const instance = wrapper.instance() as App;
-        const params = { id: 1, label: 'Demo' };
+        const params = { value: 1, label: 'Demo' };
 
         instance.handleClick(params, true);
         expect(instance.selectedItems.has(1)).toBeTruthy();

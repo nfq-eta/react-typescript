@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as styles from './CheckBox.css';
 
 export interface IItem {
-    id: number;
+    value: string | number;
     label: string;
 }
 
@@ -29,20 +29,23 @@ export default class CheckBox extends React.Component<IProps, ICheckBoxState> {
         const checked = !this.state.checked;
         this.setState({ checked });
 
-        const { id, label } = this.props.item;
-        this.props.handleClick({ id, label }, checked);
+        const { value, label } = this.props.item;
+        this.props.handleClick({ value, label }, checked);
     };
 
     render() {
-        const { id, label } = this.props.item;
+        const { value, label } = this.props.item;
 
         return (
             <div
-                key={id}
+                key={'a' + value}
                 onClick={this.handleClick}
                 className={this.state.checked ? styles.checkBox : styles.checkBoxSelected}
             >
-                {id}. {!this.state.checked ? '[ ] ' : '[x] '}{label}
+                <label>
+                    <input type="checkbox" value={value} checked={this.state.checked} />
+                    {label}
+                </label>
             </div>
         );
     }
