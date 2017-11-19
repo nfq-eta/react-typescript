@@ -59,7 +59,7 @@ Bundle size should be minimum as possible
 | `yarn test:coverage` | Display tests coverage                 |
 
 ## Todo
-* [x] Automate Changelist.md
+* [ ] Automate Changelist.md
 * [ ] E2E Tests
 * [x] react-redux
 * [ ] storybook
