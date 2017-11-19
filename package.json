@@ -16,7 +16,7 @@
         "test": "jest --watch --no-cache",
         "test:ci": "jest --env=jsdom --no-cache --maxWorkers=2",
         "test:coverage": "cross-env NODE_ENV=test jest --env=jsdom --no-cache --coverage",
-        "prepush": "yarn test:ci --notify && yarn lint && yarn lint:css",
+        "prepush": "yarn test:ci --notify && yarn lint && yarn lint:css"
     },
     "devDependencies": {
         "@types/enzyme": "3.1.3",
