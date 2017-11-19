@@ -1,6 +1,8 @@
-1.0.4 / 2017-11-16
+1.1.0 / 2017-11-19
 ==================
 
+* [[`bc625f8`]](https://github.com/nfq-eta/react-typescript/commit/bc625f8) - enable_style_lint (#16)
+* [[`26ae5a2`]](https://github.com/nfq-eta/react-typescript/commit/26ae5a2) - Updated auto changelog
 * [[`270c6a7`]](https://github.com/nfq-eta/react-typescript/commit/270c6a7) - Updated auto changelog
 * [[`3fccd46`]](https://github.com/nfq-eta/react-typescript/commit/3fccd46) - release-v1.0.4
 * [[`5f02202`]](https://github.com/nfq-eta/react-typescript/commit/5f02202) - release-v1.0.3
