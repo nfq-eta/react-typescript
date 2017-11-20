@@ -15,9 +15,9 @@ after_success:
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 script:
-  - yarn test:coverage
   - yarn lint
   - yarn build
+  - yarn test:coverage
 
 deploy:
   - provider: pages
