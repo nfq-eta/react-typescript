@@ -10,7 +10,7 @@ cache:
     - node_modules
 
 after_success:
-  - yarn add codecov.io coveralls -D
+  - yarn add codecov.io coveralls --no-save
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
