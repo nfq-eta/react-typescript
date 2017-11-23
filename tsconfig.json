@@ -10,7 +10,7 @@
         "jsx": "react",
         "allowJs": true,
         "sourceMap": true,
-        "noImplicitAny": false,
+        "noImplicitAny": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "strictNullChecks": true,
