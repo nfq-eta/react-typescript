@@ -34,6 +34,7 @@
         "@types/react-router": "4.0.17",
         "@types/react-test-renderer": "^16.0.0",
         "@types/redux-actions": "2.2.2",
+        "@types/redux-logger": "3.0.5",
         "@types/webpack": "^3.0.14",
         "@types/webpack-env": "^1.13.2",
         "@types/webpack-merge": "^4.1.1",
