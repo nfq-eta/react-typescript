@@ -1,15 +1,16 @@
 import * as React from 'react';
 import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { connect, MapDispatchToProps } from 'react-redux';
+import * as uniqId from 'uniqid';
 
-import CheckBox, { IItem } from '../components/CheckBox';
-import * as CheckboxItemsJson from '../components/tests/__mocks__/CheckboxItems.json';
-import * as CheckboxSelectedItemsJson from '../components/tests/__mocks__/CheckboxSelectedItems.json';
+import CheckBox, { IItem } from '../components/checkbox/CheckBox';
+import * as CheckboxItemsJson from '../components/checkbox/tests/__mocks__/CheckboxItems.json';
+import * as CheckboxSelectedItemsJson from '../components/checkbox/tests/__mocks__/CheckboxSelectedItems.json';
 import { addCheckbox } from '../modules/checkbox/actions';
 import { IRootState } from '../core/reducers';
 
 export interface IAppProps {
-    actions: typeof addCheckbox;
+    addAction: typeof addCheckbox;
     items: IItem[];
 }
 
@@ -29,18 +30,19 @@ class App extends React.Component<IAppProps, IAppState> {
 
     handleClick = (item: IItem, checked: boolean) => {
         if (checked) {
-            this.selectedItems.set(item.value, item);
+            this.selectedItems.set(item.id, item);
         } else {
-            this.selectedItems.delete(item.value);
+            this.selectedItems.delete(item.id);
         }
     };
 
     isSelected(item: IItem): boolean {
-        return this.selectedItems.has(item.value);
+        return this.selectedItems.has(item.id);
     }
 
     handleAdd = () => {
-        this.props.actions({
+        this.props.addAction({
+            id: uniqId(),
             value: 'demo',
             label: 'Demo',
         });
@@ -52,28 +54,28 @@ class App extends React.Component<IAppProps, IAppState> {
                 <h1>App</h1>
                 <button onClick={this.handleAdd}>Add more</button>
                 {this.props.items.map(item => (
-                    <CheckBox
-                        item={item}
-                        key={'a' + item.value}
-                        checked={this.isSelected(item) || false}
-                        handleClick={this.handleClick}
-                    />
-                    ))
-                }
+                    <div key={item.id}>
+                        <CheckBox
+                            item={item}
+                            checked={this.isSelected(item) || false}
+                            handleClick={this.handleClick}
+                        />
+                    </div>
+                ))}
             </div>
         );
     }
 }
 
-function mapStateToProps(state: IRootState) {
+export function mapStateToProps(state: IRootState) {
     return ({
         items: state.checkBoxItems,
     });
 }
 
-function mapDispatchToProps(dispatch: any) {
+export function mapDispatchToProps(dispatch: MapDispatchToProps<any, any>) {
     return ({
-        actions: bindActionCreators(addCheckbox as any, dispatch),
+        addAction: bindActionCreators(addCheckbox, dispatch),
     });
 }
 
