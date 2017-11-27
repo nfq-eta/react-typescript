@@ -66,4 +66,4 @@ Bundle size should be minimum as possible
 * [ ] i18n
 * [ ] Red box for react errors?
 * [ ] Server side rendering
-* [ ] TS Config enable `noImplicitAny": true`
+* [x] TS Config enable `noImplicitAny": true`
