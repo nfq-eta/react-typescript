@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import enzymeToJson from 'enzyme-to-json';
 import {} from 'jest';
 
-import CheckBox from '../CheckBox';
+import { CheckBox } from '../CheckBox';
 
 describe('CheckBox.js', () => {
     const props = {

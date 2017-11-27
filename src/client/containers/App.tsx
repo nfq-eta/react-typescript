@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect, MapDispatchToProps } from 'react-redux';
 import * as uniqId from 'uniqid';
 
-import CheckBox, { IItem } from '../components/checkbox/CheckBox';
+import { CheckBox, IItem } from '../components/checkbox/CheckBox';
 import * as CheckboxItemsJson from '../components/checkbox/tests/__mocks__/CheckboxItems.json';
 import * as CheckboxSelectedItemsJson from '../components/checkbox/tests/__mocks__/CheckboxSelectedItems.json';
 import { addCheckbox } from '../modules/checkbox/actions';
@@ -22,8 +22,8 @@ export interface IAppState {
 class App extends React.Component<IAppProps, IAppState> {
     selectedItems = new Map(CheckboxSelectedItemsJson);
 
-    constructor() {
-        super();
+    constructor(props: IAppProps) {
+        super(props);
 
         this.state = { items: CheckboxItemsJson };
     }

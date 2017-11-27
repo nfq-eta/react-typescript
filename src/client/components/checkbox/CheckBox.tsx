@@ -21,7 +21,7 @@ export interface ITestEvent {
     target: { checked: boolean };
 }
 
-export default class CheckBox extends React.Component<IProps, ICheckBoxState> {
+export class CheckBox extends React.Component<IProps, ICheckBoxState> {
     constructor(props: IProps) {
         super(props);
 

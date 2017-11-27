@@ -6,3 +6,4 @@ dist/
 coverage/
 *.css.d.ts
 *.scss.d.ts
+storybook-static/
