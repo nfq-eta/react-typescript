@@ -8,6 +8,7 @@ import CheckBox from '../CheckBox';
 describe('CheckBox.js', () => {
     const props = {
         item: {
+            id: 'test',
             value: 1,
             label: 'Test',
         },
@@ -25,7 +26,7 @@ describe('CheckBox.js', () => {
 
     it('Label should be visible', () => {
         const wrapper = shallow(<CheckBox {...props} />);
-        expect(wrapper.find('div').text()).toContain('Test');
+        expect(wrapper.find('label').text()).toContain('Test');
     });
 
     it('should be checked', () => {
@@ -38,11 +39,11 @@ describe('CheckBox.js', () => {
     it('should toggle state', () => {
         const wrapper = shallow(<CheckBox {...props} />);
         const appInstance = wrapper.instance() as CheckBox;
-        appInstance.handleClick();
 
+        appInstance.handleClick({ target: { checked: true } });
         expect(appInstance.state.checked).toBeTruthy();
 
-        appInstance.handleClick();
+        appInstance.handleClick({ target: { checked: false } });
         expect(appInstance.state.checked).toBeFalsy();
     });
 });

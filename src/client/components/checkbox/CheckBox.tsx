@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as styles from './CheckBox.css';
 
 export interface IItem {
+    id: string;
     value: string | number;
     label: string;
 }
@@ -16,37 +17,39 @@ interface ICheckBoxState {
     checked: boolean;
 }
 
+export interface ITestEvent {
+    target: { checked: boolean };
+}
+
 export default class CheckBox extends React.Component<IProps, ICheckBoxState> {
     constructor(props: IProps) {
-        super();
+        super(props);
 
         this.state = {
             checked: props.checked || false,
         };
     }
 
-    handleClick = () => {
-        const checked = !this.state.checked;
+    handleClick = (e: React.ChangeEvent<HTMLInputElement> | ITestEvent) => {
+        const checked = e.target.checked;
         this.setState({ checked });
 
-        const { value, label } = this.props.item;
-        this.props.handleClick({ value, label }, checked);
+        this.props.handleClick(this.props.item, checked);
     };
 
     render() {
         const { value, label } = this.props.item;
 
         return (
-            <div
-                key={'a' + value}
-                onClick={this.handleClick}
-                className={this.state.checked ? styles.checkBox : styles.checkBoxSelected}
-            >
-                <label>
-                    <input type="checkbox" value={value} checked={this.state.checked} />
-                    {label}
-                </label>
-            </div>
+            <label className={this.state.checked ? styles.checkBox : styles.checkBoxSelected}>
+                <input
+                    type="checkbox"
+                    onChange={this.handleClick}
+                    value={value}
+                    defaultChecked={this.state.checked}
+                />
+                {label}
+            </label>
         );
     }
 }
