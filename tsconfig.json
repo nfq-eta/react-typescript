@@ -4,8 +4,7 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
-        "baseUrl": "./src",
-        "moduleResolution": "classic",
+        "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
         "jsx": "react",
@@ -15,7 +14,11 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "strictNullChecks": true,
-        "outDir": "./dist/",
+        "outDir": "./dist",
+        "rootDirs": [
+            "./src",
+            "./config"
+        ],
         "preserveConstEnums": true,
         "removeComments": true,
         "typeRoots": [
@@ -26,7 +29,8 @@
         "skipLibCheck": true
     },
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "dist"
     ],
     "include": [
         "./src/**/*",

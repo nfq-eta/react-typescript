@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App.tsx matches snapshot 1`] = `
+<div>
+  <h1>
+    App
+  </h1>
+  <button
+    onClick={[Function]}
+  >
+    Add more
+  </button>
+  <div
+    key="demo1"
+  >
+    <CheckBox
+      checked={false}
+      handleClick={[Function]}
+      item={
+        Object {
+          "id": "demo1",
+          "label": "Demo",
+          "value": "demo",
+        }
+      }
+    />
+  </div>
+</div>
+`;

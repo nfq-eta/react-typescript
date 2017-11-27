@@ -14,7 +14,7 @@ const config: webpack.Configuration = strategy(
     entry: {
         app: [
             'babel-polyfill',
-            './src/index.tsx',
+            './src/client/index.tsx',
         ],
     },
 
@@ -59,7 +59,7 @@ const config: webpack.Configuration = strategy(
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve('./src/index.html'),
+            template: path.resolve('./src/client/index.html'),
             inject: 'body',
             filename: 'index.html',
             title: require(path.resolve('package.json')).description,

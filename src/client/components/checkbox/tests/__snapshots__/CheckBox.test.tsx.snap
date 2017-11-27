@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBox.js matches snapshot 1`] = `
+<label
+  className="checkBoxSelected"
+>
+  <input
+    defaultChecked={false}
+    onChange={[Function]}
+    type="checkbox"
+    value={1}
+  />
+  Test
+</label>
+`;
+
+exports[`CheckBox.js should be checked 1`] = `
+<label
+  className="checkBox"
+>
+  <input
+    defaultChecked={true}
+    onChange={[Function]}
+    type="checkbox"
+    value={1}
+  />
+  Test
+</label>
+`;
