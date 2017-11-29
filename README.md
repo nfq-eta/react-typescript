@@ -2,10 +2,12 @@
 
 1. `yarn` Install dependencies
 1. `yarn start` Start development
+1. `yarn start:storybook` Start storybook
 1. `yarn build` Build for production
 1. Install [wallaby](https://wallabyjs.com/download/) plugin for you IDE
 1. [Configure wallaby test runner](https://wallabyjs.com/docs/intro/install.html)
 1. `yarn test` Run tests to check if everything is working
+1. `yarn prepush` Run before each push
 
 ## Why?
 Make it fast as possible. Current development environment starts in ~10s
@@ -48,21 +50,25 @@ Bundle size should be minimum as possible
 * SourceMaps
     * Source maps for typescript
     * Source maps for scss/css modules
+* Storybook [Demo](https://nfq-eta.github.io/react-typescript/docs)
+    * With actions
+    * Addons
 
 ## Available commands
-|              Command | Description                            |
-|---------------------:|----------------------------------------|
-| `yarn start`         | Start development enviroiment          |
-| `yarn lint`          | Lint typescript files                  |
-| `yarn lint:css`      | Lint scss/css files                    |
-| `yarn test`          | Start test enviroiment for development |
-| `yarn test:coverage` | Display tests coverage                 |
+|              Command  | Description                            |
+|---------------------: |----------------------------------------|
+| `yarn start`          | Start development enviroiment          |
+| `yarn start:storybook`| Start storybook                        |
+| `yarn lint`           | Lint typescript files                  |
+| `yarn lint:css`       | Lint scss/css files                    |
+| `yarn test`           | Start test enviroiment for development |
+| `yarn test:coverage`  | Display tests coverage                 |
 
 ## Todo
 * [ ] Automate Changelist.md
 * [ ] E2E Tests
 * [x] react-redux
-* [ ] storybook
+* [x] storybook. Please check the [issue status](https://github.com/storybooks/storybook/issues/1519)
 * [ ] i18n
 * [ ] Red box for react errors?
 * [ ] Server side rendering

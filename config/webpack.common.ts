@@ -1,7 +1,7 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
 
-const config: webpack.Configuration = {
+const config = {
     entry: {
         vendors: Object.keys(require(path.resolve('package.json')).dependencies),
     },

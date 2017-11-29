@@ -15,7 +15,11 @@ module.exports = function (wallaby) {
                 ignore: true
             },
             {
-                pattern: 'src/index.tsx',
+                pattern: 'src/**/*.story.tsx',
+                ignore: true
+            },
+            {
+                pattern: 'src/client/index.tsx',
                 ignore: true
             },
         ],
