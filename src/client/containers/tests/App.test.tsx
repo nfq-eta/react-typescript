@@ -57,15 +57,4 @@ describe('App.tsx', () => {
         expect(mapStateToProps(initialState)).toEqual({ items: [] });
     });
 
-    // Todo: test mapDispatchToProps
-    /*it('mapDispatchToProps()', () => {
-            const initialState: IRootState = {
-                checkBoxItems: [],
-            };
-
-            expect(
-                mapDispatchToProps(initialState),
-            ).toContain({addAction: jest.fn()})
-        }
-    );*/
 });

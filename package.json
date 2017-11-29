@@ -1,5 +1,4 @@
-{
-    "name": "react-typescript",
+Improvename": "react-typescript",
     "version": "1.1.0",
     "main": "index.js",
     "license": "MIT",
@@ -138,8 +137,9 @@
         "testRegex": "^.+\\.test\\.tsx?$",
         "collectCoverageFrom": [
             "src/**/*.tsx",
-            "!src/index.tsx",
-            "!<rootDir>/node_modules/"
+            "!src/client/index.tsx",
+            "!<rootDir>/node_modules/",
+            "!src/**/*.story.tsx"
         ],
         "moduleFileExtensions": [
             "js",
