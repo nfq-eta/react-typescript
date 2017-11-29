@@ -50,7 +50,7 @@ Bundle size should be minimum as possible
 * SourceMaps
     * Source maps for typescript
     * Source maps for scss/css modules
-* Storybook
+* Storybook [Demo](https://nfq-eta.github.io/react-typescript/docs)
     * With actions
     * Addons
 

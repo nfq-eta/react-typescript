@@ -19,7 +19,7 @@
         "test:coverage": "cross-env NODE_ENV=test jest --env=jsdom --no-cache --coverage",
         "prepush": "yarn test:ci --notify && yarn lint && yarn lint:css",
         "start:storybook": "start-storybook -p 6006 -c config/storybook",
-        "build-storybook": "build-storybook -c config/storybook"
+        "build-storybook": "build-storybook -c config/storybook -o ./dist/docs"
     },
     "devDependencies": {
         "@storybook/addon-actions": "^3.2.16",
