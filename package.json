@@ -15,13 +15,13 @@
         "build:start": "serve -s -o -C -n dist",
         "lint": "tslint -c tslint.json -p tsconfig.json -t stylish ",
         "lint:css": "stylelint './src/**/*.{css,scss}'",
-        "test": "jest --env=jsdom --no-cache --maxWorkers=2",
-        "test:start": "jest --watch --no-cache",
+        "test": "jest --watch --no-cache",
+        "test:ci": "jest --env=jsdom --no-cache --maxWorkers=2",
         "test:coverage": "cross-env NODE_ENV=test jest --env=jsdom --no-cache --coverage",
         "prepush": "yarn test:ci --notify && yarn lint && yarn lint:css",
         "start:storybook": "start-storybook -p 6006 -c config/storybook",
         "build-storybook": "build-storybook -c config/storybook -o ./dist/docs",
-        "release": "github-release-from-changelog"
+        "release:ci": "github-release-from-changelog"
     },
     "devDependencies": {
         "@storybook/addon-actions": "^3.2.16",
@@ -80,7 +80,6 @@
         "identity-obj-proxy": "^3.0.0",
         "jest": "^21.2.1",
         "node-sass": "^4.7.2",
-        "npmpub": "3.1.0",
         "optimize-css-assets-webpack-plugin": "3.2.0",
         "prop-types": "15.6.0",
         "raf": "^3.4.0",
