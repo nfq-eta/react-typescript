@@ -36,5 +36,5 @@ deploy:
       branch: master
   - provider: script
     script: yarn release:ci
-      on:
-        tags: true
+    on:
+      tags: true
