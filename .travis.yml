@@ -27,3 +27,8 @@ deploy:
     local_dir: dist
     on:
       branch: master
+  - provider: script
+    script: yarn release
+      on:
+        tags: true
+        branch: master

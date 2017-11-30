@@ -21,7 +21,6 @@
         "prepush": "yarn test:ci --notify && yarn lint && yarn lint:css",
         "start:storybook": "start-storybook -p 6006 -c config/storybook",
         "build-storybook": "build-storybook -c config/storybook -o ./dist/docs",
-        "prerelease": "yarn version",
         "release": "github-release-from-changelog"
     },
     "devDependencies": {
