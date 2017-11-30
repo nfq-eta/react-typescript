@@ -9,17 +9,19 @@ cache:
   directories:
     - node_modules
 
+before_install:
+- echo -e "machine github.com\n  login $GITHUB_TOKEN" >> ~/.netrc
+- git lfs pull
+
 after_success:
   - yarn add codecov.io coveralls --no-save
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - gem install github_changelog_generator
   - github_changelog_generator --token $GITHUB_TOKEN --date-format %y/%m/%d
-  - git config --local user.email "travis@travis-ci.com"
-  - git config --local user.name "travis"
-  - git add CHANGELOG.md
+  - git add ./CHANGELOG.md
   - git commit -m "Updated change log"
-  - git push "https://${GITHUB_TOKEN}@${TRAVIS_REPO_SLUG}" ${TRAVIS_BRANCH} > /dev/null 2>&1
+  - git push "https://$GITHUB_TOKEN@$TRAVIS_REPO_SLUG" $TRAVIS_BRANCH > /dev/null 2>&1
 
 script:
   - yarn lint
