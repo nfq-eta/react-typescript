@@ -19,7 +19,7 @@ after_success:
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - gem install github_changelog_generator
   - github_changelog_generator --token $GITHUB_TOKEN --date-format %y/%m/%d
-  - git add ./CHANGELOG.md
+  - git add CHANGELOG.md
   - git commit -m "Updated change log"
   - git push "https://$GITHUB_TOKEN@$TRAVIS_REPO_SLUG" $TRAVIS_BRANCH > /dev/null 2>&1
 
