@@ -21,7 +21,7 @@ after_success:
   - github_changelog_generator --token $GITHUB_TOKEN --date-format %y/%m/%d
   - git add CHANGELOG.md
   - git commit -m "Updated change log"
-  - git push "https://$GITHUB_TOKEN@$TRAVIS_REPO_SLUG" $TRAVIS_BRANCH
+  - git push "https://$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG" $TRAVIS_BRANCH
 
 script:
   - yarn lint
