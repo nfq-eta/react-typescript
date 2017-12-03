@@ -19,9 +19,24 @@ after_success:
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - gem install github_changelog_generator
   - github_changelog_generator --token $GITHUB_TOKEN --date-format %y/%m/%d
-  - git add .
-  - git commit -m "Updated change log"
-  - git push "https://$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG" $TRAVIS_BRANCH
+  - |
+    remote=$(git config --get remote.origin.url)
+    git remote set-url origin "${remote/github.com/$GITHUB_TOKEN:x-oauth-basic@github.com}"
+    changed_files=$(git diff --name-status "$TRAVIS_COMMIT_RANGE" | tr '\t' ' ')
+    if [[ "$changed_files" == "M CHANGELOG.md" ]] ; then
+      (
+        git status
+        git reset "$TRAVIS_BRANCH"
+        git stash
+        git checkout "$TRAVIS_BRANCH"
+        git stash pop
+        git add CHANGELOG.md
+        git commit -m "Auto-update generate CHANGELOG.md from PR #$TRAVIS_PULL_REQUEST (https://github.com/$TRAVIS_REPO_SLUG/pull/$TRAVIS_PULL_REQUEST)."
+        git push origin "$TRAVIS_BRANCH"
+      ) 2>&1
+    else
+      echo "Not auto-merging, because multiple files were changed"
+    fi
 
 script:
   - yarn lint
