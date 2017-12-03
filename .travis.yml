@@ -9,10 +9,6 @@ cache:
   directories:
     - node_modules
 
-before_install:
-- echo -e "machine github.com\n  login $GITHUB_TOKEN" >> ~/.netrc
-- git lfs pull
-
 after_success:
   - yarn global add codecov.io coveralls
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
@@ -20,20 +16,15 @@ after_success:
   - gem install github_changelog_generator
   - github_changelog_generator --token $GITHUB_TOKEN --date-format %y/%m/%d
   - |
-    remote=$(git config --get remote.origin.url)
-    git remote set-url origin "${remote/github.com/$GITHUB_TOKEN:x-oauth-basic@github.com}"
     changed_files=$(git diff --name-status "$TRAVIS_COMMIT_RANGE" | tr '\t' ' ')
     if [[ "$changed_files" == "M package.json" ]] ; then
       (
-        git status
-        git reset "$TRAVIS_BRANCH"
-        git stash
-        git checkout "$TRAVIS_BRANCH"
-        git stash pop
+        git config --global user.email "builds@travis-ci.com"
+        git config --global user.name "Travis CI"
         git add CHANGELOG.md
         git commit -m "Auto-update generate CHANGELOG.md from PR #$TRAVIS_PULL_REQUEST (https://github.com/$TRAVIS_REPO_SLUG/pull/$TRAVIS_PULL_REQUEST)."
-        git push origin "$TRAVIS_BRANCH"
-      ) 2>&1 | sed -e "s/$GITHUB_TOKEN/REDACTED/g"
+        git push -q https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG --tags
+      )
     else
       echo "Change log only updates if package.json is modified"
     fi
