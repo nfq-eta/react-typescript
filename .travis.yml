@@ -24,7 +24,7 @@ after_success:
         git add CHANGELOG.md
         git commit -m "Auto-update generate CHANGELOG.md from PR #$TRAVIS_PULL_REQUEST (https://github.com/$TRAVIS_REPO_SLUG/pull/$TRAVIS_PULL_REQUEST)."
         git push -q https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG --tags
-      )
+      ) 2>&1 | sed -e "s/$GITHUB_TOKEN/REDACTED/g"
     else
       echo "Change log only updates if package.json is modified"
     fi
