@@ -23,8 +23,7 @@ after_success:
     remote=$(git config --get remote.origin.url)
     git remote set-url origin "${remote/github.com/$GITHUB_TOKEN:x-oauth-basic@github.com}"
     changed_files=$(git diff --name-status "$TRAVIS_COMMIT_RANGE" | tr '\t' ' ')
-    echo $changed_files
-    if [[ "$changed_files" == "M CHANGELOG.md" ]] ; then
+    if [[ "$changed_files" == "M package.json" ]] ; then
       (
         git status
         git reset "$TRAVIS_BRANCH"
