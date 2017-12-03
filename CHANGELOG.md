@@ -1,5 +1,29 @@
 # Change Log
 
+## [v1.1.14](https://github.com/nfq-eta/react-typescript/tree/v1.1.14) (17/12/03)
+[Full Changelog](https://github.com/nfq-eta/react-typescript/compare/v1.1.13...v1.1.14)
+
+## [v1.1.13](https://github.com/nfq-eta/react-typescript/tree/v1.1.13) (17/12/03)
+[Full Changelog](https://github.com/nfq-eta/react-typescript/compare/v1.1.12...v1.1.13)
+
+## [v1.1.12](https://github.com/nfq-eta/react-typescript/tree/v1.1.12) (17/12/03)
+[Full Changelog](https://github.com/nfq-eta/react-typescript/compare/v1.1.11...v1.1.12)
+
+## [v1.1.11](https://github.com/nfq-eta/react-typescript/tree/v1.1.11) (17/12/03)
+[Full Changelog](https://github.com/nfq-eta/react-typescript/compare/v1.1.10...v1.1.11)
+
+## [v1.1.10](https://github.com/nfq-eta/react-typescript/tree/v1.1.10) (17/12/03)
+[Full Changelog](https://github.com/nfq-eta/react-typescript/compare/v1.1.9...v1.1.10)
+
+## [v1.1.9](https://github.com/nfq-eta/react-typescript/tree/v1.1.9) (17/12/03)
+[Full Changelog](https://github.com/nfq-eta/react-typescript/compare/v1.1.8...v1.1.9)
+
+## [v1.1.8](https://github.com/nfq-eta/react-typescript/tree/v1.1.8) (17/12/03)
+[Full Changelog](https://github.com/nfq-eta/react-typescript/compare/v1.1.7...v1.1.8)
+
+## [v1.1.7](https://github.com/nfq-eta/react-typescript/tree/v1.1.7) (17/12/03)
+[Full Changelog](https://github.com/nfq-eta/react-typescript/compare/v1.1.6...v1.1.7)
+
 ## [v1.1.6](https://github.com/nfq-eta/react-typescript/tree/v1.1.6) (17/12/03)
 [Full Changelog](https://github.com/nfq-eta/react-typescript/compare/v1.1.5...v1.1.6)
 
