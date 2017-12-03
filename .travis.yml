@@ -28,12 +28,14 @@ after_success:
       git checkout "$TRAVIS_BRANCH"
       git stash pop
 
-      gem install github_changelog_generator &
-      github_changelog_generator -u $GITHUB_USER --token $GITHUB_TOKEN --date-format %y/%m/%d &
-
-      git add .
-      git commit -m "Auto-update generate CHANGELOG.md"
-      git push origin "$TRAVIS_BRANCH"
+      (
+        gem install github_changelog_generator &
+        github_changelog_generator -u $GITHUB_USER --token $GITHUB_TOKEN --date-format %y/%m/%d
+      ) & (
+        git add .
+        git commit -m "Auto-update generate CHANGELOG.md"
+        git push origin "$TRAVIS_BRANCH"
+      )
 
 script:
   - yarn lint
