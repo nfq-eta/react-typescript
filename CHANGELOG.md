@@ -1,5 +1,18 @@
 # Change Log
 
+## [v1.1.6](https://github.com/nfq-eta/react-typescript/tree/v1.1.6) (17/12/03)
+[Full Changelog](https://github.com/nfq-eta/react-typescript/compare/v1.1.5...v1.1.6)
+
+## [v1.1.5](https://github.com/nfq-eta/react-typescript/tree/v1.1.5) (17/12/03)
+[Full Changelog](https://github.com/nfq-eta/react-typescript/compare/v1.1.4...v1.1.5)
+
+## [v1.1.4](https://github.com/nfq-eta/react-typescript/tree/v1.1.4) (17/11/30)
+[Full Changelog](https://github.com/nfq-eta/react-typescript/compare/release-v1.1.1...v1.1.4)
+
+**Merged pull requests:**
+
+- Feature/changelog [\#27](https://github.com/nfq-eta/react-typescript/pull/27) ([FDiskas](https://github.com/FDiskas))
+
 ## [release-v1.1.1](https://github.com/nfq-eta/react-typescript/tree/release-v1.1.1) (17/11/30)
 [Full Changelog](https://github.com/nfq-eta/react-typescript/compare/v1.1.2...release-v1.1.1)
 
