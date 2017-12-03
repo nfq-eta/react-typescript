@@ -15,31 +15,22 @@ before_install:
 - gem install github_changelog_generator
 
 after_success:
-  - yarn global add codecov.io coveralls
+  - yarn global add codecov.io coveralls github-release-from-changelog
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - github_changelog_generator --token $GITHUB_TOKEN --date-format %y/%m/%d
   - |
-    changed_files=$(git diff --name-status "$TRAVIS_COMMIT_RANGE" | tr '\t' ' ')
     if [ "master" == "$TRAVIS_BRANCH" ]; then
+      changed_files=$(git diff --name-status "$TRAVIS_COMMIT_RANGE" | tr '\t' ' ')
       if [[ "$changed_files" == "M package.json" ]] ; then
         (
           remote=$(git config --get remote.origin.url)
           git remote set-url origin "${remote/github.com/$GITHUB_TOKEN:x-oauth-basic@github.com}"
-          git status
-          git stash
-          git checkout "$TRAVIS_BRANCH"
-          git stash pop
-          git add CHANGELOG.md
-          git commit -m "Auto-update generate CHANGELOG.md"
+          github-release-from-changelog
           git push origin "$TRAVIS_BRANCH"
         )
       fi
     fi
-    if [ -n $TRAVIS_TAG ] ; then
-      github-release-from-changelog
-    fi
-
 
 script:
   - yarn lint
@@ -54,7 +45,3 @@ deploy:
     local_dir: dist
     on:
       branch: master
-  - provider: script
-    script: github-release-from-changelog
-    on:
-      tags: true
