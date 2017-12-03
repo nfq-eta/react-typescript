@@ -14,12 +14,12 @@ before_install:
 - git lfs pull
 
 after_success:
-  - yarn add codecov.io coveralls --no-save
+  - yarn global add codecov.io coveralls
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - gem install github_changelog_generator
   - github_changelog_generator --token $GITHUB_TOKEN --date-format %y/%m/%d
-  - git add CHANGELOG.md
+  - git add .
   - git commit -m "Updated change log"
   - git push "https://$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG" $TRAVIS_BRANCH
 
