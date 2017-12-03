@@ -19,16 +19,16 @@ after_success:
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - |
-  changed_files=$(git diff --name-status "$TRAVIS_COMMIT_RANGE" | tr '\t' ' ')
+    changed_files=$(git diff --name-status "$TRAVIS_COMMIT_RANGE" | tr '\t' ' ')
     if [[ "master" == "$TRAVIS_BRANCH" ] && [ "$changed_files" == "M package.json" ] ]]; then
       (
         github_changelog_generator --token $GITHUB_TOKEN --date-format %y/%m/%d
         remote=$(git config --get remote.origin.url)
         git remote set-url origin "${remote/github.com/$GITHUB_TOKEN:x-oauth-basic@github.com}"
-        github-release-from-changelog
         git add .
         git commit -m "Auto-update generate CHANGELOG.md"
         git push origin "$TRAVIS_BRANCH"
+        github-release-from-changelog
       )
     fi
 
