@@ -33,9 +33,9 @@ after_success:
         git add CHANGELOG.md
         git commit -m "Auto-update generate CHANGELOG.md from PR #$TRAVIS_PULL_REQUEST (https://github.com/$TRAVIS_REPO_SLUG/pull/$TRAVIS_PULL_REQUEST)."
         git push origin "$TRAVIS_BRANCH"
-      ) 2>&1
+      ) 2>&1 | sed -e "s/$GITHUB_TOKEN/REDACTED/g"
     else
-      echo "Not auto-merging, because multiple files were changed"
+      echo "Change log only updates if package.json is modified"
     fi
 
 script:
