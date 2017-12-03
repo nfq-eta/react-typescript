@@ -23,19 +23,17 @@ after_success:
     remote=$(git config --get remote.origin.url)
     git remote set-url origin "${remote/github.com/$GITHUB_TOKEN:x-oauth-basic@github.com}"
     changed_files=$(git diff --name-status "$TRAVIS_COMMIT_RANGE" | tr '\t' ' ')
-    if [[ "$changed_files" == "M package.json" ]] ; then
+    
       (
         git status
         git stash
         git checkout "$TRAVIS_BRANCH"
         git stash pop
         git add CHANGELOG.md
-        git commit -m "Auto-update generate CHANGELOG.md from PR #$TRAVIS_PULL_REQUEST (https://github.com/$TRAVIS_REPO_SLUG/pull/$TRAVIS_PULL_REQUEST)."
+        git commit -m "Auto-update generate CHANGELOG.md"
         git push origin "$TRAVIS_BRANCH"
-      ) 2>&1 | sed -e "s/$GITHUB_TOKEN/REDACTED/g"
-    else
-      echo "Change log only updates if package.json is modified"
-    fi
+      )
+   
 script:
   - yarn lint
   - yarn build
