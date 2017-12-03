@@ -1,5 +1,8 @@
 # Change Log
 
+## [v1.2.0](https://github.com/nfq-eta/react-typescript/tree/v1.2.0) (17/12/03)
+[Full Changelog](https://github.com/nfq-eta/react-typescript/compare/v1.1.14...v1.2.0)
+
 ## [v1.1.14](https://github.com/nfq-eta/react-typescript/tree/v1.1.14) (17/12/03)
 [Full Changelog](https://github.com/nfq-eta/react-typescript/compare/v1.1.13...v1.1.14)
 
