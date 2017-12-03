@@ -21,8 +21,7 @@
         "test:coverage": "cross-env NODE_ENV=test jest --env=jsdom --no-cache --coverage",
         "prepush": "yarn test:ci --notify && yarn lint && yarn lint:css",
         "start:storybook": "start-storybook -p 6006 -c config/storybook",
-        "build-storybook": "build-storybook -c config/storybook -o ./dist/docs",
-        "release:ci": "github-release-from-changelog"
+        "build-storybook": "build-storybook -c config/storybook -o ./dist/docs"
     },
     "devDependencies": {
         "@storybook/addon-actions": "^3.2.16",
@@ -74,7 +73,6 @@
         "enzyme-to-json": "3.2.2",
         "extract-text-webpack-plugin": "^3.0.2",
         "file-loader": "1.1.5",
-        "github-release-from-changelog": "1.2.1",
         "history": "4.7.2",
         "html-webpack-plugin": "^2.30.1",
         "husky": "^0.14.3",
