@@ -18,15 +18,22 @@ after_success:
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - |
-    (
       remote=$(git config --get remote.origin.url)
       git remote set-url origin "${remote/github.com/$GITHUB_TOKEN:x-oauth-basic@github.com}"
+
+      echo "auto-merging to $TRAVIS_BRANCH in repository $remote."
+      git status
+      git reset "$TRAVIS_BRANCH"
+      git stash
+      git checkout "$TRAVIS_BRANCH"
+      git stash pop
+
       gem install github_changelog_generator
       github_changelog_generator -u $GITHUB_USER --token $GITHUB_TOKEN --date-format %y/%m/%d
+
       git add .
       git commit -m "Auto-update generate CHANGELOG.md"
       git push origin "$TRAVIS_BRANCH"
-    ) 2>&1 | sed -e "s/$GITHUB_TOKEN/REDACTED/g"
 
 script:
   - yarn lint
