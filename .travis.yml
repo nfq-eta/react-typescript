@@ -10,7 +10,7 @@ cache:
     - node_modules
 
 branches:
-  except:
+  exclude:
   - /^[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+.*$/
 
 before_install:
