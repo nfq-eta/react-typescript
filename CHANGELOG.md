@@ -1,6 +1,14 @@
+<a name="1.3.4"></a>
+## 1.3.4 (2017-12-11)
+
+* Add travis todo releases ([934c0fd](https://github.com/nfq-eta/react-typescript/commit/934c0fd))
+
+
+
 <a name="1.3.3"></a>
 ## 1.3.3 (2017-12-11)
 
+* chore(release): 1.3.3 ([f0ca433](https://github.com/nfq-eta/react-typescript/commit/f0ca433))
 * ci(package.json): changed changelog style ([3e96b93](https://github.com/nfq-eta/react-typescript/commit/3e96b93))
 
 
