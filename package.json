@@ -5,6 +5,7 @@
     "license": "MIT",
     "description": "React & typescript boilerplate",
     "repository": "https://github.com/nfq-eta/react-typescript",
+    "homepage": "https://github.com/nfq-eta/react-typescript",
     "scripts": {
         "cm": "git-cz",
         "prestart": "tcm src",
