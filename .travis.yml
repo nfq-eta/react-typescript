@@ -16,7 +16,6 @@ branches:
 before_install:
 - echo -e "machine github.com\n  login $GITHUB_TOKEN" >> ~/.netrc
 - git lfs pull
-- gem install github_changelog_generator
 
 after_success:
   - yarn global add codecov.io coveralls github-release-from-changelog
@@ -26,12 +25,6 @@ after_success:
     changed_files=$(git diff --name-status "$TRAVIS_COMMIT_RANGE" | tr '\t' ' ')
     if [[ "master" == "$TRAVIS_BRANCH" && "$changed_files" == "M package.json" ]]; then
       (
-        github_changelog_generator --token $GITHUB_TOKEN --date-format %y/%m/%d
-        remote=$(git config --get remote.origin.url)
-        git remote set-url origin "${remote/github.com/$GITHUB_TOKEN:x-oauth-basic@github.com}"
-        git add CHANGELOG.md
-        git commit -m "Auto-update generate CHANGELOG.md"
-        git push origin "$TRAVIS_BRANCH"
         github-release-from-changelog
       )
     fi

@@ -65,12 +65,23 @@ Bundle size should be minimum as possible
 | `yarn test`           | Start test enviroiment for development |
 | `yarn test:coverage`  | Display tests coverage                 |
 
+## Contribute
+## <a name="commits"></a> Git Commit Guidelines
+
+We have very precise rules over how our git commit messages can be formatted.  This leads to **more readable messages** that are easy to follow when looking through the **project history**.  But also,
+we use the git commit messages to **generate the our change log**.
+
+The commit message formatting can be added using a typical git workflow or through the use of a CLI
+wizard ([Commitizen](https://github.com/commitizen/cz-cli)). To use the wizard, run `yarn run cm`
+in your terminal after staging your changes in git.
+
+A detailed explanation borrowed from angular and can be found in this [document][commit-message-format].
+
 ## Todo
-* [ ] Automate Changelist.md
+* [x] Automate Changelist.md
 * [ ] E2E Tests
-* [x] react-redux
-* [x] storybook. Please check the [issue status](https://github.com/storybooks/storybook/issues/1519)
 * [ ] i18n
 * [ ] Red box for react errors?
 * [ ] Server side rendering
-* [x] TS Config enable `noImplicitAny": true`
+
+[commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
