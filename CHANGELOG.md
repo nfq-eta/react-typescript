@@ -1,3 +1,10 @@
+<a name="1.3.3"></a>
+## 1.3.3 (2017-12-11)
+
+* ci(package.json): changed changelog style ([3e96b93](https://github.com/nfq-eta/react-typescript/commit/3e96b93))
+
+
+
 <a name="1.3.2"></a>
 ## 1.3.2 (2017-12-11)
 
