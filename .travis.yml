@@ -16,18 +16,12 @@ branches:
 before_install:
 - echo -e "machine github.com\n  login $GITHUB_TOKEN" >> ~/.netrc
 - git lfs pull
+- yarn global add github-release-from-changelog
 
 after_success:
-  - yarn global add codecov.io coveralls github-release-from-changelog
+  - yarn global add codecov.io coveralls
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-  - |
-    changed_files=$(git diff --name-status "$TRAVIS_COMMIT_RANGE" | tr '\t' ' ')
-    if [[ "master" == "$TRAVIS_BRANCH" && "$changed_files" == "M package.json" ]]; then
-      (
-        github-release-from-changelog
-      )
-    fi
 
 script:
   - yarn lint
@@ -42,3 +36,8 @@ deploy:
     local_dir: dist
     on:
       branch: master
+  - provider: script
+    github_token: $GITHUB_TOKEN
+    script: github-release-from-changelog
+    on:
+      tag: true
