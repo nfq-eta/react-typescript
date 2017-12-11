@@ -6,7 +6,7 @@
     "description": "React & typescript boilerplate",
     "repository": "https://github.com/nfq-eta/react-typescript",
     "scripts": {
-        "cm": "git-cz",
+        "cm": "git cz",
         "prestart": "tcm src",
         "start": "cross-env NODE_ENV=development webpack-dev-server --open --content-base dist --env=dev",
         "prebuild": "tcm src && rimraf ./dist ./coverage",
