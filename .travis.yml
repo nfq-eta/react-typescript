@@ -9,14 +9,10 @@ cache:
   directories:
     - node_modules
 
-branches:
-  exclude:
-  - /^[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+.*$/
-
 before_install:
 - echo -e "machine github.com\n  login $GITHUB_TOKEN" >> ~/.netrc
 - git lfs pull
-- yarn global add github-release-from-changelog
+- npm i -g github-release-from-changelog
 
 after_success:
   - npm i -g codecov.io coveralls
@@ -39,5 +35,6 @@ deploy:
   - provider: script
     github_token: $GITHUB_TOKEN
     script: github-release-from-changelog
+    skip_cleanup: true
     on:
       tag: true
