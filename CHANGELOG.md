@@ -1,3 +1,10 @@
+<a name="1.4.2"></a>
+## 1.4.2 (2017-12-13)
+
+* Saving files before refreshing line endings ([0740bdc](https://github.com/nfq-eta/react-typescript/commit/0740bdc))
+
+
+
 <a name="1.4.1"></a>
 ## 1.4.1 (2017-12-13)
 
