@@ -1,6 +1,7 @@
 <a name="1.4.1"></a>
 ## 1.4.1 (2017-12-13)
 
+* chore(release): 1.4.1 ([aa5c7ec](https://github.com/nfq-eta/react-typescript/commit/aa5c7ec))
 * build(storybook): Fixed storybook build task ([4523d25](https://github.com/nfq-eta/react-typescript/commit/4523d25))
 
 
