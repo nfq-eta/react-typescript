@@ -8,6 +8,7 @@ import * as CheckboxItemsJson from '../components/checkbox/tests/__mocks__/Check
 import * as CheckboxSelectedItemsJson from '../components/checkbox/tests/__mocks__/CheckboxSelectedItems.json';
 import { addCheckbox } from '../modules/checkbox/actions';
 import { IRootState } from '../core/reducers';
+import { Header } from '../components/header/Header';
 
 export interface IAppProps {
     addAction: typeof addCheckbox;
@@ -18,7 +19,6 @@ export interface IAppState {
     items: IItem[];
 }
 
-// @connect(mapStateToProps, mapDispatchToProps)
 class App extends React.Component<IAppProps, IAppState> {
     selectedItems = new Map(CheckboxSelectedItemsJson);
 
@@ -51,7 +51,7 @@ class App extends React.Component<IAppProps, IAppState> {
     render() {
         return (
             <div>
-                <h1>App</h1>
+                <Header />
                 <button onClick={this.handleAdd}>Add more</button>
                 {this.props.items.map(item => (
                     <div key={item.id}>
