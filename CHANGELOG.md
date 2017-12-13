@@ -1,6 +1,14 @@
+<a name="1.4.1"></a>
+## 1.4.1 (2017-12-13)
+
+* build(storybook): Fixed storybook build task ([4523d25](https://github.com/nfq-eta/react-typescript/commit/4523d25))
+
+
+
 <a name="1.4.0"></a>
 # 1.4.0 (2017-12-13)
 
+* chore(release): 1.4.0 ([b0f8d8d](https://github.com/nfq-eta/react-typescript/commit/b0f8d8d))
 * ci(travis): Fix releases ([223f220](https://github.com/nfq-eta/react-typescript/commit/223f220))
 
 
