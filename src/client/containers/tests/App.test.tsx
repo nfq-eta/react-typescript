@@ -25,7 +25,7 @@ describe('App.tsx', () => {
 
     it('Title should be visible', () => {
         const wrapper = shallow(<AppDisconnected {...props} />);
-        expect(wrapper.find('h1').text()).toContain('App');
+        expect(wrapper.find('Header').length).toBe(1);
     });
 
     it('should handle click', () => {

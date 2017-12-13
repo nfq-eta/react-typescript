@@ -2,9 +2,7 @@
 
 exports[`App.tsx matches snapshot 1`] = `
 <div>
-  <h1>
-    App
-  </h1>
+  <Header />
   <button
     onClick={[Function]}
   >
