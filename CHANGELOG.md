@@ -1,6 +1,14 @@
+<a name="1.4.0"></a>
+# 1.4.0 (2017-12-13)
+
+* ci(travis): Fix releases ([223f220](https://github.com/nfq-eta/react-typescript/commit/223f220))
+
+
+
 <a name="1.3.5"></a>
 ## 1.3.5 (2017-12-13)
 
+* chore(release): 1.3.5 ([c577763](https://github.com/nfq-eta/react-typescript/commit/c577763))
 * ci(travis): Fix code coverage report ([0bc92f3](https://github.com/nfq-eta/react-typescript/commit/0bc92f3))
 * ci(travis): Fix code coverage report ([a0bcf3f](https://github.com/nfq-eta/react-typescript/commit/a0bcf3f))
 * feat(scss): Add scss support. Act as css module ([56855da](https://github.com/nfq-eta/react-typescript/commit/56855da)), closes [#21](https://github.com/nfq-eta/react-typescript/issues/21)
