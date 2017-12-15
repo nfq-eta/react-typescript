@@ -9,7 +9,7 @@
         "experimentalDecorators": true,
         "jsx": "react",
         "allowJs": true,
-        "checkJs": true,
+        "checkJs": false,
         "sourceMap": true,
         "noImplicitAny": true,
         "noUnusedLocals": true,
@@ -26,7 +26,7 @@
         "importHelpers": false,
         "typeRoots": [
             "./node_modules/json-d-ts",
-            "node_modules/@types"
+            "./node_modules/@types"
         ],
         "lib": [
             "dom",
@@ -36,7 +36,7 @@
         "skipLibCheck": true
     },
     "exclude": [
-        "node_modules",
+        "./node_modules",
         "./src/**/*.test.tsx"
     ],
     "include": [

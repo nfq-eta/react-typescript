@@ -1,15 +1,8 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import enzymeToJson from 'enzyme-to-json';
-import {} from 'jest';
 
 import { CheckBox } from '../CheckBoxComponent';
-
-const configure = require('enzyme').configure;
-const Adapter = require('enzyme-adapter-react-16');
-
-configure({ adapter: new Adapter() });
-
 
 describe('CheckBox.js', () => {
     const props = {
