@@ -1,0 +1,15 @@
+.navigation {
+    background-color: rgba(163, 228, 238, 0.48);
+    padding: 5px;
+    margin: 5px;
+    outline: 1px solid #fff;
+
+    a {
+        margin-right: 5px;
+    }
+
+    :global .active {
+        color: #ff0600;
+        font-weight: bold;
+    }
+}

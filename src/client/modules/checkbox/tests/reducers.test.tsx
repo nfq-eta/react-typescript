@@ -1,5 +1,5 @@
 import addReducer from '../reducers';
-import { IItem } from '../../../components/checkbox/CheckBox';
+import { IItem } from '../../../components/checkbox/CheckBoxComponent';
 import { ACTION } from '../../../core/constants';
 
 const initialState: IItem[] = [];

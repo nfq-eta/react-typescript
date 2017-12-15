@@ -3,12 +3,11 @@ import { bindActionCreators } from 'redux';
 import { connect, MapDispatchToProps } from 'react-redux';
 import * as uniqId from 'uniqid';
 
-import { CheckBox, IItem } from '../components/checkbox/CheckBox';
+import { CheckBox, IItem } from '../components/checkbox/CheckBoxComponent';
 import * as CheckboxItemsJson from '../components/checkbox/tests/__mocks__/CheckboxItems.json';
 import * as CheckboxSelectedItemsJson from '../components/checkbox/tests/__mocks__/CheckboxSelectedItems.json';
 import { addCheckbox } from '../modules/checkbox/actions';
 import { IRootState } from '../core/reducers';
-import { Header } from '../components/header/Header';
 
 export interface IAppProps {
     addAction: typeof addCheckbox;
@@ -20,6 +19,16 @@ export interface IAppState {
 }
 
 class App extends React.Component<IAppProps, IAppState> {
+    static defaultProps: Partial<IAppProps> = {
+        items: [{
+            id: 'string',
+            label: 'Demo',
+            value: 'sadasd',
+        }],
+
+        addAction: addCheckbox,
+    };
+
     selectedItems = new Map(CheckboxSelectedItemsJson);
 
     constructor(props: IAppProps) {
@@ -49,9 +58,10 @@ class App extends React.Component<IAppProps, IAppState> {
     };
 
     render() {
+        // const { match: { url } } = this.props;
+        // console.log(this.props);
         return (
             <div>
-                <Header />
                 <button onClick={this.handleAdd}>Add more</button>
                 {this.props.items.map(item => (
                     <div key={item.id}>

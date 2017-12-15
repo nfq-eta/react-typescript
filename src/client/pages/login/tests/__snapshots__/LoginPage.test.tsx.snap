@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPage.js matches snapshot 1`] = `
+<main
+  className="page"
+>
+  Component name: LoginPage
+  <hr />
+  <NavLink
+    activeClassName="active"
+    ariaCurrent="true"
+    to="/"
+  >
+    back to home
+  </NavLink>
+</main>
+`;

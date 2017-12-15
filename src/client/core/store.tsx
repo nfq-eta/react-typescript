@@ -3,7 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { logger } from './middleware';
 
 import rootReducer, { IRootState } from './reducers';
-import { IItem } from '../components/checkbox/CheckBox';
+import { IItem } from '../components/checkbox/CheckBoxComponent';
 
 export function configureStore(initialState?: IRootState) {
     let middleware = applyMiddleware(logger);

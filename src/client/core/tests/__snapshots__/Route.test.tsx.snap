@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Route.js matches snapshot 1`] = `
+<Route
+  path="/"
+  render={[Function]}
+/>
+`;
+
+exports[`Route.js matches snapshot 2`] = `
+<Route
+  render={[Function]}
+/>
+`;

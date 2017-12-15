@@ -2,15 +2,15 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import enzymeToJson from 'enzyme-to-json';
 
-import { Header } from '../Header';
+import { EmptyLayout } from '../EmptyLayout';
 
-describe('Header.js', () => {
+describe('EmptyLayout.js', () => {
     it('renders without crashing', () => {
-        shallow(<Header/>);
+        shallow(<EmptyLayout/>);
     });
 
     it('matches snapshot', () => {
-        const wrapper = shallow(<Header/>);
+        const wrapper = shallow(<EmptyLayout/>);
         expect(enzymeToJson(wrapper)).toMatchSnapshot();
     });
 });

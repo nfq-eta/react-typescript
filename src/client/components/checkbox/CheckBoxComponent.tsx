@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as styles from './CheckBox.css';
+import * as styles from './CheckBoxComponent.css';
 
 export interface IItem {
     id: string;

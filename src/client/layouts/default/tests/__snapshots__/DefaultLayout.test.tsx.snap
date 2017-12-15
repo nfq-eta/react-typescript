@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DefaultLayout.js matches snapshot 1`] = `
+<div
+  className="layout"
+>
+  Component name: DefaultLayout
+  <HeaderComponent
+    key="header"
+  />
+  <main
+    key="content"
+  />
+  <FooterComponent
+    key="footer"
+  />
+</div>
+`;

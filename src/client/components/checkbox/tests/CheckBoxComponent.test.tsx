@@ -3,7 +3,13 @@ import { shallow } from 'enzyme';
 import enzymeToJson from 'enzyme-to-json';
 import {} from 'jest';
 
-import { CheckBox } from '../CheckBox';
+import { CheckBox } from '../CheckBoxComponent';
+
+const configure = require('enzyme').configure;
+const Adapter = require('enzyme-adapter-react-16');
+
+configure({ adapter: new Adapter() });
+
 
 describe('CheckBox.js', () => {
     const props = {
@@ -31,7 +37,7 @@ describe('CheckBox.js', () => {
 
     it('should be checked', () => {
         const wrapper = shallow(<CheckBox {...props} checked={true} />);
-        const appInstance = wrapper.instance() as CheckBox;
+        const appInstance = wrapper.instance();
         expect(appInstance.state.checked).toBeTruthy();
         expect(enzymeToJson(wrapper)).toMatchSnapshot();
     });
