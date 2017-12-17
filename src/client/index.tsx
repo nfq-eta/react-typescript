@@ -4,9 +4,9 @@ import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import { createBrowserHistory } from 'history';
 import { Router, Switch } from 'react-router-dom';
+import { Route } from 'react-router4-with-layouts';
 
 import { configureStore } from './core/store';
-import { Route } from './core/Route';
 import { DefaultLayout } from './layouts/default/DefaultLayout';
 import { HomePage } from './pages/home/HomePage';
 import { LoginPage } from './pages/login/LoginPage';
@@ -19,7 +19,7 @@ const history = createBrowserHistory();
 ReactDOM.render(
     <AppContainer>
         <Provider store={store}>
-            <Router  history={history}>
+            <Router history={history}>
                 <Switch>
                     <Route path="/" component={HomePage} exact={true} layout={DefaultLayout} />
                     <Route path="/demo" component={DemoPage} layout={DefaultLayout} />

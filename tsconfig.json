@@ -26,6 +26,7 @@
         "importHelpers": false,
         "typeRoots": [
             "./node_modules/json-d-ts",
+            "./node_modules/react-router4-with-layouts",
             "./node_modules/@types"
         ],
         "lib": [

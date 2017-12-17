@@ -9,14 +9,14 @@
     "scripts": {
         "cm": "git-cz",
         "prestart": "tcm -p src/client/**/*.{css,scss}",
-        "start": "cross-env NODE_ENV=development webpack-dev-server --open --content-base dist --env=dev",
+        "start": "cross-env NODE_ENV=development  webpack-dev-server --open --content-base dist --env=dev",
         "prebuild": "tcm -p src/client/**/*.{css,scss} && rimraf ./dist ./coverage",
         "cleanup": "yarn prebuild",
         "build": "cross-env NODE_ENV=production webpack -p --env=prod --display-error-details",
         "prebuild:start": "yarn build",
         "postbuild": "yarn build-storybook",
         "build:start": "serve -s -o -C -n dist",
-        "lint": "tslint -c tslint.json -p tsconfig.json -t stylish ",
+        "lint": "tslint -c tslint.json -p tsconfig.json -t stylish",
         "lint:css": "stylelint './src/client/**/*.{css,scss}'",
         "test": "jest --watch --no-cache",
         "test:ci": "jest --env=jsdom --no-cache --maxWorkers=2",
@@ -130,6 +130,7 @@
         "react": "^16.1.1",
         "react-dom": "^16.1.1",
         "react-redux": "5.0.6",
+        "react-router4-with-layouts": "1.2.0",
         "redux": "3.7.2"
     },
     "jest": {
