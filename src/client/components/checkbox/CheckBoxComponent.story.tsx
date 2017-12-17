@@ -3,10 +3,10 @@ import { storiesOf } from '@storybook/react';
 import { object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import { CheckBox, IItem } from './CheckBox';
+import { CheckBox, IItem } from './CheckBoxComponent';
 
-storiesOf('components/checkBox', module)
-    .add('CheckBox.js', () => {
+storiesOf('components/CheckBoxComponent', module)
+    .add('CheckBoxComponent.js', () => {
         return (
             <CheckBox
                 item={object('Item', {

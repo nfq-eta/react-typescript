@@ -82,6 +82,7 @@ const config: webpack.Configuration = strategy(
     devServer: {
         hot: true,
         quiet: true,
+        historyApiFallback: true,
     },
 });
 

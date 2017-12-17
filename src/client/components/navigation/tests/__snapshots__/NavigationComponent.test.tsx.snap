@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationComponent.js matches snapshot 1`] = `
+<nav
+  className="navigation"
+>
+  <div>
+    Component name: NavigationComponent
+  </div>
+  <NavLink
+    activeClassName="active"
+    ariaCurrent="true"
+    exact={true}
+    to="/"
+  >
+    Home
+  </NavLink>
+  <NavLink
+    activeClassName="active"
+    ariaCurrent="true"
+    to="/demo"
+  >
+    Demo
+  </NavLink>
+  <NavLink
+    activeClassName="active"
+    ariaCurrent="true"
+    style={
+      Object {
+        "float": "right",
+      }
+    }
+    to="/login"
+  >
+    Login
+  </NavLink>
+</nav>
+`;

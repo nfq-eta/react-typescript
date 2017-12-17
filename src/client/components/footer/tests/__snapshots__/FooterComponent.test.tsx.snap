@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FooterComponent.js matches snapshot 1`] = `
+<footer
+  className="footer"
+>
+  Component name: FooterComponent
+</footer>
+`;

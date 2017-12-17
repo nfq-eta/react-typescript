@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import enzymeToJson from 'enzyme-to-json';
-import {} from 'jest';
 
-import { AppDisconnected, mapStateToProps } from '../App';
+import { AppDisconnected, mapStateToProps } from '../AppContainer';
 import { IRootState } from '../../core/reducers';
 
 describe('App.tsx', () => {
@@ -25,7 +24,7 @@ describe('App.tsx', () => {
 
     it('Title should be visible', () => {
         const wrapper = shallow(<AppDisconnected {...props} />);
-        expect(wrapper.find('Header').length).toBe(1);
+        expect(wrapper.find('button').length).toBe(1);
     });
 
     it('should handle click', () => {
