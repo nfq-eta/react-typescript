@@ -37,4 +37,4 @@ deploy:
     script: github-release-from-changelog
     skip_cleanup: true
     on:
-      tag: true
+      tags: true
