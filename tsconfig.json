@@ -6,6 +6,7 @@
         "module": "commonjs",
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
+        "skipDefaultLibCheck": true,
         "experimentalDecorators": true,
         "jsx": "react",
         "allowJs": true,
@@ -26,7 +27,6 @@
         "importHelpers": false,
         "typeRoots": [
             "./node_modules/json-d-ts",
-            "./node_modules/react-router4-with-layouts",
             "./node_modules/@types"
         ],
         "lib": [
