@@ -2,18 +2,18 @@
 require("ts-node").register(
     {filename: '../webpack.prod.ts'}
 );
-const webpacConfig = require('../webpack.prod').default;
+const webpackConfig = require('../webpack.prod').config;
 
 module.exports = {
     plugins: [
         // your custom plugins
     ],
     resolve: {
-        extensions: webpacConfig.resolve.extensions,
+        extensions: webpackConfig.resolve.extensions,
     },
     module: {
         rules: [
-            webpacConfig.module.rules[0],
+            webpackConfig.module.rules[0],
             {
                 test: /\.(css|sass|scss)$/,
                 exclude: /node_modules/,
