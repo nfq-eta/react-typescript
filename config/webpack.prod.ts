@@ -4,9 +4,10 @@ import * as path from 'path';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
-import webpackCommon from './webpack.common';
+import { webpackCommon } from './webpack.common';
+import * as DotenvPlugin from 'webpack-dotenv-plugin';
 
-const config: webpack.Configuration = strategy(
+export const config: webpack.Configuration = strategy(
     {
         plugins: 'prepend',
     },
@@ -81,7 +82,9 @@ const config: webpack.Configuration = strategy(
             cssProcessorOptions: { discardComments: { removeAll: true } },
             canPrint: false,
         }),
+        new DotenvPlugin({
+            sample: '.env.example',
+            path: `.env.${process.env.NODE_ENV}`,
+        }),
     ],
 });
-
-export default config;

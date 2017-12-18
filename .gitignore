@@ -7,3 +7,6 @@ coverage/
 *.css.d.ts
 *.scss.d.ts
 storybook-static/
+/.env.production
+/.env.staging
+/.env
