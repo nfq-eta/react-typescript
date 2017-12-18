@@ -10,7 +10,6 @@ cache:
     - node_modules
 
 before_install:
-  - export BASE_PATH=$BASE_PATH
   - npm i -g github-release-from-changelog
 
 after_success:
