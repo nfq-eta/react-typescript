@@ -1,7 +1,7 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
 
-const config = {
+export const webpackCommon = {
     entry: {
         vendors: Object.keys(require(path.resolve('package.json')).dependencies),
     },
@@ -23,9 +23,7 @@ const config = {
             ],
             minChunks: Infinity,
         }),
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-        }),
+        new webpack.EnvironmentPlugin(['NODE_ENV']),
     ],
     externals: [],
     node: {
@@ -37,5 +35,3 @@ const config = {
         child_process: 'empty',
     },
 };
-
-export default config;

@@ -7,6 +7,7 @@ Bundle size should be minimum as possible
 
 ### How to start
 1. `yarn` Install dependencies
+1. Copy `.env.example` to `.env`
 1. `yarn start` Start development
 1. `yarn start:storybook` Start storybook
 1. `yarn build` Build for production

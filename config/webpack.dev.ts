@@ -1,15 +1,16 @@
 import * as webpack from 'webpack';
-import webpackCommon from './webpack.common';
+import { webpackCommon } from './webpack.common';
 import { strategy } from 'webpack-merge';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as path from 'path';
 import * as DashboardPlugin from 'webpack-dashboard/plugin';
 import * as Dashboard from 'webpack-dashboard';
+import * as DotenvPlugin from 'webpack-dotenv-plugin';
 
 const dashboard = new Dashboard();
 
-const config: webpack.Configuration = strategy(
+export const config: webpack.Configuration = strategy(
     {
         plugins: 'prepend',
     },
@@ -78,6 +79,10 @@ const config: webpack.Configuration = strategy(
             minify: false,
         }),
         new ExtractTextPlugin('static/css/styles.css'),
+        new DotenvPlugin({
+            sample: '.env.example',
+            path: '.env',
+        }),
     ],
     devServer: {
         hot: true,
@@ -85,5 +90,3 @@ const config: webpack.Configuration = strategy(
         historyApiFallback: true,
     },
 });
-
-export default config;
