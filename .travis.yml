@@ -5,18 +5,13 @@ language: node_js
 node_js:
   - 8.4
 
-env:
-  global:
-    - BASE_PATH=$BASE_PATH
-
 cache:
   directories:
     - node_modules
 
 before_install:
-- echo -e "machine github.com\n  login $GITHUB_TOKEN" >> ~/.netrc
-- git lfs pull
-- npm i -g github-release-from-changelog
+  - export BASE_PATH=$BASE_PATH
+  - npm i -g github-release-from-changelog
 
 after_success:
   - npm i -g codecov.io coveralls
@@ -28,8 +23,6 @@ script:
   - yarn build
   - yarn test:coverage
 
-before_deploy:
-  - export CI=false
 deploy:
   - provider: pages
     name: Github Pages
