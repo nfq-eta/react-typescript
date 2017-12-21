@@ -17,7 +17,7 @@ const store = configureStore();
 ReactDOM.render(
     <AppContainer>
         <Provider store={store}>
-            <Router basename={`${process.env.c}`}>
+            <Router basename={`${process.env.BASE_PATH}`}>
                 <Switch>
                     <Route path="/" component={HomePage} exact={true} layout={DefaultLayout} />
                     <Route path="/demo" component={DemoPage} layout={DefaultLayout} />
