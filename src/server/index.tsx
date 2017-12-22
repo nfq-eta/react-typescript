@@ -66,16 +66,14 @@ app.use((req: express.Request, res: express.Response) => {
 
     const context: { url?: string } = {};
     const html = renderToString(
-        <Provider store={store}>
-            <Provider store={store}>
-                <StaticRouter basename={`${process.env.BASE_PATH}`}>
-                    <Switch>
-                        <Route path="/" component={HomePage} exact={true} layout={DefaultLayout} />
-                        <Route path="/demo" component={DemoPage} layout={DefaultLayout} />
-                        <Route path="/login" component={LoginPage} layout={EmptyLayout} />
-                    </Switch>
-                </StaticRouter>
-            </Provider>
+<Provider store={store}>
+            <StaticRouter basename={`${process.env.BASE_PATH}`}>
+                <Switch>
+                    <Route path="/" component={HomePage} exact={true} layout={DefaultLayout} />
+                    <Route path="/demo" component={DemoPage} layout={DefaultLayout} />
+                    <Route path="/login" component={LoginPage} layout={EmptyLayout} />
+                </Switch>
+            </StaticRouter>
         </Provider>,
     );
     if (context.url) {
