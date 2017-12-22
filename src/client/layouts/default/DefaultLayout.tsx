@@ -18,7 +18,7 @@ export class DefaultLayout extends React.Component<IDefaultLayoutProps, IDefault
             <div className={styles.layout}>
                 Component name: DefaultLayout
                 <HeaderComponent key={'header'} />
-                <main key={'content'}>{this.props.children}</main>
+                {this.props.children}
                 <FooterComponent key={'footer'} />
             </div>
         );
