@@ -8,9 +8,6 @@ exports[`DefaultLayout.js matches snapshot 1`] = `
   <HeaderComponent
     key="header"
   />
-  <main
-    key="content"
-  />
   <FooterComponent
     key="footer"
   />

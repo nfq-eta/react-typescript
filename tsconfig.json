@@ -17,17 +17,17 @@
         "noUnusedParameters": true,
         "strictNullChecks": true,
         "pretty": true,
-        "outDir": "./dist",
+        "outDir": "dist",
         "rootDirs": [
-            "./src",
-            "./config"
+            "src/client",
+            "config"
         ],
         "preserveConstEnums": true,
         "removeComments": true,
         "importHelpers": false,
         "typeRoots": [
-            "./node_modules/json-d-ts",
-            "./node_modules/@types"
+            "node_modules/json-d-ts",
+            "node_modules/@types"
         ],
         "lib": [
             "dom",
@@ -37,11 +37,15 @@
         "skipLibCheck": true
     },
     "exclude": [
-        "./node_modules",
-        "./src/**/*.test.tsx"
+        "node_modules",
+        "src/client/**/*.test.tsx",
+        "src/server/**/*"
     ],
     "include": [
-        "./src/**/*",
-        "./typings/**/*"
+        "src/client/**/*",
+        "typings/**/*"
+    ],
+    "files": [
+        "./typings/typings.d.ts"
     ]
 }

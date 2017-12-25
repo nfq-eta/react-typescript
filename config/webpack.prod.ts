@@ -20,8 +20,8 @@ export const config: webpack.Configuration = strategy(
     },
 
     output: {
-        filename: 'js/[name].[hash].min.js',
-        chunkFilename: 'js/[name].[hash].chunk.js',
+        filename: 'js/[name].js',
+        chunkFilename: 'js/[name].chunk.js',
     },
 
     devtool: false,
@@ -77,7 +77,7 @@ export const config: webpack.Configuration = strategy(
                 minifyURLs: true,
             },
         }),
-        new ExtractTextPlugin('static/css/[name].[chunkhash:8].min.css'),
+        new ExtractTextPlugin('css/[name].css'),
         new OptimizeCssAssetsPlugin({
             cssProcessorOptions: { discardComments: { removeAll: true } },
             canPrint: false,
@@ -85,6 +85,7 @@ export const config: webpack.Configuration = strategy(
         new DotenvPlugin({
             sample: '.env.example',
             path: `.env.${process.env.NODE_ENV}`,
+            allowEmptyValues: true,
         }),
     ],
 });

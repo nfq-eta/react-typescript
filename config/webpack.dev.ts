@@ -78,10 +78,11 @@ export const config: webpack.Configuration = strategy(
             title: require(path.resolve('package.json')).description,
             minify: false,
         }),
-        new ExtractTextPlugin('static/css/styles.css'),
+        new ExtractTextPlugin('css/styles.css'),
         new DotenvPlugin({
             sample: '.env.example',
             path: '.env',
+            allowEmptyValues: true,
         }),
     ],
     devServer: {

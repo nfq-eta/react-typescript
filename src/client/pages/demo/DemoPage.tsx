@@ -19,7 +19,7 @@ export class DemoPage extends React.Component<IDemoPageProps, IDemoPageState> {
         return (
             <main className={styles.page}>
                 Component name: DemoPage
-                <AppContainer addAction={addCheckbox} items={[{ id: '', label: '', value: '' }]} />
+                <AppContainer addAction={addCheckbox} items={[]} />
             </main>
         );
     }

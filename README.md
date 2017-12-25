@@ -65,6 +65,7 @@ Bundle size should be minimum as possible
 | `yarn lint:css`       | Lint scss/css files                    |
 | `yarn test`           | Start test enviroiment for development |
 | `yarn test:coverage`  | Display tests coverage                 |
+| `yarn start:server`   | Test SSR locally                       |
 
 ## Contribute
 ## <a name="commits"></a> Git Commit Guidelines
@@ -84,5 +85,8 @@ A detailed explanation borrowed from angular and can be found in this [document]
 * [ ] i18n
 * [ ] Red box for react errors?
 * [ ] Server side rendering
+* [ ] Use redux-observable instead saga
+* [ ] Assets (css, js) caching
+* [ ] HMR route v4
 
 [commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#

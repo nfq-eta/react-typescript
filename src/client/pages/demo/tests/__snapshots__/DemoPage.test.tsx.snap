@@ -7,15 +7,7 @@ exports[`DemoPage.js matches snapshot 1`] = `
   Component name: DemoPage
   <Connect(App)
     addAction={[Function]}
-    items={
-      Array [
-        Object {
-          "id": "",
-          "label": "",
-          "value": "",
-        },
-      ]
-    }
+    items={Array []}
   />
 </main>
 `;
