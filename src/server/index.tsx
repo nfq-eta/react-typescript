@@ -57,7 +57,7 @@ app.use((req: express.Request, res: express.Response) => {
     const html = renderToString(
         <Provider store={store}>
             <StaticRouter
-                basename={process.env.BASE_PATH ? process.env.BASE_PATH : ''}
+                basename={process.env.BASE_PATH !== '' ? process.env.BASE_PATH : undefined}
                 location={req.url}
                 context={context}
             >

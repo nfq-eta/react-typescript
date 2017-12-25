@@ -14,7 +14,7 @@ function reactRender(App: any) {
     ReactDOM.hydrate(
         <AppContainer>
             <Provider store={store}>
-                <BrowserRouter basename={process.env.BASE_PATH ? process.env.BASE_PATH : ''}>
+                <BrowserRouter basename={process.env.BASE_PATH !== '' ? process.env.BASE_PATH : undefined}>
                     <App />
                 </BrowserRouter>
             </Provider>
