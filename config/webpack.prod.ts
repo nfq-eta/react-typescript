@@ -85,6 +85,7 @@ export const config: webpack.Configuration = strategy(
         new DotenvPlugin({
             sample: '.env.example',
             path: `.env.${process.env.NODE_ENV}`,
+            allowEmptyValues: true,
         }),
     ],
 });

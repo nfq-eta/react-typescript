@@ -44,5 +44,8 @@
     "include": [
         "src/client/**/*",
         "typings/**/*"
+    ],
+    "files": [
+        "./typings/typings.d.ts"
     ]
 }

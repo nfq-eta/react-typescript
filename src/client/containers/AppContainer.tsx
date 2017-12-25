@@ -4,8 +4,6 @@ import { connect, MapDispatchToProps } from 'react-redux';
 import * as uniqId from 'uniqid';
 
 import { CheckBox, IItem } from '../components/checkbox/CheckBoxComponent';
-import * as CheckboxItemsJson from '../components/checkbox/tests/__mocks__/CheckboxItems.json';
-import * as CheckboxSelectedItemsJson from '../components/checkbox/tests/__mocks__/CheckboxSelectedItems.json';
 import { addCheckbox } from '../modules/checkbox/actions';
 import { IRootState } from '../core/reducers';
 
@@ -29,12 +27,12 @@ class App extends React.Component<IAppProps, IAppState> {
         addAction: addCheckbox,
     };
 
-    selectedItems = new Map(CheckboxSelectedItemsJson);
+    selectedItems = new Map();
 
     constructor(props: IAppProps) {
         super(props);
 
-        this.state = { items: CheckboxItemsJson };
+        this.state = { items: [] };
     }
 
     handleClick = (item: IItem, checked: boolean) => {
@@ -58,8 +56,6 @@ class App extends React.Component<IAppProps, IAppState> {
     };
 
     render() {
-        // const { match: { url } } = this.props;
-        // console.log(this.props);
         return (
             <div>
                 <button onClick={this.handleAdd}>Add more</button>

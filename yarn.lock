@@ -280,6 +280,10 @@
   dependencies:
     "@types/webpack" "*"
 
+"@types/get-port@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@types/get-port/-/get-port-3.2.0.tgz#f9e0a11443cc21336470185eae3dfba4495d29bc"
+
 "@types/history@*", "@types/history@4.6.2":
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.6.2.tgz#12cfaba693ba20f114ed5765467ff25fdf67ddb0"
@@ -4374,6 +4378,10 @@ get-pkg-repo@^1.0.0:
     parse-github-repo-url "^1.3.0"
     through2 "^2.0.0"
 
+get-port@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/get-port/-/get-port-3.2.0.tgz#dd7ce7de187c06c8bf353796ac71e099f0980ebc"
+
 get-stdin@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-4.0.1.tgz#b968c6b0a04384324902e8bf1a5df32579a450fe"
@@ -5799,6 +5807,10 @@ jsesc@^1.3.0:
 jsesc@~0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-0.5.0.tgz#e7dee66e35d6fc16f710fe91d5cf69f70f08911d"
+
+json-d-ts@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/json-d-ts/-/json-d-ts-1.0.1.tgz#149cf9e097adac5c78194cb9f0458a7f3e34ab0f"
 
 json-loader@^0.5.4, json-loader@^0.5.7:
   version "0.5.7"

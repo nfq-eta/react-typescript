@@ -4,26 +4,16 @@ import * as React from 'react';
 import HttpStatus from 'http-status-enum';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
-import { StaticRouter, Switch } from 'react-router-dom';
-import { Route } from 'react-router4-with-layouts';
-// import { routerMiddleware } from 'react-router-redux';
-// import createHistory from 'history/createMemoryHistory';
-// import { createStore, applyMiddleware } from 'redux';
-// import { createEpicMiddleware } from 'redux-observable';
+import { StaticRouter } from 'react-router-dom';
+import * as getPort from 'get-port';
 
-// import reducer, { epics, State } from './redux/reducer';
-// import AppContainer from './modules/AppContainer';
-import { DefaultLayout } from '../client/layouts/default/DefaultLayout';
-import { EmptyLayout } from '../client/layouts/empty/EmptyLayout';
-import { LoginPage } from '../client/pages/login/LoginPage';
-import { DemoPage } from '../client/pages/demo/DemoPage';
-import { HomePage } from '../client/pages/home/HomePage';
 import { configureStore } from '../client/core/store';
 import { IItem } from '../client/components/checkbox/CheckBoxComponent';
+import { CoreRoutes } from '../client/core/routes';
+import { initialState } from '../client/core/initialState';
 
-const normalizePort = (val: number | string): number | string | boolean => {
-    const nPort: number = typeof val === 'string' ? parseInt(val, 10) : val;
-    return isNaN(nPort) ? val : nPort >= 0 ? nPort : false;
+const normalizePort = (val: number | string): number => {
+    return typeof val === 'string' ? parseInt(val, 10) : val;
 };
 
 const renderHtml = (html: string, preLoadedState: IItem[]) => (
@@ -49,8 +39,8 @@ const renderHtml = (html: string, preLoadedState: IItem[]) => (
     `
 );
 
-const defaultPort = 8080;
-const port = normalizePort(process.env.PORT || defaultPort);
+// const defaultPort = 8080;
+const port = normalizePort(process.env.PORT || 8080);
 const app = express();
 
 app.use('/js', express.static(path.join('dist', 'js'), { redirect: false }));
@@ -61,18 +51,17 @@ app.use((req: express.Request, res: express.Response) => {
         routerMiddleware(createHistory()),
         createEpicMiddleware(epics),
     ));*/
-    console.log(req);
-    const store = configureStore();
 
+    const store = configureStore(initialState);
     const context: { url?: string } = {};
     const html = renderToString(
-<Provider store={store}>
-            <StaticRouter basename={`${process.env.BASE_PATH}`}>
-                <Switch>
-                    <Route path="/" component={HomePage} exact={true} layout={DefaultLayout} />
-                    <Route path="/demo" component={DemoPage} layout={DefaultLayout} />
-                    <Route path="/login" component={LoginPage} layout={EmptyLayout} />
-                </Switch>
+        <Provider store={store}>
+            <StaticRouter
+                basename={process.env.BASE_PATH ? process.env.BASE_PATH : ''}
+                location={req.url}
+                context={context}
+            >
+                <CoreRoutes />
             </StaticRouter>
         </Provider>,
     );
@@ -83,4 +72,7 @@ app.use((req: express.Request, res: express.Response) => {
     }
 });
 
-app.listen(port, () => console.log(`App is listening on ${port}`));
+getPort({ port }).then((rPort) => {
+    // tslint:disable-next-line:no-console
+    app.listen(rPort, () => console.log(`App is listening on http://localhost:${rPort}`));
+});
