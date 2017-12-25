@@ -1,6 +1,38 @@
+<a name="1.5.0"></a>
+# 1.5.0 (2017-12-25)
+
+* fix(router): Fix base path ([e5f3a1f](https://github.com/nfq-eta/react-typescript/commit/e5f3a1f)), closes [#34](https://github.com/nfq-eta/react-typescript/issues/34)
+* fix(SSR): Fixed SSR routes ([bbccc2e](https://github.com/nfq-eta/react-typescript/commit/bbccc2e))
+* fix(SSR): Fixed SSR routes ([dc55fe1](https://github.com/nfq-eta/react-typescript/commit/dc55fe1))
+* fix(SSR): Fixed SSR routes ([997f532](https://github.com/nfq-eta/react-typescript/commit/997f532))
+* fix(SSR): Fixed SSR routes ([d0da471](https://github.com/nfq-eta/react-typescript/commit/d0da471))
+* fix(SSR): Fixed SSR routes ([5a952c5](https://github.com/nfq-eta/react-typescript/commit/5a952c5))
+* style(ssr): Some ssr fixes ([424b704](https://github.com/nfq-eta/react-typescript/commit/424b704))
+* style(ssr): Some ssr fixes ([94af536](https://github.com/nfq-eta/react-typescript/commit/94af536))
+* build(SSR): Server side rendering ([eee4b03](https://github.com/nfq-eta/react-typescript/commit/eee4b03))
+* Merge branch 'master' of github.com:nfq-eta/react-typescript into feature/base-structure ([262f80f](https://github.com/nfq-eta/react-typescript/commit/262f80f))
+* Merge branch 'master' of github.com:nfq-eta/react-typescript into feature/base-structure ([fa1db59](https://github.com/nfq-eta/react-typescript/commit/fa1db59))
+* Merge branch 'master' of github.com:nfq-eta/react-typescript into feature/base-structure ([bc05a9d](https://github.com/nfq-eta/react-typescript/commit/bc05a9d))
+* Update .travis.yml ([bbaddc2](https://github.com/nfq-eta/react-typescript/commit/bbaddc2))
+* Update .travis.yml ([1d7daee](https://github.com/nfq-eta/react-typescript/commit/1d7daee))
+* Update .travis.yml ([b5a1a09](https://github.com/nfq-eta/react-typescript/commit/b5a1a09))
+* ci(travis): Added base path to react router ([8cadaf3](https://github.com/nfq-eta/react-typescript/commit/8cadaf3)), closes [#34](https://github.com/nfq-eta/react-typescript/issues/34)
+* ci(travis): Added base path to react router ([66b0f8b](https://github.com/nfq-eta/react-typescript/commit/66b0f8b)), closes [#34](https://github.com/nfq-eta/react-typescript/issues/34)
+* ci(travis): updated depenedency ([72bf6b2](https://github.com/nfq-eta/react-typescript/commit/72bf6b2))
+* ci(travis): updated depenedency ([5f14be8](https://github.com/nfq-eta/react-typescript/commit/5f14be8))
+* ci(travis): updated depenedency ([01c8f15](https://github.com/nfq-eta/react-typescript/commit/01c8f15))
+* refactor: Refactor base structure ([0462e13](https://github.com/nfq-eta/react-typescript/commit/0462e13)), closes [#32](https://github.com/nfq-eta/react-typescript/issues/32)
+
+
+### BREAKING CHANGE
+
+* index.tsx should be reafactored to keep in mind about SSR
+
+
 <a name="1.4.2"></a>
 ## 1.4.2 (2017-12-13)
 
+* chore(release): 1.4.2 ([c2ff584](https://github.com/nfq-eta/react-typescript/commit/c2ff584))
 * Saving files before refreshing line endings ([0740bdc](https://github.com/nfq-eta/react-typescript/commit/0740bdc))
 
 
