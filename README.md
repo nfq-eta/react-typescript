@@ -87,5 +87,6 @@ A detailed explanation borrowed from angular and can be found in this [document]
 * [ ] Server side rendering
 * [ ] Use redux-observable instead saga
 * [ ] Assets (css, js) caching
+* [ ] HMR route v4
 
 [commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
