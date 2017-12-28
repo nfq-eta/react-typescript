@@ -1,29 +1,27 @@
-module.exports = function (wallaby) {
-
+module.exports = function() {
     return {
         files: [
             {
                 pattern: 'src/**/*.tsx',
-                load: false
+                load: false,
             },
             {
                 pattern: 'src/**/*.json',
-                load: false
+                load: false,
             },
             {
                 pattern: 'src/**/*.test.tsx',
-                ignore: true
+                ignore: true,
             },
             {
                 pattern: 'src/**/*.story.tsx',
-                ignore: true
+                ignore: true,
             },
             {
                 pattern: 'src/client/index.tsx',
-                ignore: true
+                ignore: true,
             },
         ],
-
         tests: [
             {
                 pattern: 'src/**/*.test.tsx',

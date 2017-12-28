@@ -10,12 +10,12 @@ import * as DotenvPlugin from 'webpack-dotenv-plugin';
 export const config: webpack.Configuration = strategy(
     {
         plugins: 'prepend',
+        entry: 'prepend',
     },
 )(webpackCommon, {
     entry: {
         app: [
             'babel-polyfill',
-            './src/client/index.tsx',
         ],
     },
 
@@ -32,7 +32,7 @@ export const config: webpack.Configuration = strategy(
                 test: /.*\.tsx$/,
                 include: path.resolve('src'),
                 use: [
-                    'awesome-typescript-loader',
+                    'ts-loader?silent',
                 ],
             },
             {

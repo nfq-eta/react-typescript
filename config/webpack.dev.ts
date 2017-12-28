@@ -13,12 +13,12 @@ const dashboard = new Dashboard();
 export const config: webpack.Configuration = strategy(
     {
         plugins: 'prepend',
+        entry: 'prepend',
     },
 )(webpackCommon, {
     entry: {
         app: [
             'react-hot-loader/patch',
-            './src/client/index.tsx',
         ],
     },
 
@@ -34,10 +34,10 @@ export const config: webpack.Configuration = strategy(
         rules: [
             {
                 test: /.*\.tsx$/,
-                include: path.resolve('src'),
+                include: path.resolve('src/client'),
                 use: [
                     'react-hot-loader/webpack',
-                    'awesome-typescript-loader?silent',
+                    'ts-loader',
                 ],
             },
             {
