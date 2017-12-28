@@ -11,7 +11,8 @@ import { initialState } from './core/initialState';
 const store = configureStore(initialState);
 
 function reactRender(App: any) {
-    ReactDOM.hydrate(
+    const renderMethod = !!module.hot ? ReactDOM.render : ReactDOM.hydrate;
+    renderMethod(
         <AppContainer>
             <Provider store={store}>
                 <BrowserRouter basename={process.env.BASE_PATH !== '' ? process.env.BASE_PATH : undefined}>
@@ -27,8 +28,7 @@ reactRender(CoreRoutes);
 
 if (module.hot) {
     module.hot.accept('./core/routes', () => {
-        const NextApp = require('./core/routes').default;
-
+        const NextApp = require('./core/routes').CoreRoutes;
         reactRender(NextApp);
     });
 }

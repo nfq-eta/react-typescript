@@ -20,6 +20,7 @@
         "outDir": "dist",
         "rootDirs": [
             "src/client",
+            "src/server",
             "config"
         ],
         "preserveConstEnums": true,
@@ -42,10 +43,9 @@
         "src/server/**/*"
     ],
     "include": [
-        "src/client/**/*",
-        "typings/**/*"
+        "src/**/*"
     ],
     "files": [
-        "./typings/typings.d.ts"
+        "./src/typings/client.d.ts"
     ]
 }

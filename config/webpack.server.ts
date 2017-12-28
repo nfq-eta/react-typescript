@@ -41,7 +41,7 @@ export const config: webpack.Configuration = {
                 test: /.*\.tsx?$/,
                 include: path.resolve('src'),
                 use: [
-                    'awesome-typescript-loader',
+                    'ts-loader',
                 ],
             },
             {

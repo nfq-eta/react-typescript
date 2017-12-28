@@ -4,6 +4,9 @@ import * as webpack from 'webpack';
 export const webpackCommon = {
     entry: {
         vendors: Object.keys(require(path.resolve('package.json')).dependencies),
+        app: [
+            './src/client/index.tsx',
+        ],
     },
 
     output: {
