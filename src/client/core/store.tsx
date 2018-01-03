@@ -1,9 +1,8 @@
-import { createStore, applyMiddleware, Store } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { logger } from './middleware';
 
 import rootReducer, { IRootState } from './reducers';
-import { IItem } from '../components/checkbox/CheckBoxComponent';
 
 export function configureStore(initialState?: IRootState) {
     let middleware = applyMiddleware(logger);
@@ -12,11 +11,11 @@ export function configureStore(initialState?: IRootState) {
         middleware = composeWithDevTools(middleware);
     }
 
-    const store = createStore(rootReducer, initialState, middleware) as Store<IItem[]>;
+    const store = createStore(rootReducer, initialState, middleware);
 
     if (module.hot) {
         module.hot.accept('./reducers', () => {
-            const nextReducer = require('./reducers');
+            const nextReducer = require('./reducers').default;
             store.replaceReducer(nextReducer);
         });
     }

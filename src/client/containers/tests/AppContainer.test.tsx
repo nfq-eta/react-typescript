@@ -5,7 +5,7 @@ import enzymeToJson from 'enzyme-to-json';
 import { AppDisconnected, mapStateToProps } from '../AppContainer';
 import { IRootState } from '../../core/reducers';
 
-describe('App.tsx', () => {
+describe('AppContainer.tsx', () => {
     const props = {
         items: [
             { id: 'demo1', label: 'Demo', value: 'demo' },
@@ -22,9 +22,9 @@ describe('App.tsx', () => {
         expect(enzymeToJson(wrapper)).toMatchSnapshot();
     });
 
-    it('Title should be visible', () => {
+    it('Buttons should be visible', () => {
         const wrapper = shallow(<AppDisconnected {...props} />);
-        expect(wrapper.find('button').length).toBe(1);
+        expect(wrapper.find('button').length).toBe(2);
     });
 
     it('should handle click', () => {

@@ -8,15 +8,15 @@ import { StaticRouter } from 'react-router-dom';
 import * as getPort from 'get-port';
 
 import { configureStore } from '../client/core/store';
-import { IItem } from '../client/components/checkbox/CheckBoxComponent';
 import { CoreRoutes } from '../client/core/routes';
 import { initialState } from '../client/core/initialState';
+import { IRootState } from '../client/core/reducers';
 
 const normalizePort = (val: number | string): number => {
     return typeof val === 'string' ? parseInt(val, 10) : val;
 };
 
-const renderHtml = (html: string, preLoadedState: IItem[]) => (
+const renderHtml = (html: string, preLoadedState: IRootState) => (
     `
     <!doctype html>
     <html>
@@ -39,7 +39,6 @@ const renderHtml = (html: string, preLoadedState: IItem[]) => (
     `
 );
 
-// const defaultPort = 8080;
 const port = normalizePort(process.env.PORT || 8080);
 const app = express();
 
@@ -68,7 +67,7 @@ app.use((req: express.Request, res: express.Response) => {
     if (context.url) {
         res.redirect(HttpStatus.MOVED_PERMANENTLY, context.url);
     } else {
-        res.send(renderHtml(html, store.getState()));
+        res.send(renderHtml(html, store.getState() as IRootState));
     }
 });
 

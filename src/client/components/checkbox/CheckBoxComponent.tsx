@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as styles from './CheckBoxComponent.css';
 
 export interface IItem {
-    id: string;
+    id: string | number;
     value: string | number;
     label: string;
 }
