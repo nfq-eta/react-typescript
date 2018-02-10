@@ -36,3 +36,9 @@ deploy:
     skip_cleanup: true
     on:
       tags: true
+  - provider: heroku
+    api_key:
+      secure: $HEROKU_TOKEN
+    skip_cleanup: true
+    on:
+      branch: master

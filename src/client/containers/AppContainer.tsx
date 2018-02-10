@@ -55,6 +55,10 @@ class App extends React.Component<IAppProps, IAppState> {
         });
     };
 
+    handleDelete = () => {
+        // console.log(item);
+    };
+
     render() {
         return (
             <div>
@@ -63,9 +67,9 @@ class App extends React.Component<IAppProps, IAppState> {
                     <div key={item.id}>
                         <CheckBox
                             item={item}
-                            checked={this.isSelected(item) || false}
                             handleClick={this.handleClick}
                         />
+                        <button onClick={this.handleDelete.bind(this, item)}>Delete</button>
                     </div>
                 ))}
             </div>

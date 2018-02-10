@@ -4,21 +4,22 @@ import { strategy } from 'webpack-merge';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as path from 'path';
-import * as DashboardPlugin from 'webpack-dashboard/plugin';
-import * as Dashboard from 'webpack-dashboard';
 import * as DotenvPlugin from 'webpack-dotenv-plugin';
+
+const Dashboard = require('webpack-dashboard');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 const dashboard = new Dashboard();
 
 export const config: webpack.Configuration = strategy(
     {
         plugins: 'prepend',
+        entry: 'prepend',
     },
 )(webpackCommon, {
     entry: {
         app: [
             'react-hot-loader/patch',
-            './src/client/index.tsx',
         ],
     },
 
@@ -34,10 +35,10 @@ export const config: webpack.Configuration = strategy(
         rules: [
             {
                 test: /.*\.tsx$/,
-                include: path.resolve('src'),
+                include: path.resolve('src/client'),
                 use: [
                     'react-hot-loader/webpack',
-                    'awesome-typescript-loader?silent',
+                    'ts-loader',
                 ],
             },
             {

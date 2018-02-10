@@ -1,3 +1,4 @@
+require('jest');
 require('raf/polyfill');
 
 const configure = require('enzyme').configure;

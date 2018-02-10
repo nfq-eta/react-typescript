@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`initialState.js matches snapshot 1`] = `
+Object {
+  "checkBoxItems": Array [
+    Object {
+      "id": "1",
+      "label": "1",
+      "value": "1",
+    },
+    Object {
+      "id": "2",
+      "label": "2",
+      "value": "2",
+    },
+  ],
+}
+`;

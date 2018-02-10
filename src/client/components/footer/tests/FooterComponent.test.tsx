@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import enzymeToJson from 'enzyme-to-json';
 
 import { FooterComponent } from '../FooterComponent';
 
@@ -11,6 +10,6 @@ describe('FooterComponent.js', () => {
 
     it('matches snapshot', () => {
         const wrapper = shallow(<FooterComponent/>);
-        expect(enzymeToJson(wrapper)).toMatchSnapshot();
+        expect(wrapper).toMatchSnapshot();
     });
 });

@@ -1,9 +1,10 @@
 # React & typescript boilerplate [![Build is passing?](https://travis-ci.org/nfq-eta/react-typescript.svg?branch=master)](https://travis-ci.org/nfq-eta/react-typescript) [![Coverage Status](https://coveralls.io/repos/github/nfq-eta/react-typescript/badge.svg)](https://coveralls.io/github/nfq-eta/react-typescript) [![Waffle.io](https://badge.waffle.io/nfq-eta/react-typescript.svg?columns=Backlog,In%20Progress,Done)](https://waffle.io/nfq-eta/react-typescript)
 
 ## Why?
-Make it fast as possible. Current development environment starts in ~10s
-Build time as fast as possible
+Make it fast as possible. Current development environment starts in <10s
+Build time as fast as possible ~35s.
 Bundle size should be minimum as possible
+![performance](https://i.imgur.com/t3AS08T.png)
 
 ### How to start
 1. `yarn` Install dependencies
@@ -15,6 +16,7 @@ Bundle size should be minimum as possible
 1. [Configure wallaby test runner](https://wallabyjs.com/docs/intro/install.html)
 1. `yarn test` Run tests to check if everything is working
 1. `yarn prepush` Run before each push
+1. `yarn start:server` Start the server with SR (Server side rendering)
 
 #### What's inside
 * webpack v3
@@ -59,7 +61,8 @@ Bundle size should be minimum as possible
 ## Available commands
 |              Command  | Description                            |
 |---------------------: |----------------------------------------|
-| `yarn start`          | Start development enviroiment          |
+| `yarn dev`            | Start development environment          |
+| `yarn start`          | Start production environment           |
 | `yarn start:storybook`| Start storybook                        |
 | `yarn lint`           | Lint typescript files                  |
 | `yarn lint:css`       | Lint scss/css files                    |
@@ -84,9 +87,10 @@ A detailed explanation borrowed from angular and can be found in this [document]
 * [ ] E2E Tests
 * [ ] i18n
 * [ ] Red box for react errors?
-* [ ] Server side rendering
+* [x] Server side rendering
 * [ ] Use redux-observable instead saga
 * [ ] Assets (css, js) caching
 * [ ] HMR route v4
+* [ ] PWA
 
 [commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
