@@ -27,7 +27,8 @@
         "start": "node ./dist/server",
         "start:storybook": "start-storybook -p 6006 -c config/storybook",
         "build-storybook": "build-storybook -c config/storybook -o ./dist/docs",
-        "version": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+        "version": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+        "postinstall": "npm rebuild node-sass"
     },
     "devDependencies": {
         "@storybook/addon-actions": "3.2.17",
