@@ -625,14 +625,6 @@ ajv@^5.1.5:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.3.0"
 
-ajv@^6.1.1:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.1.1.tgz#978d597fbc2b7d0e5a5c3ddeb149a682f2abfa0e"
-  dependencies:
-    fast-deep-equal "^1.0.0"
-    fast-json-stable-stringify "^2.0.0"
-    json-schema-traverse "^0.3.0"
-
 align-text@^0.1.1, align-text@^0.1.3:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/align-text/-/align-text-0.1.4.tgz#0cd90a561093f35d0a99256c22b7069433fad117"
@@ -6219,7 +6211,7 @@ mixin-object@^2.0.1:
     for-in "^0.1.3"
     is-extendable "^0.1.1"
 
-mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
+mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
@@ -7521,17 +7513,6 @@ react-datetime@^2.11.0:
 react-deep-force-update@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-2.1.1.tgz#8ea4263cd6455a050b37445b3f08fd839d86e909"
-
-react-docgen-typescript-webpack-plugin@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-docgen-typescript-webpack-plugin/-/react-docgen-typescript-webpack-plugin-1.0.1.tgz#cb9fe5f40bf8de326ad8b7293ea6362368ac2da2"
-  dependencies:
-    ajv "^6.1.1"
-    react-docgen-typescript "^1.2.3"
-
-react-docgen-typescript@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/react-docgen-typescript/-/react-docgen-typescript-1.2.3.tgz#2801a69b7338eb93d732f77c7a5dfabada6a44bd"
 
 react-docgen@^2.15.0:
   version "2.20.0"
