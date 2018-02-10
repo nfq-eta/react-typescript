@@ -23,7 +23,7 @@
         "test:coverage": "cross-env NODE_ENV=test jest --env=jsdom --no-cache --coverage",
         "prepush": "yarn test:ci --notify && yarn lint && yarn lint:css",
         "dev": "cross-env NODE_ENV=development webpack-dev-server --open --env=dev",
-        "start": "node ./dist/server",
+        "start": "node ./dist/server.js",
         "start:storybook": "start-storybook -p 6006 -c config/storybook",
         "build-storybook": "build-storybook -c config/storybook -o ./dist/docs",
         "version": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"

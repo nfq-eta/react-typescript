@@ -42,7 +42,6 @@ deploy:
   - provider: heroku
     api_key:
       secure: $HEROKU_TOKEN
-    skip_cleanup: true
     app: nfq-react-typescript
     on:
       branch: master
