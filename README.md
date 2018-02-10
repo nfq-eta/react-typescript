@@ -61,7 +61,8 @@ Bundle size should be minimum as possible
 ## Available commands
 |              Command  | Description                            |
 |---------------------: |----------------------------------------|
-| `yarn start`          | Start development enviroiment          |
+| `yarn dev`            | Start development environment          |
+| `yarn start`          | Start production environment           |
 | `yarn start:storybook`| Start storybook                        |
 | `yarn lint`           | Lint typescript files                  |
 | `yarn lint:css`       | Lint scss/css files                    |

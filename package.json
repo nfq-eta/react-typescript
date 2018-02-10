@@ -8,7 +8,7 @@
     "homepage": "https://github.com/nfq-eta/react-typescript",
     "scripts": {
         "cm": "git-cz",
-        "prestart": "tcm -p src/client/**/*.{css,scss}",
+        "predev": "tcm -p src/client/**/*.{css,scss}",
         "prebuild": "tcm -p src/client/**/*.{css,scss} && rimraf ./dist ./coverage",
         "cleanup": "yarn prebuild",
         "build:server": "cross-env NODE_ENV=production webpack --env=server --display-error-details",
@@ -22,9 +22,9 @@
         "test:ci": "jest --env=jsdom --no-cache --maxWorkers=2",
         "test:coverage": "cross-env NODE_ENV=test jest --env=jsdom --no-cache --coverage",
         "prepush": "yarn test:ci --notify && yarn lint && yarn lint:css",
-        "start": "cross-env NODE_ENV=development webpack-dev-server --open --env=dev",
-        "prestart:server": "yarn build:server",
-        "start:server": "node ./dist/server",
+        "dev": "cross-env NODE_ENV=development webpack-dev-server --open --env=dev",
+        "prestart": "yarn build:server",
+        "start": "node ./dist/server",
         "start:storybook": "start-storybook -p 6006 -c config/storybook",
         "build-storybook": "build-storybook -c config/storybook -o ./dist/docs",
         "version": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
