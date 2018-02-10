@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import enzymeToJson from 'enzyme-to-json';
 
 import { CheckBox } from '../CheckBoxComponent';
 
@@ -20,7 +19,7 @@ describe('CheckBox.js', () => {
 
     it('matches snapshot', () => {
         const wrapper = shallow(<CheckBox {...props} />);
-        expect(enzymeToJson(wrapper)).toMatchSnapshot();
+        expect(wrapper).toMatchSnapshot();
     });
 
     it('Label should be visible', () => {
@@ -32,7 +31,7 @@ describe('CheckBox.js', () => {
         const wrapper = shallow(<CheckBox {...props} checked={true} />);
         const appInstance = wrapper.instance();
         expect(appInstance.state.checked).toBeTruthy();
-        expect(enzymeToJson(wrapper)).toMatchSnapshot();
+        expect(wrapper).toMatchSnapshot();
     });
 
     it('should toggle state', () => {

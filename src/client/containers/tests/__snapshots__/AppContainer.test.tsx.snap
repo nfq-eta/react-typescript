@@ -27,5 +27,25 @@ exports[`AppContainer.tsx matches snapshot 1`] = `
       Delete
     </button>
   </div>
+  <div
+    key="demo2"
+  >
+    <CheckBox
+      checked={false}
+      handleClick={[Function]}
+      item={
+        Object {
+          "id": "demo2",
+          "label": "Demo2",
+          "value": "demo2",
+        }
+      }
+    />
+    <button
+      onClick={[Function]}
+    >
+      Delete
+    </button>
+  </div>
 </div>
 `;

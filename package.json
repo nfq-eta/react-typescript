@@ -157,6 +157,9 @@
         "setupFiles": [
             "<rootDir>/config/jest/bootstrap.js"
         ],
+        "snapshotSerializers": [
+            "enzyme-to-json/serializer"
+        ],
         "transform": {
             "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
         },

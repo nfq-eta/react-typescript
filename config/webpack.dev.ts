@@ -4,9 +4,10 @@ import { strategy } from 'webpack-merge';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as path from 'path';
-import * as DashboardPlugin from 'webpack-dashboard/plugin';
-import * as Dashboard from 'webpack-dashboard';
 import * as DotenvPlugin from 'webpack-dotenv-plugin';
+
+const Dashboard = require('webpack-dashboard');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 const dashboard = new Dashboard();
 

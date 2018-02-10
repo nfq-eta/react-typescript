@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import enzymeToJson from 'enzyme-to-json';
 
 import { DefaultLayout } from '../DefaultLayout';
 
@@ -11,6 +10,6 @@ describe('DefaultLayout.js', () => {
 
     it('matches snapshot', () => {
         const wrapper = shallow(<DefaultLayout/>);
-        expect(enzymeToJson(wrapper)).toMatchSnapshot();
+        expect(wrapper).toMatchSnapshot();
     });
 });
