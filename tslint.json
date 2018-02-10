@@ -6,6 +6,7 @@
     },
     "rules": {
         "arrow-parens": false,
+        "no-var-requires": false,
         "arrow-return-shorthand": [false],
         "comment-format": [true, "check-space"],
         "import-blacklist": [true, "rxjs"],
@@ -39,7 +40,7 @@
         "prefer-method-signature": false,
         "prefer-template": [true, "allow-single-concat"],
         "semicolon": [true, "ignore-bound-class-methods"],
-        "strict-boolean-expressions": [false], // TODO: turn it on
+        "strict-boolean-expressions": [false],
         "ter-indent": [true, 4],
         "quotemark": [true, "single", "jsx-double"],
         "triple-equals": [true, "allow-null-check"],

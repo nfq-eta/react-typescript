@@ -1,8 +1,8 @@
 # React & typescript boilerplate [![Build is passing?](https://travis-ci.org/nfq-eta/react-typescript.svg?branch=master)](https://travis-ci.org/nfq-eta/react-typescript) [![Coverage Status](https://coveralls.io/repos/github/nfq-eta/react-typescript/badge.svg)](https://coveralls.io/github/nfq-eta/react-typescript) [![Waffle.io](https://badge.waffle.io/nfq-eta/react-typescript.svg?columns=Backlog,In%20Progress,Done)](https://waffle.io/nfq-eta/react-typescript)
 
 ## Why?
-Make it fast as possible. Current development environment starts in ~10s
-Build time as fast as possible
+Make it fast as possible. Current development environment starts in <10s
+Build time as fast as possible ~35s.
 Bundle size should be minimum as possible
 
 ### How to start
@@ -15,6 +15,7 @@ Bundle size should be minimum as possible
 1. [Configure wallaby test runner](https://wallabyjs.com/docs/intro/install.html)
 1. `yarn test` Run tests to check if everything is working
 1. `yarn prepush` Run before each push
+1. `yarn start:server` Start the server with SR (Server side rendering)
 
 #### What's inside
 * webpack v3

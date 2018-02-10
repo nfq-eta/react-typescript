@@ -1,7 +1,3 @@
-declare module '*.json';
-declare module 'webpack-dashboard';
-declare module 'webpack-dashboard/plugin';
-
 // noinspection TsLint
 import 'react-redux';
 
@@ -21,3 +17,7 @@ declare module 'react-redux' {
         ): InferableComponentDecorator<TOwnProps>;
     }
 }
+
+declare module '*.json';
+declare module 'webpack-dashboard';
+declare module 'webpack-dashboard/plugin';
