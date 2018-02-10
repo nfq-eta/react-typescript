@@ -4,6 +4,7 @@
 Make it fast as possible. Current development environment starts in <10s
 Build time as fast as possible ~35s.
 Bundle size should be minimum as possible
+![performance](https://i.imgur.com/t3AS08T.png)
 
 ### How to start
 1. `yarn` Install dependencies
@@ -85,9 +86,10 @@ A detailed explanation borrowed from angular and can be found in this [document]
 * [ ] E2E Tests
 * [ ] i18n
 * [ ] Red box for react errors?
-* [ ] Server side rendering
+* [x] Server side rendering
 * [ ] Use redux-observable instead saga
 * [ ] Assets (css, js) caching
 * [ ] HMR route v4
+* [ ] PWA
 
 [commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
