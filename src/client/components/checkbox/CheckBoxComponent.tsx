@@ -8,8 +8,11 @@ export interface IItem {
 }
 
 export interface IProps {
+    /** Checkbox item */
     item: IItem;
+    /** Handle Action called when checked */
     handleClick: (item: IItem, checked: boolean) => void;
+    /** Is it active by default? */
     checked?: boolean;
 }
 

@@ -22,9 +22,6 @@ script:
   - yarn build
   - yarn test:coverage
 
-before_deploy:
-  - echo '!dist/' >> .gitignore
-
 deploy:
   - provider: pages
     name: Github Pages
@@ -39,9 +36,3 @@ deploy:
     skip_cleanup: true
     on:
       tags: true
-  - provider: heroku
-    api_key:
-      secure: $HEROKU_TOKEN
-    app: nfq-react-typescript
-    on:
-      branch: master

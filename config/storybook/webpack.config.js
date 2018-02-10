@@ -1,12 +1,14 @@
 // @ts-check
-require("ts-node").register(
+const TSDocgenPlugin = require('react-docgen-typescript-webpack-plugin');
+
+require('ts-node').register(
     {filename: '../webpack.prod.ts'}
 );
 const webpackConfig = require('../webpack.prod').config;
 
 module.exports = {
     plugins: [
-        // your custom plugins
+        new TSDocgenPlugin(),
     ],
     resolve: {
         extensions: webpackConfig.resolve.extensions,
@@ -33,5 +35,5 @@ module.exports = {
                 ],
             },
         ]
-    },
+    }
 };
