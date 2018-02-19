@@ -2,5 +2,13 @@
     "eslint.enable": false,
     "prettier.eslintIntegration": true,
     "editor.formatOnSave": true,
-    "jest.pathToJest": "yarn test:ci"
+    "jest.pathToJest": "yarn test:ci",
+    "gitflow4code.init": {
+        "develop": "develop",
+        "master": "master",
+        "releases": "release/",
+        "hotfixes": "hotfix/",
+        "features": "feature/",
+        "support": ""
+    }
 }
