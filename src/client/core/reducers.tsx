@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import checkBoxReducers from '../modules/checkbox/reducers';
+import reducers from '../modules/checkbox/reducers';
 import { IItem } from '../components/checkbox/CheckBoxComponent';
 
 export interface IRootState {
@@ -7,7 +7,7 @@ export interface IRootState {
 }
 
 const rootReducer = combineReducers({
-    checkBoxItems: checkBoxReducers,
+    checkBoxItems: reducers,
 });
 
 export default rootReducer;

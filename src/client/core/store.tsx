@@ -1,17 +1,17 @@
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { logger } from './middleware';
+import { reduxLogger } from './middleware';
 
-import rootReducer, { IRootState } from './reducers';
+import reducers, { IRootState } from './reducers';
 
 export function configureStore(initialState?: IRootState) {
-    let middleware = applyMiddleware(logger);
+    let middleware = applyMiddleware(reduxLogger);
 
     if (process.env.NODE_ENV === 'development') {
         middleware = composeWithDevTools(middleware);
     }
 
-    const store = createStore(rootReducer, initialState, middleware);
+    const store = createStore(reducers, initialState, middleware);
 
     if (!!module.hot) {
         module.hot.accept('./reducers', () => {

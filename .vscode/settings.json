@@ -2,5 +2,9 @@
     "eslint.enable": false,
     "prettier.eslintIntegration": true,
     "editor.formatOnSave": true,
-    "jest.pathToJest": "yarn test:ci"
+    "jest.pathToJest": "yarn test:ci",
+    "tslint.enable": true,
+    "tslint.autoFixOnSave": false,
+    "tslint.alwaysShowStatus": true,
+    "tslint.packageManager": "yarn"
 }
