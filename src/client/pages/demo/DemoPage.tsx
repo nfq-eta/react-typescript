@@ -4,11 +4,9 @@ import * as styles from './DemoPage.scss';
 import AppContainer from '../../containers/AppContainer';
 import { addCheckbox } from '../../modules/checkbox/actions';
 
-export interface IDemoPageProps {
-}
+export interface IDemoPageProps {}
 
-export interface IDemoPageState {
-}
+export interface IDemoPageState {}
 
 export class DemoPage extends React.Component<IDemoPageProps, IDemoPageState> {
     constructor(props: IDemoPageProps) {

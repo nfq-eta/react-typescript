@@ -11,9 +11,9 @@ const item: IItem = {
 };
 
 describe('store/topics/reducer', () => {
-
     it('should have initial state', () => {
-        expect(addReducer(initialState, { type: ACTION.CHECKBOX.ADD, payload: item })).toEqual([item]);
+        expect(addReducer(initialState, { type: ACTION.CHECKBOX.ADD, payload: item })).toEqual([
+            item,
+        ]);
     });
-
 });

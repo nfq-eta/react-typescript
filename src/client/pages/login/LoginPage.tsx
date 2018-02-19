@@ -15,7 +15,7 @@ export class LoginPage extends React.Component<ILoginPageProps, ILoginPageState>
         return (
             <main className={styles.page}>
                 Component name: LoginPage
-                <hr/>
+                <hr />
                 <NavLink to={'/'}>back to home</NavLink>
             </main>
         );

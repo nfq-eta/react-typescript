@@ -15,12 +15,14 @@ function reactRender(App: any) {
     renderMethod(
         <AppContainer>
             <Provider store={store}>
-                <BrowserRouter basename={process.env.BASE_PATH !== '' ? process.env.BASE_PATH : undefined}>
+                <BrowserRouter
+                    basename={process.env.BASE_PATH !== '' ? process.env.BASE_PATH : undefined}
+                >
                     <App />
                 </BrowserRouter>
             </Provider>
         </AppContainer>,
-        document.getElementById('app')  as HTMLElement,
+        document.getElementById('app') as HTMLElement,
     );
 }
 

@@ -7,16 +7,12 @@ import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import { webpackCommon } from './webpack.common';
 import * as DotenvPlugin from 'webpack-dotenv-plugin';
 
-export const config: webpack.Configuration = strategy(
-    {
-        plugins: 'prepend',
-        entry: 'prepend',
-    },
-)(webpackCommon, {
+export const config: webpack.Configuration = strategy({
+    plugins: 'prepend',
+    entry: 'prepend',
+})(webpackCommon, {
     entry: {
-        app: [
-            'babel-polyfill',
-        ],
+        app: ['babel-polyfill'],
     },
 
     output: {
@@ -31,13 +27,11 @@ export const config: webpack.Configuration = strategy(
             {
                 test: /.*\.tsx$/,
                 include: path.resolve('src'),
-                use: [
-                    'ts-loader?silent',
-                ],
+                use: ['ts-loader?silent'],
             },
             {
                 test: /\.(css|sass|scss)$/,
-                exclude : /node_modules/,
+                exclude: /node_modules/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [

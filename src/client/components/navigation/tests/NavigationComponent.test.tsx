@@ -5,11 +5,11 @@ import { NavigationComponent } from '../NavigationComponent';
 
 describe('NavigationComponent.js', () => {
     it('renders without crashing', () => {
-        shallow(<NavigationComponent/>);
+        shallow(<NavigationComponent />);
     });
 
     it('matches snapshot', () => {
-        const wrapper = shallow(<NavigationComponent/>);
+        const wrapper = shallow(<NavigationComponent />);
         expect(wrapper).toMatchSnapshot();
     });
 });

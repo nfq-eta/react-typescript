@@ -1,11 +1,9 @@
 import * as React from 'react';
 import * as styles from './HomePage.scss';
 
-export interface IHomePageProps {
-}
+export interface IHomePageProps {}
 
-export interface IHomePageState {
-}
+export interface IHomePageState {}
 
 export class HomePage extends React.Component<IHomePageProps, IHomePageState> {
     constructor(props: IHomePageProps) {
@@ -13,10 +11,6 @@ export class HomePage extends React.Component<IHomePageProps, IHomePageState> {
     }
 
     render() {
-        return (
-            <main className={styles.page}>
-                Component name: HomePage
-            </main>
-        );
+        return <main className={styles.page}>Component name: HomePage</main>;
     }
 }

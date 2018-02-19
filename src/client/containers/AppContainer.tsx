@@ -18,11 +18,13 @@ export interface IAppState {
 
 class App extends React.Component<IAppProps, IAppState> {
     static defaultProps: Partial<IAppProps> = {
-        items: [{
-            id: 'string',
-            label: 'Demo',
-            value: 'sadasd',
-        }],
+        items: [
+            {
+                id: 'string',
+                label: 'Demo',
+                value: 'sadasd',
+            },
+        ],
 
         addAction: addCheckbox,
     };
@@ -65,10 +67,7 @@ class App extends React.Component<IAppProps, IAppState> {
                 <button onClick={this.handleAdd}>Add more</button>
                 {this.props.items.map(item => (
                     <div key={item.id}>
-                        <CheckBox
-                            item={item}
-                            handleClick={this.handleClick}
-                        />
+                        <CheckBox item={item} handleClick={this.handleClick} />
                         <button onClick={this.handleDelete.bind(this, item)}>Delete</button>
                     </div>
                 ))}
@@ -78,15 +77,15 @@ class App extends React.Component<IAppProps, IAppState> {
 }
 
 export function mapStateToProps(state: IRootState) {
-    return ({
+    return {
         items: state.checkBoxItems,
-    });
+    };
 }
 
 export function mapDispatchToProps(dispatch: MapDispatchToProps<any, any>) {
-    return ({
+    return {
         addAction: bindActionCreators(addCheckbox, dispatch),
-    });
+    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

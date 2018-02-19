@@ -27,7 +27,7 @@ const styles = readCss('dist/css/app.css');
 const name = require('../../package.json').name;
 const description = require('../../package.json').description;
 
-const renderHtml = (html: string, preLoadedState: IRootState) => (
+const renderHtml = (html: string, preLoadedState: IRootState) =>
     `
     <!doctype html>
     <html lang="en-us">
@@ -44,14 +44,16 @@ const renderHtml = (html: string, preLoadedState: IRootState) => (
         <body>
             <div id="app">${html}</div>
             <script>
-                window.__PRELOADED_STATE__ = ${JSON.stringify(preLoadedState).replace(/</g, '\\u003c')}
+                window.__PRELOADED_STATE__ = ${JSON.stringify(preLoadedState).replace(
+                    /</g,
+                    '\\u003c',
+                )}
             </script>
             <script src="/js/vendors.js" async></script>
             <script src="/js/app.js" async></script>
         </body>
     </html>
-    `
-);
+    `;
 
 const port = normalizePort(process.env.PORT || 8080);
 const app = express();
@@ -88,7 +90,7 @@ app.use((req: express.Request, res: express.Response) => {
     }
 });
 
-getPort({ port }).then((rPort) => {
+getPort({ port }).then(rPort => {
     // tslint:disable-next-line:no-console
     app.listen(rPort, () => console.log(`App is listening on http://localhost:${rPort}`));
 });

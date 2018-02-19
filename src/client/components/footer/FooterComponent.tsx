@@ -2,11 +2,9 @@ import * as React from 'react';
 
 import * as styles from './FooterComponent.scss';
 
-export interface IFooterComponentProps {
-}
+export interface IFooterComponentProps {}
 
-export interface IFooterComponentState {
-}
+export interface IFooterComponentState {}
 
 export class FooterComponent extends React.Component<IFooterComponentProps, IFooterComponentState> {
     constructor(props: IFooterComponentProps) {
@@ -14,10 +12,6 @@ export class FooterComponent extends React.Component<IFooterComponentProps, IFoo
     }
 
     render() {
-        return (
-            <footer className={styles.footer}>
-                Component name: FooterComponent
-            </footer>
-        );
+        return <footer className={styles.footer}>Component name: FooterComponent</footer>;
     }
 }

@@ -5,11 +5,11 @@ import { FooterComponent } from '../FooterComponent';
 
 describe('FooterComponent.js', () => {
     it('renders without crashing', () => {
-        shallow(<FooterComponent/>);
+        shallow(<FooterComponent />);
     });
 
     it('matches snapshot', () => {
-        const wrapper = shallow(<FooterComponent/>);
+        const wrapper = shallow(<FooterComponent />);
         expect(wrapper).toMatchSnapshot();
     });
 });

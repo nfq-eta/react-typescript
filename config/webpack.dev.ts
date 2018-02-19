@@ -11,16 +11,12 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 
 const dashboard = new Dashboard();
 
-export const config: webpack.Configuration = strategy(
-    {
-        plugins: 'prepend',
-        entry: 'prepend',
-    },
-)(webpackCommon, {
+export const config: webpack.Configuration = strategy({
+    plugins: 'prepend',
+    entry: 'prepend',
+})(webpackCommon, {
     entry: {
-        app: [
-            'react-hot-loader/patch',
-        ],
+        app: ['react-hot-loader/patch'],
     },
 
     output: {
@@ -36,14 +32,11 @@ export const config: webpack.Configuration = strategy(
             {
                 test: /.*\.tsx$/,
                 include: path.resolve('src/client'),
-                use: [
-                    'react-hot-loader/webpack',
-                    'ts-loader',
-                ],
+                use: ['react-hot-loader/webpack', 'ts-loader'],
             },
             {
                 test: /\.(css|sass|scss)$/,
-                exclude : /node_modules/,
+                exclude: /node_modules/,
                 use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
@@ -69,9 +62,7 @@ export const config: webpack.Configuration = strategy(
         new DashboardPlugin(dashboard.setData),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
-        new webpack.WatchIgnorePlugin([
-            /css\.d\.ts$/,
-        ]),
+        new webpack.WatchIgnorePlugin([/css\.d\.ts$/]),
         new HtmlWebpackPlugin({
             template: path.resolve('./src/client/index.html'),
             inject: 'body',

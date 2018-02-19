@@ -5,12 +5,11 @@ import { DemoPage } from '../DemoPage';
 
 describe('DemoPage.js', () => {
     it('renders without crashing', () => {
-        shallow(<DemoPage/>);
+        shallow(<DemoPage />);
     });
 
     it('matches snapshot', () => {
-        const wrapper = shallow(<DemoPage/>);
+        const wrapper = shallow(<DemoPage />);
         expect(wrapper).toMatchSnapshot();
     });
-
 });

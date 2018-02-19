@@ -5,11 +5,11 @@ import { HeaderComponent } from '../HeaderComponent';
 
 describe('HeaderComponent.js', () => {
     it('renders without crashing', () => {
-        shallow(<HeaderComponent/>);
+        shallow(<HeaderComponent />);
     });
 
     it('matches snapshot', () => {
-        const wrapper = shallow(<HeaderComponent/>);
+        const wrapper = shallow(<HeaderComponent />);
         expect(wrapper).toMatchSnapshot();
     });
 });

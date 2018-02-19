@@ -45,7 +45,11 @@ describe('AppContainer.tsx', () => {
 
         instance.handleAdd();
 
-        expect(props.addAction).toBeCalledWith({ id: expect.any(String), label: 'Demo', value: 'demo' });
+        expect(props.addAction).toBeCalledWith({
+            id: expect.any(String),
+            label: 'Demo',
+            value: 'demo',
+        });
     });
 
     it('mapStateToProps()', () => {
@@ -64,5 +68,5 @@ describe('AppContainer.tsx', () => {
         instance.selectedItems.set(item.id, item);
 
         expect(instance.isSelected(item)).toBe(true);
-    })
+    });
 });

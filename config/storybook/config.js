@@ -1,11 +1,11 @@
 // @ts-check
 import * as React from 'react';
-import {configure, addDecorator} from '@storybook/react';
-import {setOptions} from '@storybook/addon-options';
-import {withKnobs} from '@storybook/addon-knobs';
-import {withInfo, setDefaults} from '@storybook/addon-info';
+import { configure, addDecorator } from '@storybook/react';
+import { setOptions } from '@storybook/addon-options';
+import { withKnobs } from '@storybook/addon-knobs';
+import { withInfo, setDefaults } from '@storybook/addon-info';
 
-import {description, homepage} from '../../package.json';
+import { description, homepage } from '../../package.json';
 
 setOptions({
     name: description,
@@ -22,7 +22,9 @@ setDefaults({
     header: false, // Toggles display of header with component name and description
     inline: true, // Displays info inline vs click button to view
     source: true, // Displays the source of story Component
-    propTables: [/* Components used in story */], // displays Prop Tables with this components
+    propTables: [
+        /* Components used in story */
+    ], // displays Prop Tables with this components
     propTablesExclude: [], // Exclude Components from being shoun in Prop Tables section
     styles: {}, // Overrides style of addon
     marksyConf: {}, // Overrides components used to display markdown. Warning! This option's name will be likely deprecated in favor to "components" with the same API in 3.3 release. Follow this PR #1501 for details
@@ -34,7 +36,7 @@ setDefaults({
 
 addDecorator((story, context) => withInfo('common info')(story)(context));
 addDecorator(withKnobs);
-addDecorator(story => (<div style={{padding: 30}}>{story()}</div>));
+addDecorator(story => <div style={{ padding: 30 }}>{story()}</div>);
 
 const req = require.context('../../src/client', true, /.story.tsx$/);
 

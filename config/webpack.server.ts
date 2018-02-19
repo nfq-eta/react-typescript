@@ -4,9 +4,7 @@ import * as DotenvPlugin from 'webpack-dotenv-plugin';
 
 export const config: webpack.Configuration = {
     entry: {
-        server: [
-            './src/server/index.tsx',
-        ],
+        server: ['./src/server/index.tsx'],
     },
 
     target: 'node',
@@ -30,9 +28,7 @@ export const config: webpack.Configuration = {
 
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
-        modules: [
-            'node_modules',
-        ],
+        modules: ['node_modules'],
     },
 
     module: {
@@ -40,14 +36,12 @@ export const config: webpack.Configuration = {
             {
                 test: /.*\.tsx?$/,
                 include: path.resolve('src'),
-                use: [
-                    'ts-loader',
-                ],
+                use: ['ts-loader'],
             },
             {
                 test: /\.s?css$/,
                 loader: 'css-loader/locals?module&camelcase&&!sass-loader',
-                exclude : /node_modules/,
+                exclude: /node_modules/,
             },
         ],
     },

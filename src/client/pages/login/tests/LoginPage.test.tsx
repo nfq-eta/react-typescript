@@ -5,11 +5,11 @@ import { LoginPage } from '../LoginPage';
 
 describe('LoginPage.js', () => {
     it('renders without crashing', () => {
-        shallow(<LoginPage/>);
+        shallow(<LoginPage />);
     });
 
     it('matches snapshot', () => {
-        const wrapper = shallow(<LoginPage/>);
+        const wrapper = shallow(<LoginPage />);
         expect(wrapper).toMatchSnapshot();
     });
 });

@@ -5,11 +5,11 @@ import { HomePage } from '../HomePage';
 
 describe('HomePage.js', () => {
     it('renders without crashing', () => {
-        shallow(<HomePage/>);
+        shallow(<HomePage />);
     });
 
     it('matches snapshot', () => {
-        const wrapper = shallow(<HomePage/>);
+        const wrapper = shallow(<HomePage />);
         expect(wrapper).toMatchSnapshot();
     });
 });

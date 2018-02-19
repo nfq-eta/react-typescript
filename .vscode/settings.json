@@ -1,4 +1,6 @@
 {
     "eslint.enable": false,
+    "prettier.eslintIntegration": true,
+    "editor.formatOnSave": true,
     "jest.pathToJest": "yarn test:ci"
 }

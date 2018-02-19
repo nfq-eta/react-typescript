@@ -4,9 +4,7 @@ import * as webpack from 'webpack';
 export const webpackCommon = {
     entry: {
         vendors: Object.keys(require(path.resolve('package.json')).dependencies),
-        app: [
-            './src/client/index.tsx',
-        ],
+        app: ['./src/client/index.tsx'],
     },
 
     output: {
@@ -20,10 +18,7 @@ export const webpackCommon = {
 
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            names: [
-                'app',
-                'vendors',
-            ],
+            names: ['app', 'vendors'],
             minChunks: Infinity,
         }),
         new webpack.EnvironmentPlugin(['NODE_ENV']),

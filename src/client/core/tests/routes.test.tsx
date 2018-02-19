@@ -6,11 +6,11 @@ import { CoreRoutes } from '../routes';
 
 describe('routes.js', () => {
     it('renders without crashing', () => {
-        shallow(<CoreRoutes/>);
+        shallow(<CoreRoutes />);
     });
 
     it('matches snapshot', () => {
-        const wrapper = shallow(<CoreRoutes/>);
+        const wrapper = shallow(<CoreRoutes />);
         expect(toJson(wrapper)).toMatchSnapshot();
     });
 });

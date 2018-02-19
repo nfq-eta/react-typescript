@@ -5,11 +5,11 @@ import { EmptyLayout } from '../EmptyLayout';
 
 describe('EmptyLayout.js', () => {
     it('renders without crashing', () => {
-        shallow(<EmptyLayout/>);
+        shallow(<EmptyLayout />);
     });
 
     it('matches snapshot', () => {
-        const wrapper = shallow(<EmptyLayout/>);
+        const wrapper = shallow(<EmptyLayout />);
         expect(wrapper).toMatchSnapshot();
     });
 });

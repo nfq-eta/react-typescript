@@ -1,4 +1,2 @@
 import logger from 'redux-logger';
-export {
-    logger,
-};
+export { logger };
