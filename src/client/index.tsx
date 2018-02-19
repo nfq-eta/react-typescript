@@ -10,6 +10,7 @@ import { initialState } from './core/initialState';
 
 const store = configureStore(initialState);
 
+// tslint:disable-next-line:variable-name
 function reactRender(App: any) {
     const renderMethod = !!module.hot ? ReactDOM.render : ReactDOM.hydrate;
     renderMethod(
@@ -30,7 +31,7 @@ reactRender(CoreRoutes);
 
 if (module.hot) {
     module.hot.accept('./core/routes', () => {
-        const NextApp = require('./core/routes').CoreRoutes;
-        reactRender(NextApp);
+        const nextApp = require('./core/routes').CoreRoutes;
+        reactRender(nextApp);
     });
 }

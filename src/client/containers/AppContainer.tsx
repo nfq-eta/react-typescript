@@ -22,10 +22,9 @@ class App extends React.Component<IAppProps, IAppState> {
             {
                 id: 'string',
                 label: 'Demo',
-                value: 'sadasd',
+                value: 'demo',
             },
         ],
-
         addAction: addCheckbox,
     };
 
@@ -52,8 +51,8 @@ class App extends React.Component<IAppProps, IAppState> {
     handleAdd = () => {
         this.props.addAction({
             id: uniqId(),
-            value: 'demo',
             label: 'Demo',
+            value: 'demo',
         });
     };
 

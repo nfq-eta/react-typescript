@@ -3,12 +3,8 @@
     "prettier.eslintIntegration": true,
     "editor.formatOnSave": true,
     "jest.pathToJest": "yarn test:ci",
-    "gitflow4code.init": {
-        "develop": "develop",
-        "master": "master",
-        "releases": "release/",
-        "hotfixes": "hotfix/",
-        "features": "feature/",
-        "support": ""
-    }
+    "tslint.enable": true,
+    "tslint.autoFixOnSave": false,
+    "tslint.alwaysShowStatus": true,
+    "tslint.packageManager": "yarn"
 }

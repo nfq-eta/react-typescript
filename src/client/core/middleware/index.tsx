@@ -1,2 +1,2 @@
-import logger from 'redux-logger';
-export { logger };
+import reduxLogger from 'redux-logger';
+export { reduxLogger };

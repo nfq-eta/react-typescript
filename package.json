@@ -11,8 +11,10 @@
         "predev": "tcm -p src/client/**/*.{css,scss}",
         "prebuild": "tcm -p src/client/**/*.{css,scss} && rimraf ./dist ./coverage",
         "cleanup": "yarn prebuild",
-        "build:server": "cross-env NODE_ENV=production webpack --env=server --display-error-details",
-        "build": "cross-env NODE_ENV=production webpack -p --env=prod --display-error-details && yarn build:server",
+        "build:server":
+            "cross-env NODE_ENV=production webpack --env=server --display-error-details",
+        "build":
+            "cross-env NODE_ENV=production webpack -p --env=prod --display-error-details && yarn build:server",
         "prebuild:start": "yarn build",
         "postbuild": "yarn build-storybook",
         "build:start": "serve -s -o -C -n dist",
@@ -95,7 +97,7 @@
         "http-status-enum": "1.0.2",
         "husky": "0.14.3",
         "identity-obj-proxy": "3.0.0",
-        "jest": "21.2.1",
+        "jest": "22.3.0",
         "json-d-ts": "1.0.1",
         "lint-staged": "6.1.1",
         "mkdirp": "0.5.1",
@@ -119,22 +121,22 @@
         "serve": "6.4.1",
         "source-map-loader": "0.2.3",
         "style-loader": "0.19.0",
-        "stylelint": "8.3.1",
-        "stylelint-config-css-modules": "1.1.0",
-        "stylelint-config-sass-guidelines": "4.0.1",
-        "stylelint-order": "0.7.0",
-        "stylelint-scss": "2.1.0",
-        "ts-jest": "21.2.3",
-        "ts-loader": "3.2.0",
-        "ts-node": "3.3.0",
-        "tslib": "1.8.1",
-        "tslint": "5.8.0",
-        "tslint-config-airbnb": "5.4.2",
+        "stylelint": "9.0.0",
+        "stylelint-config-css-modules": "1.2.0",
+        "stylelint-config-sass-guidelines": "4.1.0",
+        "stylelint-order": "0.8.1",
+        "stylelint-scss": "2.3.0",
+        "ts-jest": "22.0.4",
+        "ts-loader": "3.5.0",
+        "ts-node": "4.1.0",
+        "tslib": "1.9.0",
+        "tslint": "5.9.1",
+        "tslint-config-airbnb": "5.6.0",
         "tslint-config-prettier": "1.8.0",
-        "tslint-react": "3.2.0",
-        "tsutils": "2.13.0",
+        "tslint-react": "3.5.1",
+        "tsutils": "2.21.1",
         "typed-css-modules": "0.3.1",
-        "typescript": "2.6.2",
+        "typescript": "2.7.2",
         "typescript-babel-jest": "1.0.5",
         "typings-for-css-modules-loader": "1.7.0",
         "uniqid": "4.1.1",
@@ -155,10 +157,7 @@
         "redux": "3.7.2"
     },
     "lint-staged": {
-        "src/**/*.{js,jsx,ts,tsx,json,css,scss}": [
-            "prettier --write",
-            "git add"
-        ]
+        "src/**/*.{js,jsx,ts,tsx,json,css,scss}": ["prettier --write", "git add"]
     },
     "jest": {
         "globals": {
@@ -166,12 +165,8 @@
                 "skipBabel": true
             }
         },
-        "setupFiles": [
-            "<rootDir>/config/jest/bootstrap.js"
-        ],
-        "snapshotSerializers": [
-            "enzyme-to-json/serializer"
-        ],
+        "setupFiles": ["<rootDir>/config/jest/bootstrap.js"],
+        "snapshotSerializers": ["enzyme-to-json/serializer"],
         "transform": {
             "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
         },
@@ -182,13 +177,7 @@
             "!<rootDir>/node_modules/",
             "!src/**/*.story.tsx"
         ],
-        "moduleFileExtensions": [
-            "js",
-            "jsx",
-            "json",
-            "ts",
-            "tsx"
-        ],
+        "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx"],
         "moduleNameMapper": {
             "^.+\\.s?css$": "identity-obj-proxy"
         },
@@ -196,18 +185,13 @@
         "coverageDirectory": "./coverage/"
     },
     "stylelint": {
-        "extends": [
-            "stylelint-config-sass-guidelines",
-            "stylelint-config-css-modules"
-        ],
+        "extends": ["stylelint-config-sass-guidelines", "stylelint-config-css-modules"],
         "rules": {
             "indentation": 4,
             "number-leading-zero": null,
             "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
             "order/properties-alphabetical-order": null,
-            "max-nesting-depth": [
-                3
-            ],
+            "max-nesting-depth": [3],
             "selector-max-compound-selectors": 4
         }
     },
