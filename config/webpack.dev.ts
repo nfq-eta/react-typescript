@@ -6,17 +6,24 @@ import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as path from 'path';
 import * as DotenvPlugin from 'webpack-dotenv-plugin';
 
+const errorOverlayMiddleware = require('react-dev-utils/errorOverlayMiddleware');
 const Dashboard = require('webpack-dashboard');
 const DashboardPlugin = require('webpack-dashboard/plugin');
+const ignoredFiles = require('react-dev-utils/ignoredFiles');
 
 const dashboard = new Dashboard();
 
-export const config: webpack.Configuration = strategy({
-    plugins: 'prepend',
-    entry: 'prepend',
-})(webpackCommon, {
+export const config: webpack.Configuration = strategy(
+    {
+        plugins: 'prepend',
+        entry: 'prepend',
+    },
+)(webpackCommon, {
     entry: {
-        app: ['react-hot-loader/patch'],
+        app: [
+            'react-hot-loader/patch',
+            require.resolve('react-dev-utils/webpackHotDevClient'),
+        ],
     },
 
     output: {
@@ -81,5 +88,13 @@ export const config: webpack.Configuration = strategy({
         hot: true,
         quiet: true,
         historyApiFallback: true,
+
+        watchOptions: {
+            ignored: ignoredFiles('./src'),
+        },
+        before(app: any) {
+            // This lets us open files from the runtime error overlay.
+            app.use(errorOverlayMiddleware());
+        },
     },
 });

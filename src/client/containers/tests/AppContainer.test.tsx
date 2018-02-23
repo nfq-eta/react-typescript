@@ -11,6 +11,7 @@ describe('AppContainer.tsx', () => {
             { id: 'demo2', label: 'Demo2', value: 'demo2' },
         ],
         addAction: jest.fn(),
+        deleteAction: jest.fn(),
     };
 
     it('renders without crashing', () => {
@@ -24,7 +25,7 @@ describe('AppContainer.tsx', () => {
 
     it('Buttons should be visible', () => {
         const wrapper = shallow(<AppDisconnected {...props} />);
-        expect(wrapper.find('button').length).toBe(3);
+        expect(wrapper.find('button').length).toBe(4);
     });
 
     it('should handle click', () => {
@@ -44,6 +45,19 @@ describe('AppContainer.tsx', () => {
         const instance = wrapper.instance() as AppDisconnected;
 
         instance.handleAdd();
+
+        expect(props.addAction).toBeCalledWith({
+            id: expect.any(String),
+            label: 'Demo',
+            value: 'demo',
+        });
+    });
+
+    it('handleDelete()', () => {
+        const wrapper = shallow(<AppDisconnected {...props} />);
+        const instance = wrapper.instance() as AppDisconnected;
+
+        instance.handleDelete({ id: 'demo1', label: 'Demo', value: 'demo' });
 
         expect(props.addAction).toBeCalledWith({
             id: expect.any(String),

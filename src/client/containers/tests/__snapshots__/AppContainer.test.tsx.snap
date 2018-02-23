@@ -1,11 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AppContainer.tsx matches snapshot 1`] = `
-<div>
+<div
+  className="appContainer"
+>
+  Component name: AppContainer
+  <hr />
   <button
     onClick={[Function]}
   >
     Add more
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Add more to state
   </button>
   <div
     key="demo1"

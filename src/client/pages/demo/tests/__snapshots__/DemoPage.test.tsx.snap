@@ -5,9 +5,6 @@ exports[`DemoPage.js matches snapshot 1`] = `
   className="page"
 >
   Component name: DemoPage
-  <Connect(App)
-    addAction={[Function]}
-    items={Array []}
-  />
+  <Connect(AppContainer) />
 </main>
 `;
