@@ -15,6 +15,7 @@
         "no-empty-interface": false,
         "member-access": false,
         "strict-boolean-expressions": false,
-        "variable-name": false
+        "variable-name": false,
+        "no-var-requires": false
     }
 }

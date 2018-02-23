@@ -13,6 +13,7 @@
         "checkJs": false,
         "sourceMap": true,
         "noImplicitAny": true,
+        "noEmitOnError": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "strictNullChecks": true,
@@ -49,8 +50,5 @@
     ],
     "include": [
         "./src/**/*"
-    ],
-    "files": [
-        "./typings/typings.d.ts"
     ]
 }
