@@ -4,17 +4,17 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "taskName": "yarn",
+            "label": "yarn",
             "type": "shell",
             "command": "yarn"
         },
         {
-            "taskName": "yarn start",
+            "label": "yarn start",
             "type": "shell",
             "command": "yarn start"
         },
         {
-            "taskName": "yarn test",
+            "label": "yarn test",
             "type": "shell",
             "command": "yarn test"
         }
