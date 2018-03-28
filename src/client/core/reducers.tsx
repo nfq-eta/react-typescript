@@ -3,11 +3,11 @@ import reducers from '../modules/checkbox/reducers';
 import { IItem } from '../components/checkbox/CheckBoxComponent';
 
 export interface IRootState {
-    checkBoxItems: IItem[];
+  checkBoxItems: IItem[];
 }
 
 const rootReducer = combineReducers({
-    checkBoxItems: reducers,
+  checkBoxItems: reducers,
 });
 
 export default rootReducer;

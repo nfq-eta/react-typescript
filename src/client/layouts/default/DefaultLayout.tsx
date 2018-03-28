@@ -9,18 +9,18 @@ export interface IDefaultLayoutProps {}
 export interface IDefaultLayoutState {}
 
 export class DefaultLayout extends React.Component<IDefaultLayoutProps, IDefaultLayoutState> {
-    constructor(props: IDefaultLayoutProps) {
-        super(props);
-    }
+  constructor(props: IDefaultLayoutProps) {
+    super(props);
+  }
 
-    render() {
-        return (
-            <div className={styles.layout}>
-                Component name: DefaultLayout
-                <HeaderComponent key={'header'} />
-                {this.props.children}
-                <FooterComponent key={'footer'} />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className={styles.layout}>
+        Component name: DefaultLayout
+        <HeaderComponent key={'header'} />
+        {this.props.children}
+        <FooterComponent key={'footer'} />
+      </div>
+    );
+  }
 }
