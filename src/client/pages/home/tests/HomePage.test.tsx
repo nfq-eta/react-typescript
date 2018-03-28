@@ -4,12 +4,12 @@ import { shallow } from 'enzyme';
 import { HomePage } from '../HomePage';
 
 describe('HomePage.js', () => {
-    it('renders without crashing', () => {
-        shallow(<HomePage />);
-    });
+  it('renders without crashing', () => {
+    shallow(<HomePage />);
+  });
 
-    it('matches snapshot', () => {
-        const wrapper = shallow(<HomePage />);
-        expect(wrapper).toMatchSnapshot();
-    });
+  it('matches snapshot', () => {
+    const wrapper = shallow(<HomePage />);
+    expect(wrapper).toMatchSnapshot();
+  });
 });

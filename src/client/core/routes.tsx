@@ -9,9 +9,9 @@ import { DefaultLayout } from '../layouts/default/DefaultLayout';
 import { EmptyLayout } from '../layouts/empty/EmptyLayout';
 
 export const CoreRoutes = () => (
-    <Switch>
-        <Route path="/" component={HomePage} exact={true} layout={DefaultLayout} />
-        <Route path="/demo" component={DemoPage} layout={DefaultLayout} />
-        <Route path="/login" component={LoginPage} layout={EmptyLayout} />
-    </Switch>
+  <Switch>
+    <Route path="/" component={HomePage} exact={true} layout={DefaultLayout} />
+    <Route path="/demo" component={DemoPage} layout={DefaultLayout} />
+    <Route path="/login" component={LoginPage} layout={EmptyLayout} />
+  </Switch>
 );

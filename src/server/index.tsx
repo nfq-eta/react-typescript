@@ -15,12 +15,12 @@ import { initialState } from '../client/core/initialState';
 import { IRootState } from '../client/core/reducers';
 
 const normalizePort = (val: number | string): number => {
-    return typeof val === 'string' ? parseInt(val, 10) : val;
+  return typeof val === 'string' ? parseInt(val, 10) : val;
 };
 
 const readCss = (file: string) => {
-    const abs = path.resolve(file);
-    return fs.readFileSync(abs, 'utf8');
+  const abs = path.resolve(file);
+  return fs.readFileSync(abs, 'utf8');
 };
 
 const styles = readCss('dist/css/app.css');
@@ -28,7 +28,7 @@ const name = require('../../package.json').name;
 const description = require('../../package.json').description;
 
 const renderHtml = (html: string, preLoadedState: IRootState) =>
-    `
+  `
     <!doctype html>
     <html lang="en-us">
         <head>
@@ -44,10 +44,7 @@ const renderHtml = (html: string, preLoadedState: IRootState) =>
         <body>
             <div id="app">${html}</div>
             <script>
-                window.__PRELOADED_STATE__ = ${JSON.stringify(preLoadedState).replace(
-                    /</g,
-                    '\\u003c',
-                )}
+                window.__PRELOADED_STATE__ = ${JSON.stringify(preLoadedState).replace(/</g, '\\u003c')}
             </script>
             <script src="/js/vendors.js" async></script>
             <script src="/js/app.js" async></script>
@@ -65,32 +62,32 @@ app.use('/js', express.static(path.join('dist', 'js'), { redirect: false }));
 app.use('/css', express.static(path.join('dist', 'css'), { redirect: false }));
 
 app.use((req: express.Request, res: express.Response) => {
-    /*const store = createStore<State>(reducer, applyMiddleware(
+  /*const store = createStore<State>(reducer, applyMiddleware(
         routerMiddleware(createHistory()),
         createEpicMiddleware(epics),
     ));*/
 
-    const store = configureStore(initialState);
-    const context: { url?: string } = {};
-    const html = renderToString(
-        <Provider store={store}>
-            <StaticRouter
-                basename={process.env.BASE_PATH !== '' ? process.env.BASE_PATH : undefined}
-                location={req.url}
-                context={context}
-            >
-                <CoreRoutes />
-            </StaticRouter>
-        </Provider>,
-    );
-    if (context.url) {
-        res.redirect(HttpStatus.MOVED_PERMANENTLY, context.url);
-    } else {
-        res.send(renderHtml(html, store.getState() as IRootState));
-    }
+  const store = configureStore(initialState);
+  const context: { url?: string } = {};
+  const html = renderToString(
+    <Provider store={store}>
+      <StaticRouter
+        basename={process.env.BASE_PATH !== '' ? process.env.BASE_PATH : undefined}
+        location={req.url}
+        context={context}
+      >
+        <CoreRoutes />
+      </StaticRouter>
+    </Provider>,
+  );
+  if (context.url) {
+    res.redirect(HttpStatus.MOVED_PERMANENTLY, context.url);
+  } else {
+    res.send(renderHtml(html, store.getState() as IRootState));
+  }
 });
 
 getPort({ port }).then(rPort => {
-    // tslint:disable-next-line:no-console
-    app.listen(rPort, () => console.log(`App is listening on http://localhost:${rPort}`));
+  // tslint:disable-next-line:no-console
+  app.listen(rPort, () => console.log(`App is listening on http://localhost:${rPort}`));
 });
