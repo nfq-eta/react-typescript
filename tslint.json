@@ -1,15 +1,16 @@
 {
+  "rulesDirectory": ["tslint-plugin-prettier"],
     "extends": [
         "tslint:recommended",
         "tslint-react",
-        "tslint-config-airbnb",
-        "tslint-config-prettier"
+        "tslint-config-airbnb"
     ],
     "env": {
         "browser": true,
         "jest": true
     },
     "rules": {
+      "prettier": true,
         "object-literal-sort-keys": false,
         "ordered-imports": false,
         "no-empty-interface": false,
