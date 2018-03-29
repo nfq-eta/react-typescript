@@ -44,7 +44,7 @@ class App extends React.Component<IAppProps, IAppState> {
     }
   };
 
-  isSelected(item: IItem): boolean {
+  isSelected(item: IItem) {
     return this.selectedItems.has(item.id);
   }
 
