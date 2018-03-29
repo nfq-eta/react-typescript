@@ -6,16 +6,16 @@ export interface IEmptyLayoutProps {}
 export interface IEmptyLayoutState {}
 
 export class EmptyLayout extends React.Component<IEmptyLayoutProps, IEmptyLayoutState> {
-    constructor(props: IEmptyLayoutProps) {
-        super(props);
-    }
+  constructor(props: IEmptyLayoutProps) {
+    super(props);
+  }
 
-    render() {
-        return (
-            <div className={styles.layout}>
-                Component name: EmptyLayout
-                {this.props.children}
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className={styles.layout}>
+        Component name: EmptyLayout
+        {this.props.children}
+      </div>
+    );
+  }
 }

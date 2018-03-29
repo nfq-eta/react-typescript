@@ -9,16 +9,16 @@ export interface IDemoPageProps {}
 export interface IDemoPageState {}
 
 export class DemoPage extends React.Component<IDemoPageProps, IDemoPageState> {
-    constructor(props: IDemoPageProps) {
-        super(props);
-    }
+  constructor(props: IDemoPageProps) {
+    super(props);
+  }
 
-    render() {
-        return (
-            <main className={styles.page}>
-                Component name: DemoPage
-                <AppContainer addAction={addCheckbox} items={[]} />
-            </main>
-        );
-    }
+  render() {
+    return (
+      <main className={styles.page}>
+        Component name: DemoPage
+        <AppContainer addAction={addCheckbox} items={[]} />
+      </main>
+    );
+  }
 }

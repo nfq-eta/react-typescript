@@ -11,10 +11,8 @@
         "predev": "tcm -p src/client/**/*.{css,scss}",
         "prebuild": "tcm -p src/client/**/*.{css,scss} && rimraf ./dist ./coverage",
         "cleanup": "yarn prebuild",
-        "build:server":
-            "cross-env NODE_ENV=production webpack --env=server --display-error-details",
-        "build":
-            "cross-env NODE_ENV=production webpack -p --env=prod --display-error-details && yarn build:server",
+        "build:server": "cross-env NODE_ENV=production webpack --env=server --display-error-details",
+        "build": "cross-env NODE_ENV=production webpack -p --env=prod --display-error-details && yarn build:server",
         "prebuild:start": "yarn build",
         "postbuild": "yarn build-storybook",
         "build:start": "serve -s -o -C -n dist",
@@ -131,12 +129,12 @@
         "ts-node": "4.1.0",
         "tslib": "1.9.0",
         "tslint": "5.9.1",
-        "tslint-config-airbnb": "5.6.0",
-        "tslint-config-prettier": "1.8.0",
+        "tslint-config-airbnb": "5.8.0",
+        "tslint-plugin-prettier": "1.3.0",
         "tslint-react": "3.5.1",
         "tsutils": "2.21.1",
         "typed-css-modules": "0.3.1",
-        "typescript": "2.7.2",
+        "typescript": "2.8.1",
         "typescript-babel-jest": "1.0.5",
         "typings-for-css-modules-loader": "1.7.0",
         "uniqid": "4.1.1",
@@ -157,7 +155,10 @@
         "redux": "3.7.2"
     },
     "lint-staged": {
-        "src/**/*.{js,jsx,ts,tsx,json,css,scss}": ["prettier --write", "git add"]
+        "src/**/*.{js,jsx,ts,tsx,json,css,scss}": [
+            "prettier --write",
+            "git add"
+        ]
     },
     "jest": {
         "globals": {
@@ -165,8 +166,12 @@
                 "skipBabel": true
             }
         },
-        "setupFiles": ["<rootDir>/config/jest/bootstrap.js"],
-        "snapshotSerializers": ["enzyme-to-json/serializer"],
+        "setupFiles": [
+            "<rootDir>/config/jest/bootstrap.js"
+        ],
+        "snapshotSerializers": [
+            "enzyme-to-json/serializer"
+        ],
         "transform": {
             "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
         },
@@ -177,7 +182,13 @@
             "!<rootDir>/node_modules/",
             "!src/**/*.story.tsx"
         ],
-        "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx"],
+        "moduleFileExtensions": [
+            "js",
+            "jsx",
+            "json",
+            "ts",
+            "tsx"
+        ],
         "moduleNameMapper": {
             "^.+\\.s?css$": "identity-obj-proxy"
         },
@@ -185,13 +196,18 @@
         "coverageDirectory": "./coverage/"
     },
     "stylelint": {
-        "extends": ["stylelint-config-sass-guidelines", "stylelint-config-css-modules"],
+        "extends": [
+            "stylelint-config-sass-guidelines",
+            "stylelint-config-css-modules"
+        ],
         "rules": {
             "indentation": 4,
             "number-leading-zero": null,
             "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
             "order/properties-alphabetical-order": null,
-            "max-nesting-depth": [3],
+            "max-nesting-depth": [
+                3
+            ],
             "selector-max-compound-selectors": 4
         }
     },

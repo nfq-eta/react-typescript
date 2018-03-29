@@ -8,83 +8,83 @@ import { addCheckbox } from '../modules/checkbox/actions';
 import { IRootState } from '../core/reducers';
 
 export interface IAppProps {
-    addAction: typeof addCheckbox;
-    items: IItem[];
+  addAction: typeof addCheckbox;
+  items: IItem[];
 }
 
 export interface IAppState {
-    items: IItem[];
+  items: IItem[];
 }
 
 class App extends React.Component<IAppProps, IAppState> {
-    static defaultProps: Partial<IAppProps> = {
-        items: [
-            {
-                id: 'string',
-                label: 'Demo',
-                value: 'demo',
-            },
-        ],
-        addAction: addCheckbox,
-    };
+  static defaultProps: Partial<IAppProps> = {
+    items: [
+      {
+        id: 'string',
+        label: 'Demo',
+        value: 'demo',
+      },
+    ],
+    addAction: addCheckbox,
+  };
 
-    selectedItems = new Map();
+  selectedItems = new Map();
 
-    constructor(props: IAppProps) {
-        super(props);
+  constructor(props: IAppProps) {
+    super(props);
 
-        this.state = { items: [] };
+    this.state = { items: [] };
+  }
+
+  handleClick = (item: IItem, checked: boolean) => {
+    if (checked) {
+      this.selectedItems.set(item.id, item);
+    } else {
+      this.selectedItems.delete(item.id);
     }
+  };
 
-    handleClick = (item: IItem, checked: boolean) => {
-        if (checked) {
-            this.selectedItems.set(item.id, item);
-        } else {
-            this.selectedItems.delete(item.id);
-        }
-    };
+  isSelected(item: IItem) {
+    return this.selectedItems.has(item.id);
+  }
 
-    isSelected(item: IItem): boolean {
-        return this.selectedItems.has(item.id);
-    }
+  handleAdd = () => {
+    this.props.addAction({
+      id: uniqId(),
+      label: 'Demo',
+      value: 'demo',
+    });
+  };
 
-    handleAdd = () => {
-        this.props.addAction({
-            id: uniqId(),
-            label: 'Demo',
-            value: 'demo',
-        });
-    };
+  handleDelete = () => {
+    // console.log(item);
+  };
 
-    handleDelete = () => {
-        // console.log(item);
-    };
-
-    render() {
-        return (
-            <div>
-                <button onClick={this.handleAdd}>Add more</button>
-                {this.props.items.map(item => (
-                    <div key={item.id}>
-                        <CheckBox item={item} handleClick={this.handleClick} />
-                        <button onClick={this.handleDelete.bind(this, item)}>Delete</button>
-                    </div>
-                ))}
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleAdd}>Add more</button>
+        {this.props.items.map(item => (
+          <div key={item.id}>
+            <CheckBox item={item} handleClick={this.handleClick} />
+            <button onClick={this.handleDelete.bind(this, item)}>Delete</button>
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
 
 export function mapStateToProps(state: IRootState) {
-    return {
-        items: state.checkBoxItems,
-    };
+  return {
+    items: state.checkBoxItems,
+  };
 }
 
 export function mapDispatchToProps(dispatch: MapDispatchToProps<any, any>) {
-    return {
-        addAction: bindActionCreators(addCheckbox, dispatch),
-    };
+  return {
+    addAction: bindActionCreators(addCheckbox, dispatch),
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
