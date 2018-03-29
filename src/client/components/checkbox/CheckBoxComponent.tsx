@@ -7,14 +7,14 @@ export interface IItem {
   label: string;
 }
 
-export type IProps = {
+export interface IProps {
   /** Checkbox item */
   item: IItem;
   /** Handle Action called when checked */
   handleClick: (item: IItem, checked: boolean) => void;
   /** Is it active by default? */
   checked?: boolean;
-};
+}
 
 interface ICheckBoxState {
   checked: boolean;
