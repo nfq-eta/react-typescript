@@ -1,4 +1,4 @@
-## Thanks
+submitting## Thanks
 
 Thanks for reading this. If you do so - you are probably ready to be an contributor. So lets follow basics setup of development environment.
 
@@ -20,3 +20,11 @@ Thanks for reading this. If you do so - you are probably ready to be an contribu
 ### Installation
 
 We are using yarn so respect this. Just type `yarn` and you are ready to go
+
+### Merge requests
+
+1. Code should be formated using [prettier](https://github.com/prettier/prettier)
+1. All tests should pass before pushing
+
+After submitting a merge request you can access a feature demo website available at "deploy/netlify" by clicking on "Details" link
+![deploy/netlify](https://i.imgur.com/ni1tq8h.png)

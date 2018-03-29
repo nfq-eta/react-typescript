@@ -12,7 +12,7 @@ Bundle size should be minimum as possible
 1. `yarn start` Start development
 1. `yarn start:storybook` Start storybook
 1. `yarn build` Build for production
-1. Install [wallaby](https://wallabyjs.com/download/) plugin for you IDE
+  * **Optional:** Install [wallaby](https://wallabyjs.com/download/) plug-in for you IDE
 1. [Configure wallaby test runner](https://wallabyjs.com/docs/intro/install.html)
 1. `yarn test` Run tests to check if everything is working
 1. `yarn prepush` Run before each push
@@ -23,10 +23,13 @@ Bundle size should be minimum as possible
     * [dashboard](https://github.com/FormidableLabs/webpack-dashboard)
     * webpack settings with typescript
     * separated settings for development and production
-* [typescript](https://www.typescriptlang.org/) v2.6
-    * [tslint](https://palantir.github.io/tslint/) (lint typescript)
+* [typescript](https://www.typescriptlang.org/) v2.8
     * import json supported
-    * [airbnb](https://github.com/airbnb/javascript) [coding style rules](https://github.com/progre/tslint-config-airbnb)
+    * [tslint](https://palantir.github.io/tslint/) (lint typescript)
+    * [prettier](https://github.com/prettier/prettier) Automatic code formatter
+* SourceMaps
+    * Source maps for typescript
+    * Source maps for scss/css modules
 * react v16
     * [react hot loader](https://github.com/gaearon/react-hot-loader)
 * redux
@@ -41,7 +44,7 @@ Bundle size should be minimum as possible
     * [enzyme](http://airbnb.io/enzyme/)
     * [wallaby](https://wallabyjs.com/) (for fast tests development)
 * git
-    * perfect [attributes](https://github.com/nfq-eta/react-typescript/blob/87722dafa58006fa6bf672110ffc6d87fe5ae8a5/.gitattributes)
+    * [attributes](https://github.com/nfq-eta/react-typescript/blob/87722dafa58006fa6bf672110ffc6d87fe5ae8a5/.gitattributes)
     * [hooks](https://www.npmjs.com/package/husky) (run tasks before push)
 * [travis](https://travis-ci.org) (for [deployment](https://github.com/nfq-eta/react-typescript/blob/6312bdfdbb62130f8df8581c99407f89c20f590c/.travis.yml))
 * [yarn](https://yarnpkg.com/) (For better dependencies lock)
@@ -51,9 +54,6 @@ Bundle size should be minimum as possible
 * IDE settings
     * [live templates](https://github.com/nfq-eta/react-typescript/blob/41feb9fd606e4f024ff3724703141aa899d595d9/config/jetBrains/settings.jar) for JetBrains
     * [settings](https://github.com/nfq-eta/react-typescript/tree/master/.vscode) for [Visual Studio Code](https://code.visualstudio.com/Download)
-* SourceMaps
-    * Source maps for typescript
-    * Source maps for scss/css modules
 * Storybook [Demo](https://nfq-eta.github.io/react-typescript/docs)
     * With actions
     * Addons
@@ -90,7 +90,7 @@ A detailed explanation borrowed from angular and can be found in this [document]
 * [x] Server side rendering
 * [ ] Use redux-observable instead saga
 * [ ] Assets (css, js) caching
-* [ ] HMR route v4
+* [x] HMR route v4
 * [ ] PWA
 
 [commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
