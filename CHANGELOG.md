@@ -1,6 +1,42 @@
-<a name="1.5.0"></a>
-# 1.5.0 (2017-12-25)
+<a name="1.5.1"></a>
+## <small>1.5.1 (2018-03-29)</small>
 
+* Add gitflow ([ba7588a](https://github.com/nfq-eta/react-typescript/commit/ba7588a))
+* Added prettier and styling ([8e594da](https://github.com/nfq-eta/react-typescript/commit/8e594da))
+* Code style ([12ea50a](https://github.com/nfq-eta/react-typescript/commit/12ea50a))
+* Configure tslint with prettier. ([de1d5bf](https://github.com/nfq-eta/react-typescript/commit/de1d5bf))
+* Configure tslint with prettier. ([45ddafc](https://github.com/nfq-eta/react-typescript/commit/45ddafc))
+* Contributing ([260b487](https://github.com/nfq-eta/react-typescript/commit/260b487))
+* Fix build by adding missing dependency ([d6cdf30](https://github.com/nfq-eta/react-typescript/commit/d6cdf30))
+* Fix deploying issues ([89f3ab0](https://github.com/nfq-eta/react-typescript/commit/89f3ab0))
+* Fix deploying issues ([91d649d](https://github.com/nfq-eta/react-typescript/commit/91d649d))
+* Fix deploying issues ([1cc1882](https://github.com/nfq-eta/react-typescript/commit/1cc1882))
+* Fix deploying issues ([7dee7ad](https://github.com/nfq-eta/react-typescript/commit/7dee7ad))
+* Fix deploying issues ([a7ea7dd](https://github.com/nfq-eta/react-typescript/commit/a7ea7dd))
+* Fix deploying issues ([8d70d2b](https://github.com/nfq-eta/react-typescript/commit/8d70d2b))
+* Fix some typings ([449a800](https://github.com/nfq-eta/react-typescript/commit/449a800))
+* Fk heroku. Added comments to storybook ([52d5877](https://github.com/nfq-eta/react-typescript/commit/52d5877))
+* react-typescript-37 HMR not working ([d50ad1f](https://github.com/nfq-eta/react-typescript/commit/d50ad1f))
+* Remove gitflow ([7eb1f9c](https://github.com/nfq-eta/react-typescript/commit/7eb1f9c))
+* Remove mess ([5b01917](https://github.com/nfq-eta/react-typescript/commit/5b01917))
+* update lock file ([832fcdf](https://github.com/nfq-eta/react-typescript/commit/832fcdf))
+* update node version ([d965d8c](https://github.com/nfq-eta/react-typescript/commit/d965d8c))
+* Updated readme ([cf82986](https://github.com/nfq-eta/react-typescript/commit/cf82986))
+* Ups - never push directly to the master ([d903d49](https://github.com/nfq-eta/react-typescript/commit/d903d49))
+* VSCode jest plugin settings ([a8835ca](https://github.com/nfq-eta/react-typescript/commit/a8835ca))
+* fix(hmr): fix HTR ([511eb29](https://github.com/nfq-eta/react-typescript/commit/511eb29)), closes [#37](https://github.com/nfq-eta/react-typescript/issues/37)
+* fix(hmr): fix HTR ([5273208](https://github.com/nfq-eta/react-typescript/commit/5273208)), closes [#37](https://github.com/nfq-eta/react-typescript/issues/37)
+* fix(webpack): A bug fix ([16eb0e2](https://github.com/nfq-eta/react-typescript/commit/16eb0e2)), closes [#37](https://github.com/nfq-eta/react-typescript/issues/37)
+* fix(webpack): A bug fix ([57162e2](https://github.com/nfq-eta/react-typescript/commit/57162e2)), closes [#37](https://github.com/nfq-eta/react-typescript/issues/37)
+* fix(webpack): A bug fix ([da1a4e1](https://github.com/nfq-eta/react-typescript/commit/da1a4e1)), closes [#37](https://github.com/nfq-eta/react-typescript/issues/37)
+* fix(webpack): A bug fix ([5823ea9](https://github.com/nfq-eta/react-typescript/commit/5823ea9)), closes [#37](https://github.com/nfq-eta/react-typescript/issues/37)
+
+
+
+<a name="1.5.0"></a>
+## 1.5.0 (2017-12-25)
+
+* chore(release): 1.5.0 ([a7e6eb2](https://github.com/nfq-eta/react-typescript/commit/a7e6eb2))
 * fix(router): Fix base path ([e5f3a1f](https://github.com/nfq-eta/react-typescript/commit/e5f3a1f)), closes [#34](https://github.com/nfq-eta/react-typescript/issues/34)
 * fix(SSR): Fixed SSR routes ([bbccc2e](https://github.com/nfq-eta/react-typescript/commit/bbccc2e))
 * fix(SSR): Fixed SSR routes ([dc55fe1](https://github.com/nfq-eta/react-typescript/commit/dc55fe1))
@@ -30,7 +66,7 @@
 
 
 <a name="1.4.2"></a>
-## 1.4.2 (2017-12-13)
+## <small>1.4.2 (2017-12-13)</small>
 
 * chore(release): 1.4.2 ([c2ff584](https://github.com/nfq-eta/react-typescript/commit/c2ff584))
 * Saving files before refreshing line endings ([0740bdc](https://github.com/nfq-eta/react-typescript/commit/0740bdc))
@@ -38,7 +74,7 @@
 
 
 <a name="1.4.1"></a>
-## 1.4.1 (2017-12-13)
+## <small>1.4.1 (2017-12-13)</small>
 
 * chore(release): 1.4.1 ([aa5c7ec](https://github.com/nfq-eta/react-typescript/commit/aa5c7ec))
 * build(storybook): Fixed storybook build task ([4523d25](https://github.com/nfq-eta/react-typescript/commit/4523d25))
@@ -46,7 +82,7 @@
 
 
 <a name="1.4.0"></a>
-# 1.4.0 (2017-12-13)
+## 1.4.0 (2017-12-13)
 
 * chore(release): 1.4.0 ([b0f8d8d](https://github.com/nfq-eta/react-typescript/commit/b0f8d8d))
 * ci(travis): Fix releases ([223f220](https://github.com/nfq-eta/react-typescript/commit/223f220))
@@ -54,7 +90,7 @@
 
 
 <a name="1.3.5"></a>
-## 1.3.5 (2017-12-13)
+## <small>1.3.5 (2017-12-13)</small>
 
 * chore(release): 1.3.5 ([c577763](https://github.com/nfq-eta/react-typescript/commit/c577763))
 * ci(travis): Fix code coverage report ([0bc92f3](https://github.com/nfq-eta/react-typescript/commit/0bc92f3))
@@ -64,7 +100,7 @@
 
 
 <a name="1.3.4"></a>
-## 1.3.4 (2017-12-11)
+## <small>1.3.4 (2017-12-11)</small>
 
 * chore(release): 1.3.4 ([cb5f674](https://github.com/nfq-eta/react-typescript/commit/cb5f674))
 * Add travis todo releases ([934c0fd](https://github.com/nfq-eta/react-typescript/commit/934c0fd))
@@ -72,7 +108,7 @@
 
 
 <a name="1.3.3"></a>
-## 1.3.3 (2017-12-11)
+## <small>1.3.3 (2017-12-11)</small>
 
 * chore(release): 1.3.3 ([f0ca433](https://github.com/nfq-eta/react-typescript/commit/f0ca433))
 * ci(package.json): changed changelog style ([3e96b93](https://github.com/nfq-eta/react-typescript/commit/3e96b93))
@@ -80,7 +116,7 @@
 
 
 <a name="1.3.2"></a>
-## 1.3.2 (2017-12-11)
+## <small>1.3.2 (2017-12-11)</small>
 
 * chore(release): 1.3.2 ([1242ecf](https://github.com/nfq-eta/react-typescript/commit/1242ecf))
 * docs: fix version commit message ([67e9d5d](https://github.com/nfq-eta/react-typescript/commit/67e9d5d))
@@ -88,7 +124,7 @@
 
 
 <a name="1.3.1"></a>
-## 1.3.1 (2017-12-11)
+## <small>1.3.1 (2017-12-11)</small>
 
 * chore(release): 1.3.1 :tada: ([2424c5d](https://github.com/nfq-eta/react-typescript/commit/2424c5d))
 * docs(package.json): Fixed storybook link ([ea4a6d5](https://github.com/nfq-eta/react-typescript/commit/ea4a6d5))
@@ -101,7 +137,7 @@
 
 
 <a name="1.2.9"></a>
-## 1.2.9 (2017-12-04)
+## <small>1.2.9 (2017-12-04)</small>
 
 * Fixing travis - again ([de62c18](https://github.com/nfq-eta/react-typescript/commit/de62c18))
 * release-v1.2.9 ([9f8b9f4](https://github.com/nfq-eta/react-typescript/commit/9f8b9f4))
@@ -109,7 +145,7 @@
 
 
 <a name="1.2.8"></a>
-## 1.2.8 (2017-12-04)
+## <small>1.2.8 (2017-12-04)</small>
 
 * Fixing travis - again ([1467741](https://github.com/nfq-eta/react-typescript/commit/1467741))
 * release-v1.2.8 ([9458587](https://github.com/nfq-eta/react-typescript/commit/9458587))
@@ -117,7 +153,7 @@
 
 
 <a name="1.2.7"></a>
-## 1.2.7 (2017-12-04)
+## <small>1.2.7 (2017-12-04)</small>
 
 * Fixing travis - again ([d4562a4](https://github.com/nfq-eta/react-typescript/commit/d4562a4))
 * release-v1.2.7 ([3f72e98](https://github.com/nfq-eta/react-typescript/commit/3f72e98))
@@ -125,7 +161,7 @@
 
 
 <a name="1.2.6"></a>
-## 1.2.6 (2017-12-03)
+## <small>1.2.6 (2017-12-03)</small>
 
 * Fixing travis - again ([68fb917](https://github.com/nfq-eta/react-typescript/commit/68fb917))
 * release-v1.2.6 ([2efd9aa](https://github.com/nfq-eta/react-typescript/commit/2efd9aa))
@@ -133,7 +169,7 @@
 
 
 <a name="1.2.5"></a>
-## 1.2.5 (2017-12-03)
+## <small>1.2.5 (2017-12-03)</small>
 
 * Fixing travis - again ([7ebd6f2](https://github.com/nfq-eta/react-typescript/commit/7ebd6f2))
 * release-v1.2.5 ([954e2c5](https://github.com/nfq-eta/react-typescript/commit/954e2c5))
@@ -141,7 +177,7 @@
 
 
 <a name="1.2.4"></a>
-## 1.2.4 (2017-12-03)
+## <small>1.2.4 (2017-12-03)</small>
 
 * Fixing travis - again ([f4ff1d3](https://github.com/nfq-eta/react-typescript/commit/f4ff1d3))
 * release-v1.2.4 ([b517ebb](https://github.com/nfq-eta/react-typescript/commit/b517ebb))
@@ -149,7 +185,7 @@
 
 
 <a name="1.2.3"></a>
-## 1.2.3 (2017-12-03)
+## <small>1.2.3 (2017-12-03)</small>
 
 * Fixing travis - again ([27f03d8](https://github.com/nfq-eta/react-typescript/commit/27f03d8))
 * release-v1.2.3 ([2e63112](https://github.com/nfq-eta/react-typescript/commit/2e63112))
@@ -157,7 +193,7 @@
 
 
 <a name="1.2.2"></a>
-## 1.2.2 (2017-12-03)
+## <small>1.2.2 (2017-12-03)</small>
 
 * Fixing travis - again ([98fa0bd](https://github.com/nfq-eta/react-typescript/commit/98fa0bd))
 * release-v1.2.2 ([e785618](https://github.com/nfq-eta/react-typescript/commit/e785618))
@@ -165,7 +201,7 @@
 
 
 <a name="1.2.1"></a>
-## 1.2.1 (2017-12-03)
+## <small>1.2.1 (2017-12-03)</small>
 
 * Auto-update generate CHANGELOG.md ([6f7f6f5](https://github.com/nfq-eta/react-typescript/commit/6f7f6f5))
 * Fixing travis - again ([3c48662](https://github.com/nfq-eta/react-typescript/commit/3c48662))
@@ -174,7 +210,7 @@
 
 
 <a name="1.2.0"></a>
-# 1.2.0 (2017-12-03)
+## 1.2.0 (2017-12-03)
 
 * Auto-update generate CHANGELOG.md ([6cf9ae2](https://github.com/nfq-eta/react-typescript/commit/6cf9ae2))
 * release-v1.2.0 ([22c81ef](https://github.com/nfq-eta/react-typescript/commit/22c81ef))
@@ -183,7 +219,7 @@
 
 
 <a name="1.1.14"></a>
-## 1.1.14 (2017-12-03)
+## <small>1.1.14 (2017-12-03)</small>
 
 * Fixing travis - again ([3f46036](https://github.com/nfq-eta/react-typescript/commit/3f46036))
 * Fixing travis - again ([17cbb9e](https://github.com/nfq-eta/react-typescript/commit/17cbb9e))
@@ -196,7 +232,7 @@
 
 
 <a name="1.1.13"></a>
-## 1.1.13 (2017-12-03)
+## <small>1.1.13 (2017-12-03)</small>
 
 * Fixing travis - again ([9e2950f](https://github.com/nfq-eta/react-typescript/commit/9e2950f))
 * release-v1.1.13 ([abfb28b](https://github.com/nfq-eta/react-typescript/commit/abfb28b))
@@ -204,7 +240,7 @@
 
 
 <a name="1.1.12"></a>
-## 1.1.12 (2017-12-03)
+## <small>1.1.12 (2017-12-03)</small>
 
 * Fixing travis - again ([d61a80e](https://github.com/nfq-eta/react-typescript/commit/d61a80e))
 * release-v1.1.12 ([957bab3](https://github.com/nfq-eta/react-typescript/commit/957bab3))
@@ -212,7 +248,7 @@
 
 
 <a name="1.1.11"></a>
-## 1.1.11 (2017-12-03)
+## <small>1.1.11 (2017-12-03)</small>
 
 * Fixing travis - again ([9042900](https://github.com/nfq-eta/react-typescript/commit/9042900))
 * release-v1.1.11 ([057f1f4](https://github.com/nfq-eta/react-typescript/commit/057f1f4))
@@ -220,7 +256,7 @@
 
 
 <a name="1.1.10"></a>
-## 1.1.10 (2017-12-03)
+## <small>1.1.10 (2017-12-03)</small>
 
 * Fixing travis ([731e922](https://github.com/nfq-eta/react-typescript/commit/731e922))
 * release-v1.1.10 ([f1e3a58](https://github.com/nfq-eta/react-typescript/commit/f1e3a58))
@@ -228,7 +264,7 @@
 
 
 <a name="1.1.9"></a>
-## 1.1.9 (2017-12-03)
+## <small>1.1.9 (2017-12-03)</small>
 
 * Fixing travis ([f7de16d](https://github.com/nfq-eta/react-typescript/commit/f7de16d))
 * release-v1.1.9 ([303ebb0](https://github.com/nfq-eta/react-typescript/commit/303ebb0))
@@ -236,7 +272,7 @@
 
 
 <a name="1.1.8"></a>
-## 1.1.8 (2017-12-03)
+## <small>1.1.8 (2017-12-03)</small>
 
 * Fixing travis ([27cc0ce](https://github.com/nfq-eta/react-typescript/commit/27cc0ce))
 * release-v1.1.8 ([6728231](https://github.com/nfq-eta/react-typescript/commit/6728231))
@@ -244,7 +280,7 @@
 
 
 <a name="1.1.7"></a>
-## 1.1.7 (2017-12-03)
+## <small>1.1.7 (2017-12-03)</small>
 
 * Auto-update generate CHANGELOG.md from PR #false (https://github.com/nfq-eta/react-typescript/pull/f ([ce2dd67](https://github.com/nfq-eta/react-typescript/commit/ce2dd67))
 * Fixing travis ([d189d16](https://github.com/nfq-eta/react-typescript/commit/d189d16))
@@ -253,7 +289,7 @@
 
 
 <a name="1.1.6"></a>
-## 1.1.6 (2017-12-03)
+## <small>1.1.6 (2017-12-03)</small>
 
 * Fixing travis ([804f7c1](https://github.com/nfq-eta/react-typescript/commit/804f7c1))
 * release-v1.1.6 ([7af826c](https://github.com/nfq-eta/react-typescript/commit/7af826c))
@@ -261,7 +297,7 @@
 
 
 <a name="1.1.5"></a>
-## 1.1.5 (2017-12-03)
+## <small>1.1.5 (2017-12-03)</small>
 
 * Fix travis ([bc557ce](https://github.com/nfq-eta/react-typescript/commit/bc557ce))
 * Fixing travis ([7b33598](https://github.com/nfq-eta/react-typescript/commit/7b33598))
@@ -275,7 +311,7 @@
 
 
 <a name="1.1.4"></a>
-## 1.1.4 (2017-11-30)
+## <small>1.1.4 (2017-11-30)</small>
 
 * Feature/changelog (#27) ([7e7a92b](https://github.com/nfq-eta/react-typescript/commit/7e7a92b)), closes [#27](https://github.com/nfq-eta/react-typescript/issues/27) [#45](https://github.com/nfq-eta/react-typescript/issues/45)
 * release-v1.1.4 ([20c7142](https://github.com/nfq-eta/react-typescript/commit/20c7142))
@@ -283,7 +319,7 @@
 
 
 <a name="1.1.3"></a>
-## 1.1.3 (2017-11-29)
+## <small>1.1.3 (2017-11-29)</small>
 
 * :clock1030: Feature/split webpack to prod dev (#14) ([297d2d4](https://github.com/nfq-eta/react-typescript/commit/297d2d4)), closes [#14](https://github.com/nfq-eta/react-typescript/issues/14)
 * :mailbox: Pass NODE_ENV to the application, revert non working import of json, … (#10) ([7238af7](https://github.com/nfq-eta/react-typescript/commit/7238af7)), closes [#10](https://github.com/nfq-eta/react-typescript/issues/10)
