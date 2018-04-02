@@ -5,7 +5,7 @@
     "description": "React & typescript boilerplate",
     "repository": "https://github.com/nfq-eta/react-typescript",
     "homepage": "https://github.com/nfq-eta/react-typescript",
-    "main": "src/client/main.tsx",
+    "main": "./src/client/main.tsx",
     "scripts": {
         "cm": "git-cz",
         "predev": "tcm -p src/client/**/*.{css,scss}",
