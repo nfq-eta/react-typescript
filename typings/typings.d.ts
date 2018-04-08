@@ -1,23 +1,13 @@
-// noinspection TsLint
-import 'react-redux';
-
-declare module 'react-redux' {
-  export interface InferableComponentDecorator<TOwnProps> {
-    // noinspection TsLint
-    <T extends Component<TOwnProps>>(component: T): T;
-  }
-  // noinspection TsLint
-  export interface Connect {
-    // noinspection TsLint
-    <TStateProps = any, TDispatchProps = any, TOwnProps = any, TMergedProps = any>(
-      mapStateToProps: MapStateToPropsParam<TStateProps, TOwnProps>,
-      mapDispatchToProps?: MapDispatchToPropsParam<TDispatchProps, TOwnProps>,
-      mergeProps?: MergeProps<TStateProps, TDispatchProps, TOwnProps, TMergedProps>,
-      options?: Options,
-    ): InferableComponentDecorator<TOwnProps>;
-  }
-}
+import { rootStore } from '../src/client/core/store';
 
 declare module '*.json';
 declare module 'webpack-dashboard';
 declare module 'webpack-dashboard/plugin';
+
+declare global {
+  interface Window {
+    __PRELOADED_STATE__: typeof rootStore;
+  }
+}
+
+window.__PRELOADED_STATE__ = window.__PRELOADED_STATE__ || {};

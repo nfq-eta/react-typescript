@@ -9,7 +9,7 @@ Thanks for reading this. If you do so - you are probably ready to be an contribu
 
   - [IDE](#ide)
   - [Installation](#installation)
-  - [<a name="commits"></a> Git Commit Guidelines](#a-namecommitsa-git-commit-guidelines)
+  - [Git Commit Guidelines](#git-commit-guidelines)
   - [Merge requests](#merge-requests)
 - [Available commands](#available-commands)
 
@@ -34,7 +34,7 @@ Thanks for reading this. If you do so - you are probably ready to be an contribu
 
 We are using yarn so respect this. Just type `yarn` and you are ready to go
 
-### <a name="commits"></a> Git Commit Guidelines
+### Git Commit Guidelines
 
 We have very precise rules over how our git commit messages can be formatted.  This leads to **more readable messages** that are easy to follow when looking through the **project history**.  But also,
 we use the git commit messages to **generate the our change log**.

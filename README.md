@@ -14,7 +14,8 @@ Bundle size should be minimum as possible
 
   - [How to start](#how-to-start)
     - [What's inside](#whats-inside)
-- [Todo](#todo)
+- [Browser support](#browser-support)
+    - [Todo](#todo)
 - [Contributors](#contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -69,15 +70,23 @@ Bundle size should be minimum as possible
     * [settings](https://github.com/nfq-eta/react-typescript/tree/master/.vscode) for [Visual Studio Code](https://code.visualstudio.com/Download)
 * Storybook [Demo](https://nfq-eta.github.io/react-typescript/docs)
     * With actions
-    * Addons
+    * With knobs
+    * With options
+    
+## Browser support
+* Chrome: >= 49
+* Firefox: >= 38
+* Safari: >= 10
+* Edge: >= 12
+* Opera: >= 36
 
-## Todo
+#### Todo
 * [x] Automate Changelist.md
 * [ ] E2E Tests
 * [ ] i18n
 * [ ] Red box for react errors?
 * [x] Server side rendering
-* [ ] Use redux-observable instead saga
+* [ ] ~~Use redux-observable instead saga~~
 * [ ] Assets (css, js) caching
 * [x] HMR route v4
 * [ ] PWA
