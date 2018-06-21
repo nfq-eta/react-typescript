@@ -1,12 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DemoPage.js matches snapshot 1`] = `
-<main
-  className="page"
->
+<main>
   Component name: DemoPage
-  <Connect(App)
-    addAction={[Function]}
+  <App
     items={Array []}
   />
 </main>

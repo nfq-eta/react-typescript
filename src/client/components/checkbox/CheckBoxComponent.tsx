@@ -1,17 +1,18 @@
 import * as React from 'react';
-import * as styles from './CheckBoxComponent.css';
+
+import * as styles from './CheckBoxComponent.scss';
 
 export interface IItem {
   id: string | number;
   value: string | number;
-  label: string;
+  label: string | number;
 }
 
 export interface IProps {
   /** Checkbox item */
   item: IItem;
   /** Handle Action called when checked */
-  handleClick: (item: IItem, checked: boolean) => void;
+  handleClick?: (item: IItem, checked: boolean) => void;
   /** Is it active by default? */
   checked?: boolean;
 }
@@ -45,9 +46,10 @@ export class CheckBox extends React.Component<IProps, ICheckBoxState> {
 
   handleClick = (e: React.ChangeEvent<HTMLInputElement> | ITestEvent) => {
     const checked = e.target.checked;
+    const { handleClick } = this.props;
     this.setState({ checked });
 
-    this.props.handleClick(this.props.item, checked);
+    handleClick && handleClick(this.props.item, checked);
   };
 
   render() {

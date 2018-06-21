@@ -3,16 +3,13 @@ import * as fs from 'fs';
 import * as express from 'express';
 import * as React from 'react';
 import HttpStatus from 'http-status-enum';
-import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import * as getPort from 'get-port';
 import * as compression from 'compression';
 
-import { configureStore } from '../client/core/store';
 import { CoreRoutes } from '../client/core/routes';
-import { initialState } from '../client/core/initialState';
-import { IRootState } from '../client/core/reducers';
+import { rootStore } from '../client/core/store';
 
 const normalizePort = (val: number | string): number => {
   return typeof val === 'string' ? parseInt(val, 10) : val;
@@ -27,7 +24,7 @@ const styles = readCss('dist/css/app.css');
 const name = require('../../package.json').name;
 const description = require('../../package.json').description;
 
-const renderHtml = (html: string, preLoadedState: IRootState) =>
+const renderHtml = (html: string, preLoadedState: typeof rootStore) =>
   `
     <!doctype html>
     <html lang="en-us">
@@ -46,7 +43,7 @@ const renderHtml = (html: string, preLoadedState: IRootState) =>
             <script>
                 window.__PRELOADED_STATE__ = ${JSON.stringify(preLoadedState).replace(/</g, '\\u003c')}
             </script>
-            <script src="/js/vendors.js" async></script>
+            <script src="/js/vendors.js"></script>
             <script src="/js/app.js" async></script>
         </body>
     </html>
@@ -67,23 +64,20 @@ app.use((req: express.Request, res: express.Response) => {
         createEpicMiddleware(epics),
     ));*/
 
-  const store = configureStore(initialState);
   const context: { url?: string } = {};
   const html = renderToString(
-    <Provider store={store}>
-      <StaticRouter
-        basename={process.env.BASE_PATH !== '' ? process.env.BASE_PATH : undefined}
-        location={req.url}
-        context={context}
-      >
-        <CoreRoutes />
-      </StaticRouter>
-    </Provider>,
+    <StaticRouter
+      basename={process.env.BASE_PATH !== '' ? process.env.BASE_PATH : undefined}
+      location={req.url}
+      context={context}
+    >
+      <CoreRoutes />
+    </StaticRouter>,
   );
   if (context.url) {
     res.redirect(HttpStatus.MOVED_PERMANENTLY, context.url);
   } else {
-    res.send(renderHtml(html, store.getState() as IRootState));
+    res.send(renderHtml(html, rootStore));
   }
 });
 

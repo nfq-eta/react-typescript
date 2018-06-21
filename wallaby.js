@@ -1,41 +1,24 @@
-module.exports = function() {
-    return {
-        files: [
-            {
-                pattern: 'src/**/*.tsx',
-                load: false,
-            },
-            {
-                pattern: 'src/**/*.json',
-                load: false,
-            },
-            {
-                pattern: 'src/**/*.test.tsx',
-                ignore: true,
-            },
-            {
-                pattern: 'src/**/*.story.tsx',
-                ignore: true,
-            },
-            {
-                pattern: 'src/client/index.tsx',
-                ignore: true,
-            },
-        ],
-        tests: [
-            {
-                pattern: 'src/**/*.test.tsx',
-                // load: false
-            }
-        ],
-        env: {
-            type: 'node',
-        },
-        testFramework: 'jest',
-        setup(wallaby) {
-            const jestConfig = require('./package.json').jest;
-            jestConfig.testEnvironment = 'jsdom';
-            wallaby.testFramework.configure(jestConfig);
-        },
-    };
+module.exports = function () {
+  return {
+    files: [
+      'src/**/*.ts?(x)',
+      'src/**/*.snap',
+      'src/**/*.?(s)css',
+      '!src/**/*.test.ts?(x)',
+      '!src/**/*.story.ts?(x)',
+      '!src/**/*.json'
+    ],
+    tests: [
+      'src/**/*.test.tsx'
+    ],
+    env: {
+      type: 'node'
+    },
+    preprocessors: {
+      '**/*.js': file => require('babel-core').transform(
+        file.content,
+        {sourceMap: true, plugins: ['transform-es2015-modules-commonjs'], presets: ['babel-preset-jest']})
+    },
+    testFramework: 'jest'
+  };
 };

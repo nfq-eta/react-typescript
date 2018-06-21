@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HomePage.js matches snapshot 1`] = `
-<main
-  className="page"
->
+<main>
   Component name: HomePage
 </main>
 `;

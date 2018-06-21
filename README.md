@@ -1,10 +1,27 @@
-# React & typescript boilerplate [![Build is passing?](https://travis-ci.org/nfq-eta/react-typescript.svg?branch=master)](https://travis-ci.org/nfq-eta/react-typescript) [![Coverage Status](https://coveralls.io/repos/github/nfq-eta/react-typescript/badge.svg)](https://coveralls.io/github/nfq-eta/react-typescript) [![Maintainability](https://api.codeclimate.com/v1/badges/7f1962ba5828c6273d14/maintainability)](https://codeclimate.com/github/nfq-eta/react-typescript/maintainability) [![Waffle.io](https://badge.waffle.io/nfq-eta/react-typescript.svg?columns=Backlog,In%20Progress,Done)](https://waffle.io/nfq-eta/react-typescript) 
+# React & typescript boilerplate [![Build is passing?](https://travis-ci.org/nfq-eta/react-typescript.svg?branch=master)](https://travis-ci.org/nfq-eta/react-typescript)
+[![Coverage Status](https://coveralls.io/repos/github/nfq-eta/react-typescript/badge.svg)](https://coveralls.io/github/nfq-eta/react-typescript)
+[![Waffle.io](https://badge.waffle.io/nfq-eta/react-typescript.svg?columns=Backlog,In%20Progress,Done)](https://waffle.io/nfq-eta/react-typescript)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7f1962ba5828c6273d14/maintainability)](https://codeclimate.com/github/nfq-eta/react-typescript/maintainability)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 
 ## Why?
 Make it fast as possible. Current development environment starts in <10s
 Build time as fast as possible ~35s.
 Bundle size should be minimum as possible
 ![performance](https://i.imgur.com/t3AS08T.png)
+
+## Table of contents
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+  - [How to start](#how-to-start)
+    - [What's inside](#whats-inside)
+- [Browser support](#browser-support)
+    - [Todo](#todo)
+- [Contributors](#contributors)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ### How to start
 1. `yarn` Install dependencies
@@ -56,41 +73,35 @@ Bundle size should be minimum as possible
     * [settings](https://github.com/nfq-eta/react-typescript/tree/master/.vscode) for [Visual Studio Code](https://code.visualstudio.com/Download)
 * Storybook [Demo](https://nfq-eta.github.io/react-typescript/docs)
     * With actions
-    * Addons
+    * With knobs
+    * With options
+    
+## Browser support
+* Chrome: >= 49
+* Firefox: >= 38
+* Safari: >= 10
+* Edge: >= 12
+* Opera: >= 36
 
-## Available commands
-|              Command  | Description                            |
-|---------------------: |----------------------------------------|
-| `yarn dev`            | Start development environment          |
-| `yarn start`          | Start production environment           |
-| `yarn start:storybook`| Start storybook                        |
-| `yarn lint`           | Lint typescript files                  |
-| `yarn lint:css`       | Lint scss/css files                    |
-| `yarn test`           | Start test enviroiment for development |
-| `yarn test:coverage`  | Display tests coverage                 |
-| `yarn start:server`   | Test SSR locally                       |
-
-## Contribute
-## <a name="commits"></a> Git Commit Guidelines
-
-We have very precise rules over how our git commit messages can be formatted.  This leads to **more readable messages** that are easy to follow when looking through the **project history**.  But also,
-we use the git commit messages to **generate the our change log**.
-
-The commit message formatting can be added using a typical git workflow or through the use of a CLI
-wizard ([Commitizen](https://github.com/commitizen/cz-cli)). To use the wizard, run `yarn run cm`
-in your terminal after staging your changes in git.
-
-A detailed explanation borrowed from angular and can be found in this [document][commit-message-format].
-
-## Todo
+#### Todo
 * [x] Automate Changelist.md
 * [ ] E2E Tests
 * [ ] i18n
 * [ ] Red box for react errors?
 * [x] Server side rendering
-* [ ] Use redux-observable instead saga
+* [ ] ~~Use redux-observable instead saga~~
 * [ ] Assets (css, js) caching
 * [x] HMR route v4
 * [ ] PWA
 
-[commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars2.githubusercontent.com/u/468006?v=4" width="100px;"/><br /><sub><b>Vytenis</b></sub>](https://github.com/FDiskas)<br />[🐛](https://github.com/FDiskas/react-typescript/issues?q=author%3AFDiskas "Bug reports") [💻](https://github.com/FDiskas/react-typescript/commits?author=FDiskas "Code") [📖](https://github.com/FDiskas/react-typescript/commits?author=FDiskas "Documentation") [📋](#eventOrganizing-FDiskas "Event Organizing") [💡](#example-FDiskas "Examples") [🤔](#ideas-FDiskas "Ideas, Planning, & Feedback") [🚇](#infra-FDiskas "Infrastructure (Hosting, Build-Tools, etc)") [👀](#review-FDiskas "Reviewed Pull Requests") [🔧](#tool-FDiskas "Tools") | [<img src="https://avatars3.githubusercontent.com/u/12097258?v=4" width="100px;"/><br /><sub><b>Genadij Bojev</b></sub>](https://github.com/gennbo)<br />[🐛](https://github.com/FDiskas/react-typescript/issues?q=author%3Agennbo "Bug reports") [💻](https://github.com/FDiskas/react-typescript/commits?author=gennbo "Code") | [<img src="https://avatars0.githubusercontent.com/u/17545646?v=4" width="100px;"/><br /><sub><b>Aivaras</b></sub>](https://github.com/aivaras-b)<br />[👀](#review-aivaras-b "Reviewed Pull Requests") |
+| :---: | :---: | :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

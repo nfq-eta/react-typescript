@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DefaultLayout.js matches snapshot 1`] = `
-<div
-  className="layout"
->
+<div>
   Component name: DefaultLayout
   <HeaderComponent
     key="header"

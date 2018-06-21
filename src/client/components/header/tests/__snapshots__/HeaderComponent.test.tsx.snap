@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeaderComponent.js matches snapshot 1`] = `
-<div
-  className="header"
->
+<div>
   Component name: HeaderComponent
   <NavigationComponent />
 </div>

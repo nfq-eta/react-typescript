@@ -1,73 +1,39 @@
 import * as React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect, MapDispatchToProps } from 'react-redux';
-import * as uniqId from 'uniqid';
+import { view } from 'react-easy-state';
 
 import { CheckBox, IItem } from '../components/checkbox/CheckBoxComponent';
-import { addCheckbox } from '../modules/checkbox/actions';
-import { IRootState } from '../core/reducers';
+import { store } from '../core/store';
 
-export interface IAppProps {
-  addAction: typeof addCheckbox;
-  items: IItem[];
-}
+import * as styles from './AppContainer.scss';
 
-export interface IAppState {
-  items: IItem[];
-}
+export type AppProps = {
+  items?: IItem[];
+};
 
-class App extends React.Component<IAppProps, IAppState> {
-  static defaultProps: Partial<IAppProps> = {
-    items: [
-      {
-        id: 'string',
-        label: 'Demo',
-        value: 'demo',
-      },
-    ],
-    addAction: addCheckbox,
+export class App extends React.Component<AppProps, {}> {
+  static defaultProps = {
+    items: [],
   };
-
-  selectedItems = new Map();
-
-  constructor(props: IAppProps) {
-    super(props);
-
-    this.state = { items: [] };
-  }
-
-  handleClick = (item: IItem, checked: boolean) => {
-    if (checked) {
-      this.selectedItems.set(item.id, item);
-    } else {
-      this.selectedItems.delete(item.id);
-    }
-  };
-
-  isSelected(item: IItem) {
-    return this.selectedItems.has(item.id);
-  }
 
   handleAdd = () => {
-    this.props.addAction({
-      id: uniqId(),
+    store.foo = store.foo == 'clicked' ? 'click me' : 'clicked';
+    store.addAction({
+      id: Math.round(new Date().getTime() / 1000).toString(),
       label: 'Demo',
       value: 'demo',
     });
   };
 
-  handleDelete = () => {
-    // console.log(item);
-  };
-
   render() {
     return (
       <div>
-        <button onClick={this.handleAdd}>Add more</button>
-        {this.props.items.map(item => (
-          <div key={item.id}>
-            <CheckBox item={item} handleClick={this.handleClick} />
-            <button onClick={this.handleDelete.bind(this, item)}>Delete</button>
+        <button onClick={this.handleAdd} className={styles.button}>
+          Add more
+        </button>
+        {store.checkBoxItems.map((item, index) => (
+          <div key={index}>
+            <CheckBox item={item} />
+            <button>Delete</button>
           </div>
         ))}
       </div>
@@ -75,18 +41,4 @@ class App extends React.Component<IAppProps, IAppState> {
   }
 }
 
-export function mapStateToProps(state: IRootState) {
-  return {
-    items: state.checkBoxItems,
-  };
-}
-
-export function mapDispatchToProps(dispatch: MapDispatchToProps<any, any>) {
-  return {
-    addAction: bindActionCreators(addCheckbox, dispatch),
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-export { App as AppDisconnected };
+export default view(App);

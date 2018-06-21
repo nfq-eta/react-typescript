@@ -1,0 +1,48 @@
+{
+  "projectName": "react-typescript",
+  "projectOwner": "FDiskas",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "FDiskas",
+      "name": "Vytenis",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/468006?v=4",
+      "profile": "https://github.com/FDiskas",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "eventOrganizing",
+        "example",
+        "ideas",
+        "infra",
+        "review",
+        "tool"
+      ]
+    },
+    {
+      "login": "gennbo",
+      "name": "Genadij Bojev",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/12097258?v=4",
+      "profile": "https://github.com/gennbo",
+      "contributions": [
+        "bug",
+        "code"
+      ]
+    },
+    {
+      "login": "aivaras-b",
+      "name": "Aivaras",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/17545646?v=4",
+      "profile": "https://github.com/aivaras-b",
+      "contributions": [
+        "review"
+      ]
+    }
+  ],
+  "repoType": "github"
+}
