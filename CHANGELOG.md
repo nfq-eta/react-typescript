@@ -1,6 +1,23 @@
+<a name="1.5.2"></a>
+## <small>1.5.2 (2019-01-16)</small>
+
+* Fix vulnerabilities ([eeb0b3c](https://github.com/nfq-eta/react-typescript/commit/eeb0b3c))
+* Fix vulnerabilities ([cd11c6d](https://github.com/nfq-eta/react-typescript/commit/cd11c6d))
+* Update package.json ([0b6456f](https://github.com/nfq-eta/react-typescript/commit/0b6456f))
+* Update package.json ([1d13690](https://github.com/nfq-eta/react-typescript/commit/1d13690))
+* Update package.json ([7228d4a](https://github.com/nfq-eta/react-typescript/commit/7228d4a))
+* Update package.json ([41ae60b](https://github.com/nfq-eta/react-typescript/commit/41ae60b))
+* Update package.json ([14159c7](https://github.com/nfq-eta/react-typescript/commit/14159c7))
+* Update package.json ([e02cb19](https://github.com/nfq-eta/react-typescript/commit/e02cb19))
+* Update README.md ([862f22f](https://github.com/nfq-eta/react-typescript/commit/862f22f))
+* fix: package.json to reduce vulnerabilities ([212b0a3](https://github.com/nfq-eta/react-typescript/commit/212b0a3))
+
+
+
 <a name="1.5.1"></a>
 ## <small>1.5.1 (2018-03-29)</small>
 
+* chore(release): 1.5.1 ([782b410](https://github.com/nfq-eta/react-typescript/commit/782b410))
 * Add gitflow ([ba7588a](https://github.com/nfq-eta/react-typescript/commit/ba7588a))
 * Added prettier and styling ([8e594da](https://github.com/nfq-eta/react-typescript/commit/8e594da))
 * Code style ([12ea50a](https://github.com/nfq-eta/react-typescript/commit/12ea50a))
