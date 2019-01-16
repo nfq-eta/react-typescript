@@ -27,7 +27,14 @@ export const config: webpack.Configuration = strategy({
       {
         test: /.*\.tsx$/,
         include: path.resolve('src'),
-        use: ['ts-loader?silent'],
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              silent: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(css|sass|scss)$/,

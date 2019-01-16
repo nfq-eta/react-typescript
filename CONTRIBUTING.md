@@ -28,3 +28,6 @@ We are using yarn so respect this. Just type `yarn` and you are ready to go
 
 After submitting a merge request you can access a feature demo website available at "deploy/netlify" by clicking on "Details" link
 ![deploy/netlify](https://i.imgur.com/ni1tq8h.png)
+
+### Committing changes
+ Always use `yarn cm` command to commit chances

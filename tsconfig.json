@@ -9,7 +9,7 @@
         "skipDefaultLibCheck": true,
         "experimentalDecorators": true,
         "jsx": "react",
-        "allowJs": true,
+        "allowJs": false,
         "checkJs": false,
         "sourceMap": true,
         "noImplicitAny": true,

@@ -132,7 +132,7 @@
     "tslint-react": "^3.5.1",
     "tsutils": "^2.21.1",
     "typed-css-modules": "^0.3.1",
-    "typescript": "^2.8.1",
+    "typescript": "^3.2.2",
     "typescript-babel-jest": "^1.0.5",
     "typings-for-css-modules-loader": "^1.7.0",
     "uniqid": "^4.1.1",

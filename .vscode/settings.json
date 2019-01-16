@@ -6,5 +6,6 @@
     "tslint.enable": true,
     "tslint.autoFixOnSave": false,
     "tslint.alwaysShowStatus": true,
-    "tslint.packageManager": "yarn"
+    "tslint.packageManager": "yarn",
+    "typescript.tsdk": "node_modules/typescript/lib"
 }
