@@ -1,6 +1,15 @@
+<a name="1.5.3"></a>
+## <small>1.5.3 (2019-01-16)</small>
+
+* docs(contributing): Contributing readme changes ([332b13a](https://github.com/nfq-eta/react-typescript/commit/332b13a))
+* Fix vulnerabilities ([e11ab51](https://github.com/nfq-eta/react-typescript/commit/e11ab51))
+
+
+
 <a name="1.5.2"></a>
 ## <small>1.5.2 (2019-01-16)</small>
 
+* chore(release): 1.5.2 ([0ee33e4](https://github.com/nfq-eta/react-typescript/commit/0ee33e4))
 * Fix vulnerabilities ([eeb0b3c](https://github.com/nfq-eta/react-typescript/commit/eeb0b3c))
 * Fix vulnerabilities ([cd11c6d](https://github.com/nfq-eta/react-typescript/commit/cd11c6d))
 * Update package.json ([0b6456f](https://github.com/nfq-eta/react-typescript/commit/0b6456f))
