@@ -161,6 +161,7 @@
     ]
   },
   "jest": {
+    "testURL": "http://localhost/",
     "globals": {
       "ts-jest": {
         "skipBabel": true
@@ -192,7 +193,6 @@
     "moduleNameMapper": {
       "^.+\\.s?css$": "identity-obj-proxy"
     },
-    "mapCoverage": true,
     "coverageDirectory": "./coverage/"
   },
   "stylelint": {
