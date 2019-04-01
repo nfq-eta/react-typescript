@@ -14,9 +14,9 @@ import { CoreRoutes } from '../client/core/routes';
 import { initialState } from '../client/core/initialState';
 import { IRootState } from '../client/core/reducers';
 
-const normalizePort = (val: number | string): number => {
-  return typeof val === 'string' ? parseInt(val, 10) : val;
-};
+// const normalizePort = (val: number | string): number => {
+//   return typeof val === 'string' ? parseInt(val, 10) : val;
+// };
 
 const readCss = (file: string) => {
   const abs = path.resolve(file);
