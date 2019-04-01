@@ -6,7 +6,7 @@ import HttpStatus from 'http-status-enum';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import * as getPort from 'get-port';
+// import * as getPort from 'get-port';
 import * as compression from 'compression';
 
 import { configureStore } from '../client/core/store';
@@ -87,7 +87,7 @@ app.use((req: express.Request, res: express.Response) => {
   }
 });
 
-getPort({ port }).then(rPort => {
-  // tslint:disable-next-line:no-console
-  app.listen(rPort, () => console.log(`App is listening on http://localhost:${rPort}`));
-});
+// getPort({ port }).then(rPort => {
+// tslint:disable-next-line:no-console
+app.listen(port, () => console.log(`App is listening on http://localhost:${rPort}`));
+// });
