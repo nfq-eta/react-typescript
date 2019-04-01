@@ -89,5 +89,5 @@ app.use((req: express.Request, res: express.Response) => {
 
 // getPort({ port }).then(rPort => {
 // tslint:disable-next-line:no-console
-app.listen(port, () => console.log(`App is listening on http://localhost:${port}`));
+app.listen(process.env.PORT || 80, () => console.log(`App is listening on http://localhost:${port}`));
 // });
