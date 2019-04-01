@@ -155,10 +155,7 @@
     "redux": "^3.7.2"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss}": [
-      "prettier --write",
-      "git add"
-    ]
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss}": ["prettier --write", "git add"]
   },
   "jest": {
     "testURL": "http://localhost/",
@@ -167,47 +164,27 @@
         "skipBabel": true
       }
     },
-    "setupFiles": [
-      "<rootDir>/config/jest/bootstrap.js"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
+    "setupFiles": ["<rootDir>/config/jest/bootstrap.js"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "transform": {
       "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "^.+\\.test\\.tsx?$",
-    "collectCoverageFrom": [
-      "src/**/*.tsx",
-      "!src/client/index.tsx",
-      "!<rootDir>/node_modules/",
-      "!src/**/*.story.tsx"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "json",
-      "ts",
-      "tsx"
-    ],
+    "collectCoverageFrom": ["src/**/*.tsx", "!src/client/index.tsx", "!<rootDir>/node_modules/", "!src/**/*.story.tsx"],
+    "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx"],
     "moduleNameMapper": {
       "^.+\\.s?css$": "identity-obj-proxy"
     },
     "coverageDirectory": "./coverage/"
   },
   "stylelint": {
-    "extends": [
-      "stylelint-config-sass-guidelines",
-      "stylelint-config-css-modules"
-    ],
+    "extends": ["stylelint-config-sass-guidelines", "stylelint-config-css-modules"],
     "rules": {
       "indentation": 4,
       "number-leading-zero": null,
       "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
       "order/properties-alphabetical-order": null,
-      "max-nesting-depth": [
-        3
-      ],
+      "max-nesting-depth": [3],
       "selector-max-compound-selectors": 4
     }
   },
@@ -217,7 +194,7 @@
     }
   },
   "engines": {
-    "node": ">= 8.9",
+    "node": ">= 10",
     "yarn": ">= 1.3.2"
   }
 }
