@@ -52,7 +52,7 @@ const renderHtml = (html: string, preLoadedState: IRootState) =>
     </html>
     `;
 
-const port = normalizePort(process.env.PORT || 8080);
+// const port = normalizePort(process.env.PORT || 8080);
 const app = express();
 
 // compress all requests
