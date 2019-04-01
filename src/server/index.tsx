@@ -90,8 +90,7 @@ app.use((req: express.Request, res: express.Response) => {
 // getPort({ port }).then(rPort => {
 // tslint:disable-next-line:no-console
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, err => {
-  if (err) throw err;
+app.listen(PORT, () => {
   console.log('%c Server running on PORT: ' + process.env.PORT, 'color: green');
 });
 // });
