@@ -91,6 +91,6 @@ app.use((req: express.Request, res: express.Response) => {
 // tslint:disable-next-line:no-console
 // const PORT = process.env.PORT || 3000;
 app.listen(parseInt(process.env.PORT || '3000'), '0.0.0.0', function() {
-  console.log('Server started.......');
+  console.log('Server started.......' + process.env.PORT);
 });
 // });
