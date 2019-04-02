@@ -90,7 +90,7 @@ app.use((req: express.Request, res: express.Response) => {
 // getPort({ port }).then(rPort => {
 // tslint:disable-next-line:no-console
 // const PORT = process.env.PORT || 3000;
-app.listen(parseInt(process.env.PORT), '0.0.0.0', function() {
+app.listen(parseInt(process.env.PORT || '3000'), '0.0.0.0', function() {
   console.log('Server started.......');
 });
 // });
