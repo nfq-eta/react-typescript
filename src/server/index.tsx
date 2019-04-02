@@ -6,7 +6,7 @@ import HttpStatus from 'http-status-enum';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-// import * as getPort from 'get-port';
+import * as getPort from 'get-port';
 import * as compression from 'compression';
 
 import { configureStore } from '../client/core/store';
@@ -14,9 +14,9 @@ import { CoreRoutes } from '../client/core/routes';
 import { initialState } from '../client/core/initialState';
 import { IRootState } from '../client/core/reducers';
 
-// const normalizePort = (val: number | string): number => {
-//   return typeof val === 'string' ? parseInt(val, 10) : val;
-// };
+const normalizePort = (val: number | string): number => {
+  return typeof val === 'string' ? parseInt(val, 10) : val;
+};
 
 const readCss = (file: string) => {
   const abs = path.resolve(file);
@@ -52,7 +52,7 @@ const renderHtml = (html: string, preLoadedState: IRootState) =>
     </html>
     `;
 
-// const port = normalizePort(process.env.PORT || 8080);
+const port = normalizePort(process.env.PORT || 8080);
 const app = express();
 
 // compress all requests
@@ -63,9 +63,9 @@ app.use('/css', express.static(path.join('dist', 'css'), { redirect: false }));
 
 app.use((req: express.Request, res: express.Response) => {
   /*const store = createStore<State>(reducer, applyMiddleware(
-        routerMiddleware(createHistory()),
-        createEpicMiddleware(epics),
-    ));*/
+      routerMiddleware(createHistory()),
+      createEpicMiddleware(epics),
+  ));*/
 
   const store = configureStore(initialState);
   const context: { url?: string } = {};
@@ -87,10 +87,7 @@ app.use((req: express.Request, res: express.Response) => {
   }
 });
 
-// getPort({ port }).then(rPort => {
-// tslint:disable-next-line:no-console
-// const PORT = process.env.PORT || 3000;
-app.listen(parseInt(process.env.PORT || '3000'), '0.0.0.0', function() {
-  console.log('Server started.......' + process.env.PORT);
+getPort({ port }).then(rPort => {
+  // tslint:disable-next-line:no-console
+  app.listen(rPort, () => console.log(`App is listening on http://localhost:${rPort}`));
 });
-// });
