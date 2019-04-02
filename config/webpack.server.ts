@@ -1,6 +1,6 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
-import * as DotenvPlugin from 'webpack-dotenv-plugin';
+// import * as DotenvPlugin from 'webpack-dotenv-plugin';
 
 export const config: webpack.Configuration = {
   entry: {
@@ -48,10 +48,10 @@ export const config: webpack.Configuration = {
 
   plugins: [
     new webpack.EnvironmentPlugin(['NODE_ENV']),
-    new DotenvPlugin({
+    /*new DotenvPlugin({
       sample: '.env.example',
       path: `.env.${process.env.NODE_ENV}`,
       allowEmptyValues: true,
-    }),
+    }),*/
   ],
 };
