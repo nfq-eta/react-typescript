@@ -8,3 +8,8 @@ patch:
         patched: '2021-03-19T09:46:23.208Z'
     - redux > lodash:
         patched: '2021-03-19T09:46:23.208Z'
+  SNYK-JS-LODASH-450202:
+    - react-redux > lodash:
+        patched: '2021-03-19T09:57:14.020Z'
+    - redux > lodash:
+        patched: '2021-03-19T09:57:14.020Z'
