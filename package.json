@@ -192,9 +192,5 @@
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
-  },
-  "engines": {
-    "node": ">= 8.9",
-    "yarn": ">= 1.3.2"
   }
 }
