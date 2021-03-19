@@ -27,7 +27,9 @@
     "start:storybook": "start-storybook -p 6006 -c config/storybook",
     "build-storybook": "build-storybook -c config/storybook -o ./dist/docs",
     "version": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.17",
@@ -152,10 +154,14 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
     "react-router4-with-layouts": "^1.2.6",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "snyk": "^1.500.0"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss}": ["prettier --write", "git add"]
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "jest": {
     "testURL": "http://localhost/",
@@ -164,27 +170,47 @@
         "skipBabel": true
       }
     },
-    "setupFiles": ["<rootDir>/config/jest/bootstrap.js"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "setupFiles": [
+      "<rootDir>/config/jest/bootstrap.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "transform": {
       "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "^.+\\.test\\.tsx?$",
-    "collectCoverageFrom": ["src/**/*.tsx", "!src/client/index.tsx", "!<rootDir>/node_modules/", "!src/**/*.story.tsx"],
-    "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx"],
+    "collectCoverageFrom": [
+      "src/**/*.tsx",
+      "!src/client/index.tsx",
+      "!<rootDir>/node_modules/",
+      "!src/**/*.story.tsx"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "ts",
+      "tsx"
+    ],
     "moduleNameMapper": {
       "^.+\\.s?css$": "identity-obj-proxy"
     },
     "coverageDirectory": "./coverage/"
   },
   "stylelint": {
-    "extends": ["stylelint-config-sass-guidelines", "stylelint-config-css-modules"],
+    "extends": [
+      "stylelint-config-sass-guidelines",
+      "stylelint-config-css-modules"
+    ],
     "rules": {
       "indentation": 4,
       "number-leading-zero": null,
       "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
       "order/properties-alphabetical-order": null,
-      "max-nesting-depth": [3],
+      "max-nesting-depth": [
+        3
+      ],
       "selector-max-compound-selectors": 4
     }
   },
@@ -192,5 +218,6 @@
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "snyk": true
 }
