@@ -51,7 +51,7 @@ export const config: webpack.Configuration = strategy({
               },
             },
             { loader: 'resolve-url-loader' },
-            { loader: 'sass-loader', options: { sourceMap: true } },
+            { loader: 'sass-loader', options: { sourceMap: true, sass: 'dart-sass' } },
           ],
         }) as any),
       },
