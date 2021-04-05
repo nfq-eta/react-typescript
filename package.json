@@ -155,7 +155,7 @@
     "react-router-redux": "^4.0.8",
     "react-router4-with-layouts": "^1.2.6",
     "redux": "^3.7.2",
-    "snyk": "^1.500.0"
+    "snyk": "^1.518.0"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss}": [
