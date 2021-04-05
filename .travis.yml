@@ -3,7 +3,7 @@ sudo: true
 language: node_js
 
 node_js:
-  - lts
+  - v10.21.0
 
 cache:
   directories:
