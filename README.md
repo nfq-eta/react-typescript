@@ -1,5 +1,8 @@
 # React & typescript boilerplate [![Build is passing?](https://travis-ci.org/nfq-eta/react-typescript.svg?branch=master)](https://travis-ci.org/nfq-eta/react-typescript) [![Coverage Status](https://coveralls.io/repos/github/nfq-eta/react-typescript/badge.svg)](https://coveralls.io/github/nfq-eta/react-typescript) [![Maintainability](https://api.codeclimate.com/v1/badges/7f1962ba5828c6273d14/maintainability)](https://codeclimate.com/github/nfq-eta/react-typescript/maintainability)
 
+# Deprecated notice
+Use [nextjs](https://nextjs.org/)
+
 ## Why?
 Make it fast as possible. Current development environment starts in <10s
 Build time as fast as possible ~35s.
